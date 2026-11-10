@@ -135,23 +135,25 @@ const CIVIL_PHASES: CivilPhase[] = [
 ];
 
 export default function CivilInvestmentStackingCards() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const scrollToPhase = (index: number) => {
-    if (!containerRef.current) return;
-    const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
-    const cardHeight = isMobile ? 520 : 620;
-    const offset = isMobile ? 80 : 110;
-    containerRef.current.scrollTo({
-      top: offset + index * cardHeight,
-      behavior: "smooth"
-    });
+    const el = cardRefs.current[index];
+    if (el) {
+      const navOffset = 86 + index * 12;
+      const elementPosition = el.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
   };
 
   return (
     <div className="w-full">
       {/* Quick Phase Selection Pills - Horizontally scrollable on mobile */}
-      <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 px-1 sm:flex-wrap sm:justify-center mb-4 sm:mb-6">
+      <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 px-1 sm:flex-wrap sm:justify-center mb-6 sm:mb-8">
         {CIVIL_PHASES.map((p, idx) => (
           <button
             key={idx}
@@ -168,23 +170,20 @@ export default function CivilInvestmentStackingCards() {
         ))}
       </div>
 
-      {/* Main Stacking Cards Viewport */}
-      <div
-        ref={containerRef}
-        className="h-[540px] sm:h-[620px] md:h-[680px] bg-slate-50/60 rounded-2xl sm:rounded-3xl border border-slate-200 overflow-y-auto scroll-smooth p-2 sm:p-6 shadow-inner relative"
-      >
+      {/* Main Stacking Cards Viewport (Window/Page Scroll Driven) */}
+      <div className="w-full relative">
         <StackingCards
           totalCards={CIVIL_PHASES.length}
-          scrollOptions={{ container: containerRef }}
-          scaleMultiplier={0.035}
+          scaleMultiplier={0.025}
+          className="w-full relative"
         >
           {/* Scroll Down Prompt Header */}
-          <div className="h-[65px] sm:h-[80px] w-full flex flex-col items-center justify-center text-center select-none text-slate-500 mb-2 px-2">
-            <div className="flex items-center gap-1.5 text-xs font-bold text-slate-700 tracking-wider mb-1">
-              <span>Scroll inside box to stack phases</span>
+          <div className="w-full flex flex-col items-center justify-center text-center select-none text-slate-500 mb-6 sm:mb-10 px-2">
+            <div className="flex items-center gap-1.5 text-xs font-bold text-slate-800 tracking-wider mb-1">
+              <span>Scroll down webpage to stack civil phases</span>
               <ChevronDown className="w-3.5 h-3.5 animate-bounce text-neutral-950" />
             </div>
-            <p className="text-[10px] sm:text-[11px] text-slate-400">
+            <p className="text-[10px] sm:text-[11px] text-slate-500">
               Each stage stacks chronologically with live budget percentages &amp; civil execution specs
             </p>
           </div>
@@ -195,9 +194,12 @@ export default function CivilInvestmentStackingCards() {
             return (
               <StackingCardItem
                 key={index}
+                ref={(el) => {
+                  cardRefs.current[index] = el;
+                }}
                 index={index}
-                className="h-[510px] sm:h-[590px] md:h-[620px]"
-                topPosition={`${3 + index * 1.8}%`}
+                className="mb-16 sm:mb-24 md:mb-32 last:mb-12"
+                topPosition={`calc(86px + ${index * 12}px)`}
               >
                 <div
                   className={cn(
@@ -272,8 +274,9 @@ export default function CivilInvestmentStackingCards() {
           })}
 
           {/* Bottom Completed Bar */}
-          <div className="w-full h-36 flex flex-col items-center justify-center text-center text-slate-600">
-            <div className="inline-flex items-center gap-2 text-xs font-bold text-slate-600 bg-slate-200/80 px-4 py-1.5 rounded-full">
+          <div className="w-full pt-8 pb-12 flex flex-col items-center justify-center text-center text-slate-600">
+            <div className="inline-flex items-center gap-2 text-xs font-bold text-slate-700 bg-white border border-slate-200 px-4 py-2 rounded-full shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-neutral-950" />
               <span>All 6 Civil Construction Phases Completed &bull; 100% Transparent BOQ</span>
             </div>
           </div>
