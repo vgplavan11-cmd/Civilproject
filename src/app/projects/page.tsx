@@ -45,7 +45,7 @@ export default function ProjectsPage() {
             <div className="flex flex-wrap items-center justify-center gap-3">
               <Link
                 href="/contact"
-                className="rounded-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 text-xs font-bold shadow-sm shadow-blue-500/20 transition-all active:scale-[0.98]"
+                className="rounded-full bg-neutral-950 hover:bg-black text-white px-6 py-2.5 text-xs font-bold shadow-md shadow-black/25 transition-all active:scale-[0.98]"
               >
                 Request Custom Site Elevation
               </Link>
@@ -74,20 +74,20 @@ export default function ProjectsPage() {
 
           <div className="bg-white rounded-2xl border border-slate-200 overflow-x-auto shadow-sm">
             <table className="w-full text-left text-xs text-slate-700 min-w-[720px]">
-              <thead className="bg-slate-900 text-white font-bold uppercase text-[11px] tracking-wider">
+              <thead className="bg-[#0d0d0d] text-white font-bold uppercase text-[11px] tracking-wider">
                 <tr>
                   <th className="py-3.5 px-4">Engineering Feature</th>
-                  <th className="py-3.5 px-4 text-blue-400">2BHK Horizon Model</th>
-                  <th className="py-3.5 px-4 text-blue-400">3BHK Royal Palm Model</th>
-                  <th className="py-3.5 px-4 text-blue-400">4BHK Sovereign Villa</th>
+                  <th className="py-3.5 px-4 text-neutral-300">2BHK Horizon Model</th>
+                  <th className="py-3.5 px-4 text-neutral-300">3BHK Royal Palm Model</th>
+                  <th className="py-3.5 px-4 text-neutral-300">4BHK Sovereign Villa</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-200">
                 <tr className="hover:bg-slate-50">
                   <td className="py-3 px-4 font-bold text-slate-900">Super Built-Up Area</td>
-                  <td className="py-3 px-4 font-semibold text-blue-600">1,140 Sq. Ft.</td>
-                  <td className="py-3 px-4 font-semibold text-blue-600">1,680 Sq. Ft.</td>
-                  <td className="py-3 px-4 font-semibold text-blue-600">3,150 Sq. Ft.</td>
+                  <td className="py-3 px-4 font-semibold text-neutral-950">1,140 Sq. Ft.</td>
+                  <td className="py-3 px-4 font-semibold text-neutral-950">1,680 Sq. Ft.</td>
+                  <td className="py-3 px-4 font-semibold text-neutral-950">3,150 Sq. Ft.</td>
                 </tr>
                 <tr className="hover:bg-slate-50">
                   <td className="py-3 px-4 font-bold text-slate-900">Structural Foundation</td>
@@ -135,7 +135,7 @@ export default function ProjectsPage() {
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <div className="p-8 sm:p-12 rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50">
-            <Ruler className="w-10 h-10 text-blue-600 mx-auto mb-3" />
+            <Ruler className="w-10 h-10 text-neutral-950 mx-auto mb-3" />
             <h3 className="text-2xl font-black text-slate-950">
               Need a Custom Civil Blueprint for Your Plot?
             </h3>
@@ -145,7 +145,7 @@ export default function ProjectsPage() {
             <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link
                 href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-6 py-3 rounded-lg shadow-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-neutral-950 hover:bg-black text-white text-xs font-bold px-6 py-3 rounded-lg shadow-sm"
               >
                 <span>Upload Plot Details / Request Custom Plan</span>
                 <ArrowRight className="w-3.5 h-3.5" />

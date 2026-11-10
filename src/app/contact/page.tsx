@@ -105,15 +105,15 @@ function ContactFormContent() {
                 </div>
 
                 {submitted ? (
-                  <div className="p-8 bg-blue-50 border border-blue-200 rounded-xl text-center space-y-4">
-                    <div className="w-14 h-14 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto shadow-md">
+                  <div className="p-8 bg-neutral-100 border border-neutral-300 rounded-xl text-center space-y-4">
+                    <div className="w-14 h-14 bg-neutral-950 text-white rounded-full flex items-center justify-center mx-auto shadow-md">
                       <CheckCircle2 className="w-8 h-8" />
                     </div>
                     <h3 className="text-xl font-bold text-slate-950">
                       Inquiry Received Successfully!
                     </h3>
                     <p className="text-xs text-slate-600 max-w-md mx-auto leading-relaxed">
-                      Thank you, <span className="font-bold text-slate-900">{formData.name}</span>. Your project reference number is <span className="font-mono font-bold text-blue-700">{refId}</span>. Our Chief Project Engineer has been notified to schedule your site inspection.
+                      Thank you, <span className="font-bold text-slate-900">{formData.name}</span>. Your project reference number is <span className="font-mono font-bold text-neutral-950">{refId}</span>. Our Chief Project Engineer has been notified to schedule your site inspection.
                     </p>
                     <div className="pt-2">
                       <button
@@ -130,7 +130,7 @@ function ContactFormContent() {
                             notes: ""
                           });
                         }}
-                        className="text-xs font-bold text-blue-600 hover:text-blue-800 underline underline-offset-4"
+                        className="text-xs font-bold text-neutral-950 hover:text-black underline underline-offset-4"
                       >
                         Submit another inquiry
                       </button>
@@ -149,7 +149,7 @@ function ContactFormContent() {
                           placeholder="e.g. Robert Smith"
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-600 bg-white text-slate-900 font-medium"
+                          className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-neutral-950 bg-white text-slate-900 font-medium"
                         />
                       </div>
 
@@ -163,7 +163,7 @@ function ContactFormContent() {
                           placeholder="e.g. +91 98421 12345"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-600 bg-white text-slate-900 font-medium"
+                          className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-neutral-950 bg-white text-slate-900 font-medium"
                         />
                       </div>
                     </div>
@@ -179,7 +179,7 @@ function ContactFormContent() {
                           placeholder="e.g. robert@example.com"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-600 bg-white text-slate-900 font-medium"
+                          className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-neutral-950 bg-white text-slate-900 font-medium"
                         />
                       </div>
 
@@ -190,7 +190,7 @@ function ContactFormContent() {
                         <select
                           value={formData.service}
                           onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                          className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-600 bg-white text-slate-900 font-medium"
+                          className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-neutral-950 bg-white text-slate-900 font-medium"
                         >
                           <option value="2bhk-turnkey">Turnkey 2BHK House Model</option>
                           <option value="3bhk-turnkey">Turnkey 3BHK House Model</option>
@@ -212,7 +212,7 @@ function ContactFormContent() {
                           placeholder="e.g. 1,500 Sq. Ft. or 30x40 site"
                           value={formData.plotArea}
                           onChange={(e) => setFormData({ ...formData, plotArea: e.target.value })}
-                          className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-600 bg-white text-slate-900 font-medium"
+                          className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-neutral-950 bg-white text-slate-900 font-medium"
                         />
                       </div>
 
@@ -225,7 +225,7 @@ function ContactFormContent() {
                           placeholder="e.g. KK Nagar / Anna Nagar / Othakadai, Madurai"
                           value={formData.plotLocation}
                           onChange={(e) => setFormData({ ...formData, plotLocation: e.target.value })}
-                          className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-600 bg-white text-slate-900 font-medium"
+                          className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-neutral-950 bg-white text-slate-900 font-medium"
                         />
                       </div>
                     </div>
@@ -246,7 +246,7 @@ function ContactFormContent() {
                             onClick={() => setFormData({ ...formData, timeline: t.id })}
                             className={`py-2 px-2 rounded-lg border text-center transition-all ${
                               formData.timeline === t.id
-                                ? "border-blue-600 bg-blue-50 font-bold text-blue-700"
+                                ? "border-neutral-950 bg-neutral-950 font-bold text-white"
                                 : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50"
                             }`}
                           >
@@ -265,7 +265,7 @@ function ContactFormContent() {
                         placeholder="Describe your soil condition, required bedrooms, specific finish preferences, or reference house model..."
                         value={formData.notes}
                         onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-600 bg-white text-slate-900 font-medium"
+                        className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-neutral-950 bg-white text-slate-900 font-medium"
                       />
                     </div>
 
@@ -273,7 +273,7 @@ function ContactFormContent() {
                       <button
                         type="submit"
                         disabled={submitting}
-                        className="w-full inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-md shadow-blue-500/20 active:scale-[0.99] disabled:opacity-70"
+                        className="w-full inline-flex items-center justify-center gap-2 bg-neutral-950 hover:bg-black text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-md shadow-black/25 active:scale-[0.99] disabled:opacity-70"
                       >
                         {submitting ? (
                           <span>Processing Inquiry...</span>
@@ -297,20 +297,20 @@ function ContactFormContent() {
             {/* Direct Engineering Contacts & Map Placeholder */}
             <div className="lg:col-span-5 space-y-6">
               {/* HQ Office Card */}
-              <div className="bg-slate-900 text-white rounded-2xl p-7 border border-slate-800">
+              <div className="bg-[#0d0d0d] text-white rounded-2xl p-7 border border-neutral-800">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center text-white">
+                  <div className="w-10 h-10 rounded-lg bg-neutral-800 flex items-center justify-center text-white border border-neutral-700">
                     <Building2 className="w-5 h-5" />
                   </div>
                   <div>
                     <h3 className="font-bold text-base text-white">Elite Homes Office</h3>
-                    <p className="text-xs text-blue-400 font-mono">MSME Reg: {companyInfo.licenseNo}</p>
+                    <p className="text-xs text-neutral-400 font-mono">MSME Reg: {companyInfo.licenseNo}</p>
                   </div>
                 </div>
 
                 <div className="space-y-4 text-xs text-slate-300">
                   <div className="flex items-start gap-3">
-                    <MapPin className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+                    <MapPin className="w-4 h-4 text-neutral-400 shrink-0 mt-0.5" />
                     <div>
                       <p className="font-bold text-white">{companyInfo.contact.headOffice}</p>
                       <p className="text-slate-400">{companyInfo.contact.city}</p>
@@ -318,31 +318,31 @@ function ContactFormContent() {
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <Phone className="w-4 h-4 text-blue-400 shrink-0" />
+                    <Phone className="w-4 h-4 text-neutral-400 shrink-0" />
                     <div>
                       <p className="text-slate-400 text-[10px] uppercase font-bold">Helpline</p>
-                      <a href={`tel:${companyInfo.contact.phone}`} className="font-bold text-white hover:text-blue-400">
+                      <a href={`tel:${companyInfo.contact.phone}`} className="font-bold text-white hover:text-neutral-300">
                         {companyInfo.contact.phone}
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <Mail className="w-4 h-4 text-blue-400 shrink-0" />
+                    <Mail className="w-4 h-4 text-neutral-400 shrink-0" />
                     <div>
                       <p className="text-slate-400 text-[10px] uppercase font-bold">Project Tender Email</p>
-                      <a href={`mailto:${companyInfo.contact.email}`} className="font-bold text-white hover:text-blue-400">
+                      <a href={`mailto:${companyInfo.contact.email}`} className="font-bold text-white hover:text-neutral-300">
                         {companyInfo.contact.email}
                       </a>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3 pt-2 border-t border-slate-800">
-                    <Clock className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+                  <div className="flex items-start gap-3 pt-2 border-t border-neutral-800">
+                    <Clock className="w-4 h-4 text-neutral-400 shrink-0 mt-0.5" />
                     <div>
                       <p className="font-bold text-white">Engineering Consultation Hours</p>
                       <p className="text-slate-400">{companyInfo.contact.hours}</p>
-                      <p className="text-blue-400 font-semibold">{companyInfo.contact.siteVisits}</p>
+                      <p className="text-neutral-300 font-semibold">{companyInfo.contact.siteVisits}</p>
                     </div>
                   </div>
                 </div>
@@ -351,7 +351,7 @@ function ContactFormContent() {
               {/* Quality Seal Card */}
               <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 text-xs text-slate-700 space-y-3">
                 <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
-                  <ShieldCheck className="w-5 h-5 text-blue-600" />
+                  <ShieldCheck className="w-5 h-5 text-neutral-950" />
                   <span>On-Site Engineer Protocol</span>
                 </div>
                 <p className="text-slate-600 leading-relaxed">
@@ -391,7 +391,7 @@ function ContactFormContent() {
                   <span>{faq.q}</span>
                   <ChevronDown
                     className={`w-4 h-4 text-slate-400 shrink-0 transition-transform ${
-                      openFaq === idx ? "rotate-180 text-blue-600" : ""
+                      openFaq === idx ? "rotate-180 text-neutral-950" : ""
                     }`}
                   />
                 </button>

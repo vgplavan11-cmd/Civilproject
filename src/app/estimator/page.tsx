@@ -18,7 +18,7 @@ export default function EstimatorPage() {
   const materialThumbRules = [
     { material: "Reinforcement Steel (Fe550D TMT)", factor: "4.0 – 4.5 Kg / Sq.Ft", compliance: "High ductility seismic zone resilience compliant with IS 1786" },
     { material: "Cement (OPC 53 & PPC)", factor: "0.40 – 0.45 Bags / Sq.Ft", compliance: "Batch-tested compressive cube strength complying with IS 8112" },
-    { material: "Coarse & Fine Aggregates (M-Sand)", factor: "1.8 – 2.1 Cu.Ft / Sq.Ft", compliance: "Triple-washed river sand / certified graded blue-metal jelly" },
+    { material: "Coarse & Fine Aggregates (M-Sand)", factor: "1.8 – 2.1 Cu.Ft / Sq.Ft", compliance: "Triple-washed river sand / certified graded 20mm granite jelly" },
     { material: "Solid Masonry Blocks / Bricks", factor: "18 – 22 Units / Sq.Ft", compliance: "High compressive strength (>4 N/mm²) with low water absorption" }
   ];
 
@@ -76,10 +76,10 @@ export default function EstimatorPage() {
 
           <div className="bg-white rounded-2xl border border-slate-200 overflow-x-auto shadow-xs">
             <table className="w-full text-left text-xs text-slate-700 min-w-[640px]">
-              <thead className="bg-slate-900 text-white font-bold uppercase text-[11px] tracking-wider">
+              <thead className="bg-[#0d0d0d] text-white font-bold uppercase text-[11px] tracking-wider">
                 <tr>
                   <th className="py-3.5 px-4">Raw Material Component</th>
-                  <th className="py-3.5 px-4 text-blue-400">Standard Consumption Factor</th>
+                  <th className="py-3.5 px-4 text-neutral-300">Standard Consumption Factor</th>
                   <th className="py-3.5 px-4">Civil Specification &amp; Quality Benchmark</th>
                 </tr>
               </thead>
@@ -87,7 +87,7 @@ export default function EstimatorPage() {
                 {materialThumbRules.map((row, i) => (
                   <tr key={i} className="hover:bg-slate-50 transition-colors">
                     <td className="py-3.5 px-4 font-bold text-slate-900">{row.material}</td>
-                    <td className="py-3.5 px-4 font-black text-blue-700">{row.factor}</td>
+                    <td className="py-3.5 px-4 font-black text-neutral-950">{row.factor}</td>
                     <td className="py-3.5 px-4 text-slate-600">{row.compliance}</td>
                   </tr>
                 ))}
@@ -101,7 +101,7 @@ export default function EstimatorPage() {
       <section className="py-16 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <div className="p-8 sm:p-12 rounded-2xl border-2 border-dashed border-slate-300 bg-white">
-            <Ruler className="w-10 h-10 text-blue-600 mx-auto mb-3" />
+            <Ruler className="w-10 h-10 text-neutral-950 mx-auto mb-3" />
             <h3 className="text-2xl font-black text-slate-950">
               Need a Custom Bill of Quantities (BOQ) for Your Site?
             </h3>
@@ -111,7 +111,7 @@ export default function EstimatorPage() {
             <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link
                 href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-6 py-3 rounded-lg shadow-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-neutral-950 hover:bg-black text-white text-xs font-bold px-6 py-3 rounded-lg shadow-sm"
               >
                 <span>Request Site Inspection &amp; Fixed BOQ</span>
                 <ArrowRight className="w-3.5 h-3.5" />

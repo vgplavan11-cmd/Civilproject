@@ -89,10 +89,10 @@ export default function LeftNavigation() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         transition={{ type: "tween", ease: "easeOut", duration: 0.2 }}
-        className="fixed top-4 left-4 sm:top-5 sm:left-5 z-40 flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-lg hover:shadow-xl hover:border-blue-600 hover:text-blue-600 transition-all duration-300 text-slate-900 font-extrabold text-xs uppercase tracking-wider group cursor-pointer active:scale-95"
+        className="fixed top-4 left-4 sm:top-5 sm:left-5 z-40 flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-lg hover:shadow-xl hover:border-neutral-950 hover:text-black transition-all duration-300 text-slate-900 font-extrabold text-xs uppercase tracking-wider group cursor-pointer active:scale-95"
         aria-label="Open Navigation Menu"
       >
-        <Menu className="w-4 h-4 text-blue-600 group-hover:rotate-180 transition-transform duration-300" />
+        <Menu className="w-4 h-4 text-neutral-950 group-hover:rotate-180 transition-transform duration-300" />
         <span className="font-extrabold tracking-wide">Menu</span>
       </motion.button>
 
@@ -139,10 +139,10 @@ export default function LeftNavigation() {
 
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-1.5 flex-wrap">
-                        <span className="font-black text-lg tracking-tight text-slate-950 font-sans hover:text-blue-600 transition-colors">
+                        <span className="font-black text-lg tracking-tight text-slate-950 font-sans hover:text-black transition-colors">
                           ELITE HOMES
                         </span>
-                        <span className="inline-flex items-center gap-1 text-[9px] font-black uppercase tracking-wider bg-blue-50 text-blue-700 px-1.5 py-0.5 rounded-md border border-blue-200">
+                        <span className="inline-flex items-center gap-1 text-[9px] font-black uppercase tracking-wider bg-neutral-900 text-white px-1.5 py-0.5 rounded-md border border-neutral-800">
                           Madurai
                         </span>
                       </div>
@@ -170,7 +170,7 @@ export default function LeftNavigation() {
                   <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">
                     Civil Divisions &amp; Pages
                   </span>
-                  <span className="text-[10px] font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded">
+                  <span className="text-[10px] font-semibold text-neutral-900 bg-neutral-100 px-2 py-0.5 rounded">
                     Interactive UI
                   </span>
                 </div>
@@ -187,16 +187,16 @@ export default function LeftNavigation() {
               <div className="pt-6 border-t border-slate-100 space-y-4">
                 <div className="space-y-2 text-xs text-slate-600">
                   <div className="flex items-start gap-2.5">
-                    <MapPin className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+                    <MapPin className="w-4 h-4 text-neutral-950 shrink-0 mt-0.5" />
                     <span className="leading-snug">
                       No. 42, 80 Feet Road, Anna Nagar, Madurai, Tamil Nadu - 625020
                     </span>
                   </div>
                   <div className="flex items-center gap-2.5">
-                    <Phone className="w-4 h-4 text-blue-600 shrink-0" />
+                    <Phone className="w-4 h-4 text-neutral-950 shrink-0" />
                     <a 
                       href="tel:+919842155678" 
-                      className="font-bold text-slate-800 hover:text-blue-600 transition-colors"
+                      className="font-bold text-slate-800 hover:text-black transition-colors"
                     >
                       +91 98421 55678
                     </a>
@@ -206,7 +206,7 @@ export default function LeftNavigation() {
                 <Link
                   href="/estimator"
                   onClick={() => setIsOpen(false)}
-                  className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-3 px-4 rounded-xl transition-all shadow-md hover:shadow-blue-500/20 active:scale-98"
+                  className="w-full flex items-center justify-center gap-2 bg-neutral-950 hover:bg-black text-white text-xs font-bold py-3 px-4 rounded-xl transition-all shadow-md hover:shadow-black/20 active:scale-98"
                 >
                   <span>Get Civil Estimate</span>
                   <ArrowRight className="w-4 h-4" />

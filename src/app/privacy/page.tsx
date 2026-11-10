@@ -17,7 +17,7 @@ export default function PrivacyPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
           <Link
             href="/"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-blue-600 mb-4 transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-black mb-4 transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Return to Home</span>
@@ -36,7 +36,7 @@ export default function PrivacyPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-xs sm:text-sm text-slate-700 space-y-8 leading-relaxed">
           <div>
             <h2 className="text-base sm:text-lg font-bold text-slate-950 mb-2 flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-blue-600" />
+              <ShieldCheck className="w-4 h-4 text-neutral-950" />
               1. Scope &amp; Engineering Confidentiality
             </h2>
             <p>
@@ -46,7 +46,7 @@ export default function PrivacyPage() {
 
           <div>
             <h2 className="text-base sm:text-lg font-bold text-slate-950 mb-2 flex items-center gap-2">
-              <FileText className="w-4 h-4 text-blue-600" />
+              <FileText className="w-4 h-4 text-neutral-950" />
               2. Information We Collect
             </h2>
             <p className="mb-2">When you request an estimate, schedule a site visit, or sign a construction agreement, we may collect:</p>
@@ -60,7 +60,7 @@ export default function PrivacyPage() {
 
           <div>
             <h2 className="text-base sm:text-lg font-bold text-slate-950 mb-2 flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-blue-600" />
+              <CheckCircle2 className="w-4 h-4 text-neutral-950" />
               3. Use of Technical Data
             </h2>
             <p>
@@ -70,7 +70,7 @@ export default function PrivacyPage() {
 
           <div>
             <h2 className="text-base sm:text-lg font-bold text-slate-950 mb-2 flex items-center gap-2">
-              <Lock className="w-4 h-4 text-blue-600" />
+              <Lock className="w-4 h-4 text-neutral-950" />
               4. Document Storage &amp; CAD File Retention
             </h2>
             <p>
@@ -82,7 +82,7 @@ export default function PrivacyPage() {
             <h3 className="font-bold text-slate-900 text-sm">Have Questions Regarding Property Data?</h3>
             <p className="text-xs text-slate-600">
               Contact our Legal &amp; Compliance Officer at{" "}
-              <a href={`mailto:${companyInfo.contact.email}`} className="text-blue-600 font-semibold underline">
+              <a href={`mailto:${companyInfo.contact.email}`} className="text-neutral-950 font-semibold underline hover:text-black">
                 {companyInfo.contact.email}
               </a>{" "}
               or visit our Engineering HQ at {companyInfo.contact.headOffice}.

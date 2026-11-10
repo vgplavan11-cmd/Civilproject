@@ -33,7 +33,7 @@ export default function ProjectSpecModal({ model, onClose }: ProjectSpecModalPro
         <div className="px-6 py-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-xs font-bold uppercase tracking-wider bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded border border-blue-200">
+              <span className="text-xs font-bold uppercase tracking-wider bg-neutral-900 text-white px-2.5 py-0.5 rounded border border-neutral-800">
                 {model.type} Blueprint
               </span>
               <span className="text-xs text-slate-500 font-medium">Model ID: {model.id}</span>
@@ -55,10 +55,10 @@ export default function ProjectSpecModal({ model, onClose }: ProjectSpecModalPro
           <div>
             <div className="flex items-center justify-between mb-2">
               <h3 className="text-xs font-bold uppercase tracking-wider text-slate-800 flex items-center gap-2">
-                <Layers className="w-4 h-4 text-blue-600" />
+                <Layers className="w-4 h-4 text-neutral-950" />
                 Civil Engineering 2D Floor Layout &amp; Column Grid
               </h3>
-              <span className="text-xs text-blue-600 font-medium">IS-Code Compliant Layout</span>
+              <span className="text-xs text-neutral-950 font-medium">IS-Code Compliant Layout</span>
             </div>
             <div className="border border-slate-200 rounded-xl overflow-hidden bg-slate-50 p-2 sm:p-4 relative">
               <div className="relative aspect-[16/10] w-full bg-white rounded-lg border border-slate-200 overflow-hidden">
@@ -73,10 +73,10 @@ export default function ProjectSpecModal({ model, onClose }: ProjectSpecModalPro
           </div>
 
           {/* Quick Metrics Bar */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-blue-50/50 p-4 rounded-xl border border-blue-100 text-center">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-neutral-100/70 p-4 rounded-xl border border-neutral-200 text-center">
             <div>
               <p className="text-[11px] font-bold uppercase tracking-wider text-slate-500">Built-Up Area</p>
-              <p className="text-base font-extrabold text-blue-700 mt-0.5">{model.builtUpArea}</p>
+              <p className="text-base font-extrabold text-neutral-950 mt-0.5">{model.builtUpArea}</p>
             </div>
             <div>
               <p className="text-[11px] font-bold uppercase tracking-wider text-slate-500">Carpet Area</p>
@@ -97,7 +97,7 @@ export default function ProjectSpecModal({ model, onClose }: ProjectSpecModalPro
           {/* Room-By-Room Dimension Schedule */}
           <div>
             <h3 className="text-xs font-bold uppercase tracking-wider text-slate-800 mb-3 flex items-center gap-2">
-              <Home className="w-4 h-4 text-blue-600" />
+              <Home className="w-4 h-4 text-neutral-950" />
               Room Dimension Schedule
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
@@ -133,7 +133,7 @@ export default function ProjectSpecModal({ model, onClose }: ProjectSpecModalPro
           {/* Comprehensive Civil Structural Specifications */}
           <div>
             <h3 className="text-xs font-bold uppercase tracking-wider text-slate-800 mb-3 flex items-center gap-2">
-              <Hammer className="w-4 h-4 text-blue-600" />
+              <Hammer className="w-4 h-4 text-neutral-950" />
               Structural &amp; Civil Engineering Specifications
             </h3>
             <div className="border border-slate-200 rounded-xl overflow-hidden divide-y divide-slate-200 text-xs">
@@ -196,7 +196,7 @@ export default function ProjectSpecModal({ model, onClose }: ProjectSpecModalPro
             <Link
               href={`/contact?model=${encodeURIComponent(model.title)}`}
               onClick={onClose}
-              className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-xs font-bold text-white transition-colors shadow-sm"
+              className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-neutral-950 hover:bg-black rounded-lg text-xs font-bold text-white transition-colors shadow-sm"
             >
               <span>Book Site Visit / Quote</span>
               <ArrowRight className="w-3.5 h-3.5" />

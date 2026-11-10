@@ -51,9 +51,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
       <div className="bg-slate-50 border-b border-slate-200 py-4 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
           <div className="flex items-center gap-2 text-slate-500 font-medium">
-            <Link href="/" className="hover:text-blue-600 transition-colors">Home</Link>
+            <Link href="/" className="hover:text-black transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/projects" className="hover:text-blue-600 transition-colors">House Models</Link>
+            <Link href="/projects" className="hover:text-black transition-colors">House Models</Link>
             <span>/</span>
             <span className="text-slate-900 font-bold">{project.title}</span>
           </div>
@@ -62,7 +62,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             <PrintButton />
             <Link
               href="/projects"
-              className="inline-flex items-center gap-1.5 text-slate-700 hover:text-blue-600 font-semibold"
+              className="inline-flex items-center gap-1.5 text-slate-700 hover:text-black font-semibold"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>Back to All Models</span>
@@ -81,7 +81,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 <span className="text-xs font-black uppercase tracking-wider bg-slate-950 text-white px-3 py-1 rounded">
                   {project.badge}
                 </span>
-                <span className="text-xs font-bold uppercase tracking-wider bg-blue-100 text-blue-800 px-3 py-1 rounded border border-blue-200">
+                <span className="text-xs font-bold uppercase tracking-wider bg-neutral-900 text-white px-3 py-1 rounded border border-neutral-800">
                   {project.type} Model
                 </span>
                 <span className="text-xs font-semibold bg-emerald-50 text-emerald-800 px-3 py-1 rounded border border-emerald-200">
@@ -101,7 +101,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-3">
                 <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
                   <p className="text-[10px] uppercase font-bold text-slate-400">Super Built-Up Area</p>
-                  <p className="text-lg font-black text-blue-700 mt-0.5">{project.builtUpArea}</p>
+                  <p className="text-lg font-black text-neutral-950 mt-0.5">{project.builtUpArea}</p>
                 </div>
                 <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
                   <p className="text-[10px] uppercase font-bold text-slate-400">Carpet Area</p>
@@ -121,26 +121,26 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             </div>
 
             {/* Right Quick Inquiry CTA Box */}
-            <div className="lg:col-span-4 bg-slate-900 text-white rounded-2xl p-6 sm:p-7 border border-slate-800 space-y-4">
+            <div className="lg:col-span-4 bg-[#0d0d0d] text-white rounded-2xl p-6 sm:p-7 border border-neutral-800 space-y-4 shadow-xl">
               <div>
-                <span className="text-[10px] font-mono uppercase tracking-widest text-blue-400">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-400">
                   Turnkey Package Rate
                 </span>
                 <p className="text-2xl font-black text-white mt-1">{project.baseCost}</p>
                 <p className="text-xs text-slate-400 mt-0.5">Includes structure, MEP, and standard finishes</p>
               </div>
 
-              <div className="pt-2 border-t border-slate-800 space-y-2 text-xs text-slate-300">
+              <div className="pt-2 border-t border-neutral-800 space-y-2 text-xs text-slate-300">
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-blue-400 shrink-0" />
+                  <ShieldCheck className="w-4 h-4 text-neutral-400 shrink-0" />
                   <span>10-Year Structural Guarantee</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-neutral-400 shrink-0" />
                   <span>IS 456 Seismic Zone-III Compliant</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-blue-400 shrink-0" />
+                  <Clock className="w-4 h-4 text-neutral-400 shrink-0" />
                   <span>On-Time Handover Penalty Clause</span>
                 </div>
               </div>
@@ -148,7 +148,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               <div className="pt-2 space-y-2">
                 <Link
                   href={`/contact?model=${encodeURIComponent(project.title)}`}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold py-3 px-4 rounded-xl transition-all shadow-md"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-white hover:bg-neutral-200 text-neutral-950 text-xs font-bold py-3 px-4 rounded-xl transition-all shadow-md"
                 >
                   <span>Book Site Inspection for this Model</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -156,9 +156,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
                 <a
                   href={`tel:${companyInfo.contact.phone.replace(/[^0-9+]/g, "")}`}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold py-2.5 px-4 rounded-xl border border-slate-700 transition-all"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold py-2.5 px-4 rounded-xl border border-neutral-800 transition-all"
                 >
-                  <PhoneCall className="w-3.5 h-3.5 text-blue-400" />
+                  <PhoneCall className="w-3.5 h-3.5 text-neutral-400" />
                   <span>Call Civil Desk: {companyInfo.contact.phone}</span>
                 </a>
               </div>
@@ -173,7 +173,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           <div>
             <div className="flex items-center justify-between mb-4">
               <div>
-                <span className="text-xs font-mono font-bold uppercase tracking-widest text-blue-600">
+                <span className="text-xs font-mono font-bold uppercase tracking-widest text-neutral-950">
                   Architectural Schematic
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-black text-slate-950 mt-1">
@@ -202,7 +202,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           {/* Room-by-room Schedule */}
           <div>
             <h3 className="text-lg font-bold text-slate-950 mb-4 flex items-center gap-2">
-              <Ruler className="w-5 h-5 text-blue-600" />
+              <Ruler className="w-5 h-5 text-neutral-950" />
               Room Dimension Schedule
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs">
@@ -241,7 +241,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
       <section className="py-14 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-8">
-            <span className="text-xs font-mono font-bold uppercase tracking-widest text-blue-600">
+            <span className="text-xs font-mono font-bold uppercase tracking-widest text-neutral-950">
               Technical Verification
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 mt-1">
@@ -297,7 +297,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
       <section className="py-14 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-xs font-mono font-bold uppercase tracking-widest text-blue-600">
+            <span className="text-xs font-mono font-bold uppercase tracking-widest text-neutral-950">
               Execution Roadmap
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 mt-1">
@@ -313,7 +313,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               <div key={i} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-[10px] font-mono font-black uppercase text-blue-600 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
+                    <span className="text-[10px] font-mono font-black uppercase text-neutral-950 bg-neutral-100 px-2 py-0.5 rounded border border-neutral-300">
                       {m.stage}
                     </span>
                     <span className="text-[11px] font-bold text-slate-500">{m.duration}</span>
@@ -336,7 +336,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-8">
             <h3 className="text-xl font-bold text-slate-950">Explore Other House Models</h3>
-            <Link href="/projects" className="text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1">
+            <Link href="/projects" className="text-xs font-bold text-neutral-950 hover:text-black flex items-center gap-1">
               <span>View All Models</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
@@ -347,7 +347,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               <Link
                 key={rel.id}
                 href={`/projects/${rel.id}`}
-                className="p-5 rounded-2xl border border-slate-200 bg-slate-50/50 hover:border-blue-600 hover:bg-white transition-all group flex flex-col sm:flex-row items-center gap-5"
+                className="p-5 rounded-2xl border border-slate-200 bg-slate-50/50 hover:border-neutral-950 hover:bg-white transition-all group flex flex-col sm:flex-row items-center gap-5"
               >
                 <div className="relative w-full sm:w-44 aspect-[4/3] bg-white rounded-xl border border-slate-200 shrink-0 overflow-hidden">
                   <Image
@@ -358,14 +358,14 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   />
                 </div>
                 <div className="space-y-1 text-center sm:text-left">
-                  <span className="text-[10px] font-bold uppercase bg-blue-100 text-blue-800 px-2 py-0.5 rounded">
+                  <span className="text-[10px] font-bold uppercase bg-neutral-900 text-white px-2 py-0.5 rounded">
                     {rel.type}
                   </span>
-                  <h4 className="font-bold text-slate-950 text-base group-hover:text-blue-600 transition-colors">
+                  <h4 className="font-bold text-slate-950 text-base group-hover:text-black transition-colors">
                     {rel.title}
                   </h4>
                   <p className="text-xs text-slate-500 line-clamp-2">{rel.subtitle}</p>
-                  <p className="text-xs font-bold text-blue-700 pt-1">{rel.builtUpArea} Built-Up Area</p>
+                  <p className="text-xs font-bold text-neutral-950 pt-1">{rel.builtUpArea} Built-Up Area</p>
                 </div>
               </Link>
             ))}

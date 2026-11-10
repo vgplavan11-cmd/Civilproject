@@ -53,26 +53,26 @@ export default function HomePage() {
       {/* =========================================================================
           1. HERO SECTION (Shipyon-style deep navy split layout & floating dock)
          ========================================================================= */}
-      <section className="relative min-h-[92vh] sm:min-h-screen bg-[#030e21] text-white flex flex-col justify-center overflow-hidden pt-28 sm:pt-32 pb-16 sm:pb-20">
-        {/* Construction blueprint photographic background with cinematic overlay */}
+      <section className="relative min-h-[92vh] sm:min-h-screen bg-[#0d0d0d] text-white flex flex-col justify-center overflow-hidden pt-28 sm:pt-32 pb-16 sm:pb-20">
+        {/* Construction blueprint photographic background with Mars Black cinematic overlay */}
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/construction-blueprint-hero.jpg"
             alt="Elite Homes Civil Engineering & Construction"
             fill
             priority
-            className="object-cover object-center pointer-events-none opacity-40 sm:opacity-45"
+            className="object-cover object-center pointer-events-none opacity-35 sm:opacity-40"
           />
-          {/* Dual directional gradients to preserve readability and depth */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#030e21] via-[#030e21]/80 to-[#030e21]/60" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#030e21] via-transparent to-[#030e21]/75" />
+          {/* Mars Black directional gradients for pristine contrast and deep tone */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0d0d0d] via-[#121212]/85 to-[#121212]/70" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-transparent to-[#0d0d0d]/80" />
         </div>
 
         {/* Ambient atmospheric lighting accents */}
         <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
-        <div className="absolute -top-40 -left-40 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute top-1/3 -right-20 w-96 h-96 bg-indigo-600/15 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#030e21] via-[#030e21]/60 to-transparent pointer-events-none" />
+        <div className="absolute -top-40 -left-40 w-96 h-96 bg-neutral-700/15 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/3 -right-20 w-96 h-96 bg-neutral-800/20 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#0d0d0d] via-[#0d0d0d]/60 to-transparent pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
@@ -82,7 +82,7 @@ export default function HomePage() {
               {/* Main Headline */}
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.14] text-white">
                 Building Modern Homes With{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-cyan-200">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-100 via-neutral-300 to-white">
                   Structural Precision
                 </span>{" "}
                 &amp; Integrity.
@@ -97,7 +97,7 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto pt-1">
                 <Link
                   href="/projects"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm px-7 py-3.5 rounded-xl shadow-lg shadow-blue-600/25 active:scale-95 transition-all"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white hover:bg-neutral-200 text-neutral-950 font-bold text-sm px-7 py-3.5 rounded-xl shadow-lg shadow-black/40 active:scale-95 transition-all"
                 >
                   <span>Explore House Models</span>
                   <ArrowRight className="w-4 h-4" />
@@ -107,7 +107,7 @@ export default function HomePage() {
                   href="/estimator"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white/10 hover:bg-white/15 text-white font-bold text-sm px-6 py-3.5 rounded-xl border border-white/20 backdrop-blur-md transition-all active:scale-95"
                 >
-                  <Calculator className="w-4 h-4 text-blue-400" />
+                  <Calculator className="w-4 h-4 text-neutral-300" />
                   <span>Civil Cost Estimator</span>
                 </Link>
               </div>
@@ -125,7 +125,7 @@ export default function HomePage() {
                   </div>
 
                   <div className="p-3.5 sm:p-4 text-center">
-                    <div className="text-2xl sm:text-3xl font-black text-blue-400 tracking-tight">
+                    <div className="text-2xl sm:text-3xl font-black text-white tracking-tight">
                       {companyInfo.stats.completedProjects}
                     </div>
                     <p className="text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold text-slate-400 mt-0.5">
@@ -143,7 +143,7 @@ export default function HomePage() {
                   </div>
 
                   <div className="p-3.5 sm:p-4 text-center">
-                    <div className="text-2xl sm:text-3xl font-black text-blue-400 tracking-tight">
+                    <div className="text-2xl sm:text-3xl font-black text-white tracking-tight">
                       {companyInfo.stats.clientSatisfactionRate}
                     </div>
                     <p className="text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold text-slate-400 mt-0.5">
@@ -158,13 +158,13 @@ export default function HomePage() {
             <div className="lg:col-span-5 flex flex-col justify-center items-center lg:items-end w-full space-y-4">
               {/* Floating Card 1 */}
               <div className="w-full max-w-md bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-4 sm:p-5 shadow-2xl flex items-center gap-4 hover:scale-[1.02] hover:bg-white/15 transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-blue-600/30 border border-blue-400/40 text-blue-400 flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-white/15 border border-white/20 text-white flex items-center justify-center shrink-0">
                   <ShieldCheck className="w-6 h-6" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-black text-white">IS 456:2000 RCC Framing</span>
-                    <span className="text-[10px] font-mono font-bold text-blue-300 bg-blue-950/80 px-2 py-0.5 rounded border border-blue-800">
+                    <span className="text-[10px] font-mono font-bold text-neutral-300 bg-neutral-900/90 px-2 py-0.5 rounded border border-neutral-700">
                       M25 Mix
                     </span>
                   </div>
@@ -176,13 +176,13 @@ export default function HomePage() {
 
               {/* Floating Card 2 */}
               <div className="w-full max-w-md bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-4 sm:p-5 shadow-2xl flex items-center gap-4 hover:scale-[1.02] hover:bg-white/15 transition-all duration-300 lg:translate-x-3">
-                <div className="w-12 h-12 rounded-xl bg-cyan-600/30 border border-cyan-400/40 text-cyan-400 flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-white/15 border border-white/20 text-white flex items-center justify-center shrink-0">
                   <Award className="w-6 h-6" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-black text-white">100% In-House Lab Testing</span>
-                    <span className="text-[10px] font-mono font-bold text-cyan-300 bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-800">
+                    <span className="text-[10px] font-mono font-bold text-neutral-300 bg-neutral-900/90 px-2 py-0.5 rounded border border-neutral-700">
                       IS 516
                     </span>
                   </div>
@@ -194,13 +194,13 @@ export default function HomePage() {
 
               {/* Floating Card 3 */}
               <div className="w-full max-w-md bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-4 sm:p-5 shadow-2xl flex items-center gap-4 hover:scale-[1.02] hover:bg-white/15 transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-indigo-600/30 border border-indigo-400/40 text-indigo-400 flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-white/15 border border-white/20 text-white flex items-center justify-center shrink-0">
                   <CheckCircle2 className="w-6 h-6" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-black text-white">10-Year Structural Warranty</span>
-                    <span className="text-[10px] font-mono font-bold text-indigo-300 bg-indigo-950/80 px-2 py-0.5 rounded border border-indigo-800">
+                    <span className="text-[10px] font-mono font-bold text-neutral-300 bg-neutral-900/90 px-2 py-0.5 rounded border border-neutral-700">
                       Zero Settle
                     </span>
                   </div>
@@ -217,7 +217,7 @@ export default function HomePage() {
         {/* Scroll To Explore Indicator */}
         <div className="mt-8 flex flex-col items-center justify-center text-slate-400 select-none text-xs">
           <span className="tracking-widest uppercase text-[10px] font-semibold">Scroll to explore</span>
-          <ChevronDown className="w-4 h-4 mt-1 animate-bounce text-blue-400" />
+          <ChevronDown className="w-4 h-4 mt-1 animate-bounce text-neutral-400" />
         </div>
       </section>
 
@@ -230,7 +230,7 @@ export default function HomePage() {
           <div className="text-center max-w-3xl mx-auto mb-14">
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight relative inline-block">
               Civil Engineering Disciplines
-              <span className="block w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto mt-3 rounded-full" />
+              <span className="block w-20 h-1 bg-neutral-950 mx-auto mt-3 rounded-full" />
             </h2>
             <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed">
               Comprehensive turnkey solutions executed with mathematical rigor—from geotechnical foundation testing to architectural luxury handovers.
@@ -242,17 +242,17 @@ export default function HomePage() {
             {civilServices.map((service) => (
               <div
                 key={service.id}
-                className="group relative bg-white border border-slate-200 rounded-2xl p-7 shadow-xs hover:shadow-xl hover:border-blue-600 transition-all duration-300 flex flex-col justify-between overflow-hidden"
+                className="group relative bg-white border border-slate-200 rounded-2xl p-7 shadow-xs hover:shadow-xl hover:border-neutral-950 transition-all duration-300 flex flex-col justify-between overflow-hidden"
               >
-                {/* Top Animated Gradient Line on Hover */}
-                <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-600 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Top Mars Black Line on Hover */}
+                <div className="absolute top-0 inset-x-0 h-1 bg-neutral-950 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-5 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                  <div className="w-12 h-12 rounded-xl bg-neutral-100 text-neutral-950 flex items-center justify-center mb-5 group-hover:bg-neutral-950 group-hover:text-white transition-colors duration-300">
                     <Building2 className="w-6 h-6" />
                   </div>
 
-                  <h3 className="text-xl font-bold text-slate-950 mb-2 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-xl font-bold text-slate-950 mb-2 group-hover:text-black transition-colors">
                     {service.title}
                   </h3>
 
@@ -267,7 +267,7 @@ export default function HomePage() {
                     <ul className="space-y-1.5 text-xs text-slate-700">
                       {service.deliverables.slice(0, 3).map((item, idx) => (
                         <li key={idx} className="flex items-start gap-2">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 shrink-0 mt-0.5" />
+                          <CheckCircle2 className="w-3.5 h-3.5 text-neutral-950 shrink-0 mt-0.5" />
                           <span>{item}</span>
                         </li>
                       ))}
@@ -276,7 +276,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
-                  <span className="text-xs font-bold text-blue-600 group-hover:translate-x-1 transition-transform">
+                  <span className="text-xs font-bold text-neutral-950 group-hover:translate-x-1 transition-transform">
                     View Specifications &rarr;
                   </span>
                 </div>
@@ -294,7 +294,7 @@ export default function HomePage() {
           <div className="text-center max-w-3xl mx-auto mb-14">
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight relative inline-block">
               The Pillars of Our Civil Promise
-              <span className="block w-20 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mt-3 rounded-full" />
+              <span className="block w-20 h-1 bg-neutral-950 mx-auto mt-3 rounded-full" />
             </h2>
             <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed">
               Four fundamental commitments that govern every structural beam we cast and every residential home we construct.
@@ -307,14 +307,14 @@ export default function HomePage() {
               return (
                 <div
                   key={idx}
-                  className="group relative bg-slate-50 hover:bg-white border border-slate-200 hover:border-blue-600 rounded-2xl p-7 shadow-xs hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
+                  className="group relative bg-slate-50 hover:bg-white border border-slate-200 hover:border-neutral-950 rounded-2xl p-7 shadow-xs hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
-                    <div className="w-12 h-12 rounded-xl bg-blue-100/70 text-blue-600 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                    <div className="w-12 h-12 rounded-xl bg-neutral-100 text-neutral-950 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-neutral-950 group-hover:text-white transition-all duration-300">
                       <IconComp className="w-6 h-6" />
                     </div>
 
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-900 bg-neutral-100 px-2 py-0.5 rounded border border-neutral-300">
                       {pillar.tag}
                     </span>
 
@@ -327,7 +327,7 @@ export default function HomePage() {
                     </p>
                   </div>
 
-                  <div className="w-8 h-1 bg-slate-200 group-hover:w-full group-hover:bg-blue-600 transition-all duration-500 rounded-full mt-6" />
+                  <div className="w-8 h-1 bg-slate-200 group-hover:w-full group-hover:bg-neutral-950 transition-all duration-500 rounded-full mt-6" />
                 </div>
               );
             })}
@@ -338,7 +338,7 @@ export default function HomePage() {
       {/* =========================================================================
           4. WHY CHOOSE ELITE HOMES (Shipyon wcu-section engineering rigor)
          ========================================================================= */}
-      <section className="py-20 bg-slate-900 text-white border-b border-slate-800">
+      <section className="py-20 bg-[#0d0d0d] text-white border-b border-neutral-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
@@ -352,8 +352,8 @@ export default function HomePage() {
               </p>
 
               <div className="space-y-4 pt-2">
-                <div className="flex items-start gap-3.5 bg-slate-800/60 p-4 rounded-xl border border-slate-700/80">
-                  <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center shrink-0 font-black text-xs">
+                <div className="flex items-start gap-3.5 bg-neutral-900/80 p-4 rounded-xl border border-neutral-800">
+                  <div className="w-8 h-8 rounded-lg bg-neutral-800 text-white flex items-center justify-center shrink-0 font-black text-xs border border-neutral-700">
                     01
                   </div>
                   <div>
@@ -362,8 +362,8 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3.5 bg-slate-800/60 p-4 rounded-xl border border-slate-700/80">
-                  <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center shrink-0 font-black text-xs">
+                <div className="flex items-start gap-3.5 bg-neutral-900/80 p-4 rounded-xl border border-neutral-800">
+                  <div className="w-8 h-8 rounded-lg bg-neutral-800 text-white flex items-center justify-center shrink-0 font-black text-xs border border-neutral-700">
                     02
                   </div>
                   <div>
@@ -372,8 +372,8 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3.5 bg-slate-800/60 p-4 rounded-xl border border-slate-700/80">
-                  <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center shrink-0 font-black text-xs">
+                <div className="flex items-start gap-3.5 bg-neutral-900/80 p-4 rounded-xl border border-neutral-800">
+                  <div className="w-8 h-8 rounded-lg bg-neutral-800 text-white flex items-center justify-center shrink-0 font-black text-xs border border-neutral-700">
                     03
                   </div>
                   <div>
@@ -385,32 +385,32 @@ export default function HomePage() {
             </div>
 
             {/* Right Comparison Box */}
-            <div className="lg:col-span-7 bg-slate-950 rounded-2xl p-6 sm:p-8 border border-slate-800 shadow-2xl">
-              <div className="border-b border-slate-800 pb-4 mb-6 flex items-center justify-between">
+            <div className="lg:col-span-7 bg-[#141414] rounded-2xl p-6 sm:p-8 border border-neutral-800 shadow-2xl">
+              <div className="border-b border-neutral-800 pb-4 mb-6 flex items-center justify-between">
                 <span className="font-bold text-sm text-white">Standard Construction Quality Audit</span>
-                <span className="text-xs text-blue-400 font-mono">PWD &amp; IS 456 Benchmark</span>
+                <span className="text-xs text-neutral-400 font-mono">PWD &amp; IS 456 Benchmark</span>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
+                <div className="bg-[#1a1a1a] p-4 rounded-xl border border-neutral-800">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Foundation Type</span>
                   <p className="text-sm font-black text-white mt-1">M25 Isolated &amp; Raft Footings</p>
                   <p className="text-xs text-slate-400 mt-1">Cast directly on 185 kN/m² tested hard rock stratum.</p>
                 </div>
 
-                <div className="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
+                <div className="bg-[#1a1a1a] p-4 rounded-xl border border-neutral-800">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Cement Standard</span>
                   <p className="text-sm font-black text-white mt-1">53-Grade OPC + Certified M-Sand</p>
-                  <p className="text-xs text-slate-400 mt-1">Triple-washed graded silt-free blue-metal aggregates.</p>
+                  <p className="text-xs text-slate-400 mt-1">Triple-washed graded silt-free 20mm hard rock aggregates.</p>
                 </div>
 
-                <div className="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
+                <div className="bg-[#1a1a1a] p-4 rounded-xl border border-neutral-800">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Masonry Enclosure</span>
                   <p className="text-sm font-black text-white mt-1">Thermal Porotherm &amp; Solid Blocks</p>
                   <p className="text-xs text-slate-400 mt-1">Fiber chicken-mesh installed at all concrete-brick joints.</p>
                 </div>
 
-                <div className="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
+                <div className="bg-[#1a1a1a] p-4 rounded-xl border border-neutral-800">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Payment Security</span>
                   <p className="text-sm font-black text-white mt-1">Milestone Escrow Releases</p>
                   <p className="text-xs text-slate-400 mt-1">Clients pay strictly after site milestone engineer verification.</p>
@@ -429,7 +429,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight relative inline-block">
             Demo Sites &amp; Architectural Showcases
-            <span className="block w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto mt-3 rounded-full" />
+            <span className="block w-20 h-1 bg-neutral-950 mx-auto mt-3 rounded-full" />
           </h2>
           <p className="text-xs sm:text-base text-slate-600 mt-2 max-w-2xl mx-auto">
             Drag, swipe, or flip through our live interactive architectural spreads and active Madurai site construction phases.
@@ -451,8 +451,8 @@ export default function HomePage() {
          ========================================================================= */}
       <section className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-[#030e21] via-slate-900 to-blue-950 text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="bg-gradient-to-br from-[#0d0d0d] via-[#141414] to-[#1c1c1c] text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8 border border-neutral-800">
+            <div className="absolute top-0 right-0 w-80 h-80 bg-neutral-700/10 rounded-full blur-3xl pointer-events-none" />
 
             <div className="max-w-2xl space-y-4 relative z-10 text-center lg:text-left">
               <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight leading-snug">
@@ -464,15 +464,15 @@ export default function HomePage() {
 
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2 text-xs font-semibold text-slate-300">
                 <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-lg border border-white/10">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-neutral-300" />
                   Real-time Cost per Sq.Ft
                 </span>
                 <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-lg border border-white/10">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-neutral-300" />
                   Steel &amp; Cement Thumb Rules
                 </span>
                 <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-lg border border-white/10">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-neutral-300" />
                   Fixed-Price BOQ Guarantee
                 </span>
               </div>
@@ -481,7 +481,7 @@ export default function HomePage() {
             <div className="relative z-10 shrink-0 w-full sm:w-auto">
               <Link
                 href="/estimator"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs sm:text-sm px-8 py-4 rounded-xl shadow-lg shadow-blue-600/30 active:scale-95 transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white hover:bg-neutral-200 text-neutral-950 font-bold text-xs sm:text-sm px-8 py-4 rounded-xl shadow-lg shadow-black/40 active:scale-95 transition-all"
               >
                 <Calculator className="w-4 h-4" />
                 <span>Launch Full Civil Estimator</span>

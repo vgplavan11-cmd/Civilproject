@@ -142,13 +142,13 @@ const CSS =
   ".jsc-root{position:relative;width:100%;display:grid;grid-template-rows:auto minmax(0,1fr) auto;overflow:hidden;" +
   "background:#ffffff;color:#0f172a;" +
   "font-family:ui-rounded,'SF Pro Rounded',system-ui,-apple-system,'Segoe UI',sans-serif;outline:none;user-select:none;-webkit-user-select:none;container-type:inline-size;padding-bottom:clamp(16px,2.5cqi,36px)}" +
-  ".jsc-root:focus-visible{box-shadow:inset 0 0 0 2px rgba(37,99,235,.55)}" +
+  ".jsc-root:focus-visible{box-shadow:inset 0 0 0 2px rgba(17,17,17,.75)}" +
   ".jsc-top{position:relative;padding:max(18px,2cqi) max(14px,1.8cqi) 0;display:flex;justify-content:center;align-items:center}" +
   ".jsc-group{display:flex;gap:max(8px,.8cqi)}" +
   ".jsc-chip{display:grid;place-items:center;width:clamp(34px,3.4cqi,46px);height:clamp(34px,3.4cqi,46px);border-radius:50%;border:0;padding:0;cursor:pointer;" +
   "color:#0f172a;background:rgba(15,23,42,.06);box-shadow:inset 0 0 0 1px rgba(15,23,42,.08);transition:background .2s}" +
   ".jsc-chip:hover{background:rgba(15,23,42,.12)}" +
-  ".jsc-chip[aria-pressed=true]{box-shadow:inset 0 0 0 1.5px #2563eb}" +
+  ".jsc-chip[aria-pressed=true]{box-shadow:inset 0 0 0 1.5px #121212}" +
   ".jsc-chip svg{width:46%;height:46%}" +
   ".jsc-head{position:relative;text-align:center;white-space:nowrap;pointer-events:none;z-index:2}" +
   ".jsc-title{margin:0;font-weight:800;font-size:clamp(24px,3.2cqi,42px);letter-spacing:-.02em;line-height:1.1;color:#0f172a}" +

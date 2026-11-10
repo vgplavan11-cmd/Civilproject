@@ -109,8 +109,8 @@ function InteractiveLink({
       whileHover="whileHover"
       className={`group relative flex items-center justify-between border-b border-slate-200 transition-colors duration-300 ${
         isActive
-          ? "border-blue-600 bg-blue-50/40"
-          : "hover:border-blue-600"
+          ? "border-neutral-950 bg-neutral-100/60"
+          : "hover:border-neutral-950"
       } ${compact ? "py-3 px-2 sm:py-3.5" : "py-4 md:py-6"}`}
     >
       <div className="pr-2 z-10">
@@ -128,7 +128,7 @@ function InteractiveLink({
           }}
           className={`relative z-10 block font-black tracking-tight transition-colors duration-300 ${
             isActive
-              ? "text-blue-600"
+              ? "text-neutral-950"
               : "text-slate-400 group-hover:text-slate-950"
           } ${
             compact
@@ -157,8 +157,8 @@ function InteractiveLink({
         <span
           className={`relative z-10 mt-0.5 block text-xs transition-colors duration-300 ${
             isActive
-              ? "font-semibold text-blue-700"
-              : "font-medium text-slate-500 group-hover:text-blue-600"
+              ? "font-semibold text-neutral-950"
+              : "font-medium text-slate-500 group-hover:text-black"
           }`}
         >
           {subheading}
@@ -205,7 +205,7 @@ function InteractiveLink({
           }}
           className="relative z-10 p-1 sm:p-2"
         >
-          <ArrowRight className="size-5 sm:size-6 text-blue-600 group-hover:translate-x-1 transition-transform" />
+          <ArrowRight className="size-5 sm:size-6 text-neutral-950 group-hover:translate-x-1 transition-transform" />
         </motion.div>
       </div>
     </motion.a>

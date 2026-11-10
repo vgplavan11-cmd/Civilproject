@@ -1201,7 +1201,7 @@ function Detail({ uid, item, shape, index, total, labels, reduced, source, onLif
         </div>
         <div className={`flex flex-col gap-3 text-center transition-[opacity,transform] delay-150 duration-500 motion-reduce:transition-none md:text-left ${shown ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"}`}>
           <div className="flex items-center justify-center md:justify-start gap-2">
-            <span className="font-mono text-[10px] font-bold tracking-[0.2em] text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
+            <span className="font-mono text-[10px] font-bold tracking-[0.2em] text-neutral-900 bg-neutral-100 px-2 py-0.5 rounded border border-neutral-300">
               MODEL {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
             </span>
             {item.tag && (
@@ -1233,7 +1233,7 @@ function Detail({ uid, item, shape, index, total, labels, reduced, source, onLif
                 {(item.specs ?? item.details)!.map((spec) => (
                   <li 
                     key={spec} 
-                    className="rounded-lg border border-slate-200 bg-slate-50/80 px-2.5 py-1 text-[11px] font-medium text-slate-800 hover:border-blue-500 transition-colors"
+                    className="rounded-lg border border-slate-200 bg-slate-50/80 px-2.5 py-1 text-[11px] font-medium text-slate-800 hover:border-neutral-950 transition-colors"
                   >
                     {spec}
                   </li>
@@ -1246,7 +1246,7 @@ function Detail({ uid, item, shape, index, total, labels, reduced, source, onLif
           <div className="mt-2 pt-2 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3">
             <a
               href={`/contact?model=${encodeURIComponent(item.title)}`}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-2.5 px-4 shadow-xs transition-all active:scale-95"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 rounded-xl bg-neutral-950 hover:bg-black text-white text-xs font-bold py-2.5 px-4 shadow-md shadow-black/20 transition-all active:scale-95"
             >
               <span>Request Elevation Plan</span>
               <svg aria-hidden="true" viewBox="0 0 16 16" className="size-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M3 8h10M9 4l4 4-4 4" /></svg>
@@ -1260,7 +1260,7 @@ function Detail({ uid, item, shape, index, total, labels, reduced, source, onLif
                   aria-pressed={side === face} 
                   onClick={() => turnTo(face)} 
                   className={`relative pb-1 text-xs font-bold transition-colors cursor-pointer ${
-                    side === face ? "text-blue-600 border-b-2 border-blue-600" : "text-slate-400 hover:text-slate-900"
+                    side === face ? "text-neutral-950 border-b-2 border-neutral-950" : "text-slate-400 hover:text-slate-900"
                   }`}
                 >
                   {face === "front" ? labels.front : labels.back}

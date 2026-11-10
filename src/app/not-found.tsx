@@ -9,11 +9,11 @@ export default function NotFound() {
       <div className="absolute inset-0 bg-grid-pattern opacity-60 pointer-events-none" />
 
       <div className="max-w-md w-full text-center relative z-10 bg-white border border-slate-200 rounded-2xl p-8 sm:p-10 shadow-lg">
-        <div className="w-16 h-16 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mx-auto mb-6 border border-blue-200">
+        <div className="w-16 h-16 rounded-2xl bg-neutral-100 text-neutral-950 flex items-center justify-center mx-auto mb-6 border border-neutral-300">
           <HardHat className="w-8 h-8" />
         </div>
 
-        <span className="text-xs font-mono font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-2.5 py-1 rounded">
+        <span className="text-xs font-mono font-bold uppercase tracking-widest text-neutral-950 bg-neutral-100 border border-neutral-300 px-2.5 py-1 rounded">
           Civil Survey Code 404
         </span>
 
@@ -28,7 +28,7 @@ export default function NotFound() {
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
           <Link
             href="/"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-5 py-2.5 rounded-lg transition-colors shadow-sm"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-neutral-950 hover:bg-black text-white text-xs font-bold px-5 py-2.5 rounded-lg transition-colors shadow-sm"
           >
             <Home className="w-3.5 h-3.5" />
             <span>Return to Home</span>

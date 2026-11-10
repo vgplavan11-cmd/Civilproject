@@ -43,8 +43,8 @@ const CIVIL_PHASES: CivilPhase[] = [
     ],
     image: "/images/nav/projects.jpg",
     badge: "IS 456 M25 Mix",
-    accentBg: "bg-slate-900",
-    borderAccent: "border-slate-800",
+    accentBg: "bg-[#0d0d0d]",
+    borderAccent: "border-neutral-800",
     icon: Compass
   },
   {
@@ -60,8 +60,8 @@ const CIVIL_PHASES: CivilPhase[] = [
     ],
     image: "/images/nav/estimator.jpg",
     badge: "Fe550D TMT Ductile",
-    accentBg: "bg-blue-950",
-    borderAccent: "border-blue-900",
+    accentBg: "bg-[#141414]",
+    borderAccent: "border-neutral-800",
     icon: HardHat
   },
   {
@@ -77,8 +77,8 @@ const CIVIL_PHASES: CivilPhase[] = [
     ],
     image: "/images/nav/home.jpg",
     badge: "Thermal Insulation",
-    accentBg: "bg-slate-900",
-    borderAccent: "border-slate-800",
+    accentBg: "bg-[#0d0d0d]",
+    borderAccent: "border-neutral-800",
     icon: Hammer
   },
   {
@@ -94,8 +94,8 @@ const CIVIL_PHASES: CivilPhase[] = [
     ],
     image: "/images/nav/about.jpg",
     badge: "Vitrified & Teak",
-    accentBg: "bg-blue-950",
-    borderAccent: "border-blue-900",
+    accentBg: "bg-[#141414]",
+    borderAccent: "border-neutral-800",
     icon: Layers
   },
   {
@@ -111,8 +111,8 @@ const CIVIL_PHASES: CivilPhase[] = [
     ],
     image: "/images/nav/contact.jpg",
     badge: "10-Bar Hydro Tested",
-    accentBg: "bg-slate-900",
-    borderAccent: "border-slate-800",
+    accentBg: "bg-[#0d0d0d]",
+    borderAccent: "border-neutral-800",
     icon: Zap
   },
   {
@@ -128,8 +128,8 @@ const CIVIL_PHASES: CivilPhase[] = [
     ],
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
     badge: "10-Yr Bonded Guarantee",
-    accentBg: "bg-blue-950",
-    borderAccent: "border-blue-900",
+    accentBg: "bg-[#141414]",
+    borderAccent: "border-neutral-800",
     icon: Droplets
   }
 ];
@@ -157,11 +157,11 @@ export default function CivilInvestmentStackingCards() {
             key={idx}
             type="button"
             onClick={() => scrollToPhase(idx)}
-            className="shrink-0 inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold bg-white border border-slate-200 text-slate-700 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50/50 transition-all shadow-xs cursor-pointer active:scale-95"
+            className="shrink-0 inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold bg-white border border-slate-200 text-slate-700 hover:border-neutral-950 hover:text-black hover:bg-neutral-100 transition-all shadow-xs cursor-pointer active:scale-95"
           >
-            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-600" />
+            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-neutral-950" />
             <span>{p.phase}</span>
-            <span className="font-bold text-blue-600 bg-blue-50 px-1.5 py-0.2 rounded-sm border border-blue-100">
+            <span className="font-bold text-neutral-900 bg-neutral-100 px-1.5 py-0.2 rounded-sm border border-neutral-300">
               {p.pct}
             </span>
           </button>
@@ -182,7 +182,7 @@ export default function CivilInvestmentStackingCards() {
           <div className="h-[65px] sm:h-[80px] w-full flex flex-col items-center justify-center text-center select-none text-slate-500 mb-2 px-2">
             <div className="flex items-center gap-1.5 text-xs font-bold text-slate-700 tracking-wider mb-1">
               <span>Scroll inside box to stack phases</span>
-              <ChevronDown className="w-3.5 h-3.5 animate-bounce text-blue-600" />
+              <ChevronDown className="w-3.5 h-3.5 animate-bounce text-neutral-950" />
             </div>
             <p className="text-[10px] sm:text-[11px] text-slate-400">
               Each stage stacks chronologically with live budget percentages &amp; civil execution specs
@@ -207,20 +207,20 @@ export default function CivilInvestmentStackingCards() {
                   )}
                 >
                   {/* Subtle Background Glow */}
-                  <div className="absolute top-0 right-0 w-72 h-72 bg-blue-600/15 rounded-full blur-3xl pointer-events-none" />
+                  <div className="absolute top-0 right-0 w-72 h-72 bg-neutral-700/10 rounded-full blur-3xl pointer-events-none" />
 
                   {/* Left Column: Phase Details */}
                   <div className="flex-1 space-y-3 sm:space-y-4 z-10 w-full">
                     {/* Header Badges */}
                     <div className="flex flex-wrap items-center gap-1.5 sm:gap-3">
-                      <span className="inline-flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs font-bold tracking-wider uppercase text-blue-300 bg-blue-900/60 border border-blue-700/60 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full">
+                      <span className="inline-flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs font-bold tracking-wider uppercase text-neutral-300 bg-neutral-800/80 border border-neutral-700 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full">
                         <IconComponent className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                         {phaseItem.phase}
                       </span>
-                      <span className="text-xs sm:text-sm font-black text-white bg-blue-600 px-2.5 sm:px-3 py-0.5 rounded-full shadow-sm">
+                      <span className="text-xs sm:text-sm font-black text-neutral-950 bg-white px-2.5 sm:px-3 py-0.5 rounded-full shadow-sm">
                         {phaseItem.pct} of Budget
                       </span>
-                      <span className="text-[10px] sm:text-xs font-medium text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded-md border border-slate-700">
+                      <span className="text-[10px] sm:text-xs font-medium text-slate-300 bg-neutral-900/90 px-2 py-0.5 rounded-md border border-neutral-700">
                         {phaseItem.badge}
                       </span>
                     </div>
@@ -243,7 +243,7 @@ export default function CivilInvestmentStackingCards() {
                       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-2 text-[11px] sm:text-xs text-slate-200">
                         {phaseItem.specs.map((spec, sIdx) => (
                           <li key={sIdx} className="flex items-start gap-1.5 sm:gap-2">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-blue-400 shrink-0 mt-0.5" />
+                            <CheckCircle2 className="w-3.5 h-3.5 text-neutral-300 shrink-0 mt-0.5" />
                             <span>{spec}</span>
                           </li>
                         ))}
@@ -263,7 +263,7 @@ export default function CivilInvestmentStackingCards() {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
                     <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-3 sm:left-3 sm:right-3 flex items-center justify-between text-[11px] sm:text-xs text-white font-medium bg-slate-950/70 backdrop-blur-md px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg border border-slate-700/60">
                       <span className="truncate pr-2">{phaseItem.title}</span>
-                      <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-400 shrink-0" />
+                      <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neutral-300 shrink-0" />
                     </div>
                   </div>
                 </div>

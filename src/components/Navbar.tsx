@@ -72,10 +72,10 @@ export default function Navbar() {
 
               <div className="flex flex-col">
                 <div className="flex items-center gap-1.5 flex-wrap">
-                  <span className="font-black text-lg sm:text-xl tracking-tight text-slate-950 font-sans group-hover:text-blue-600 transition-colors">
+                  <span className="font-black text-lg sm:text-xl tracking-tight text-slate-950 font-sans group-hover:text-black transition-colors">
                     ELITE HOMES
                   </span>
-                  <span className="text-[9px] font-black uppercase tracking-wider bg-blue-50 text-blue-700 px-1.5 py-0.5 rounded-md border border-blue-200 shadow-2xs">
+                  <span className="text-[9px] font-black uppercase tracking-wider bg-neutral-900 text-white px-1.5 py-0.5 rounded-md border border-neutral-800 shadow-2xs">
                     Madurai
                   </span>
                 </div>
@@ -99,13 +99,13 @@ export default function Navbar() {
                     href={link.href}
                     className={`relative px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 ${
                       isActive
-                        ? "text-blue-600 bg-blue-50/80 border border-blue-200/70 shadow-xs"
-                        : "text-slate-700 hover:text-blue-600 hover:bg-slate-50"
+                        ? "text-white bg-neutral-950 shadow-xs"
+                        : "text-slate-700 hover:text-black hover:bg-neutral-100"
                     }`}
                   >
                     <span>{link.name}</span>
                     {isActive && (
-                      <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-blue-600 rounded-full" />
+                      <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-white rounded-full" />
                     )}
                   </Link>
                 );
@@ -116,7 +116,7 @@ export default function Navbar() {
             <div className="flex items-center gap-2 sm:gap-3">
               <Link
                 href="/estimator"
-                className="hidden sm:inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-xl shadow-md shadow-blue-500/20 active:scale-95 transition-all shrink-0"
+                className="hidden sm:inline-flex items-center gap-2 bg-neutral-950 hover:bg-black text-white font-bold text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-xl shadow-md shadow-black/25 active:scale-95 transition-all shrink-0"
               >
                 <Calculator className="w-3.5 h-3.5" />
                 <span>Civil Estimator</span>
@@ -156,8 +156,8 @@ export default function Navbar() {
                   onClick={() => setIsMobileOpen(false)}
                   className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-bold transition-all ${
                     isActive
-                      ? "bg-blue-50 text-blue-600 border border-blue-200/60"
-                      : "text-slate-700 hover:bg-slate-50 hover:text-slate-950"
+                      ? "bg-neutral-900 text-white"
+                      : "text-slate-700 hover:bg-neutral-100 hover:text-black"
                   }`}
                 >
                   <span>{link.name}</span>
@@ -170,7 +170,7 @@ export default function Navbar() {
               <Link
                 href="/estimator"
                 onClick={() => setIsMobileOpen(false)}
-                className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs py-3 px-4 rounded-xl shadow-md shadow-blue-500/20 active:scale-95 transition-all"
+                className="w-full flex items-center justify-center gap-2 bg-neutral-950 hover:bg-black text-white font-bold text-xs py-3 px-4 rounded-xl shadow-md shadow-black/25 active:scale-95 transition-all"
               >
                 <Calculator className="w-4 h-4" />
                 <span>Launch Civil Cost Estimator</span>
@@ -181,7 +181,7 @@ export default function Navbar() {
                 href={`tel:${companyInfo.contact.phone.replace(/[^0-9+]/g, "")}`}
                 className="w-full flex items-center justify-center gap-2 bg-slate-50 hover:bg-slate-100 text-slate-800 text-xs font-bold py-2.5 px-4 rounded-xl border border-slate-200 transition-colors"
               >
-                <Phone className="w-3.5 h-3.5 text-blue-600" />
+                <Phone className="w-3.5 h-3.5 text-neutral-900" />
                 <span>Direct Site Helpline: {companyInfo.contact.phone}</span>
               </a>
             </div>
