@@ -216,18 +216,18 @@ export default function HomePage() {
       </section>
 
       {/* =========================================================================
-          2. TRADE / CIVIL DISCIPLINES SECTION (Shipyon category-card style)
+          2. OUR CONSTRUCTION SERVICES SECTION (Shipyon category-card style)
          ========================================================================= */}
       <section className="py-20 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight relative inline-block">
-              Civil Engineering Disciplines
-              <span className="block w-20 h-1 bg-neutral-950 mx-auto mt-3 rounded-full" />
+            <h2 className="text-3xl sm:text-5xl font-black text-slate-950 tracking-tight relative inline-block">
+              Our Construction Services
+              <span className="block w-24 h-1 bg-neutral-950 mx-auto mt-3 rounded-full" />
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed">
-              Comprehensive turnkey solutions executed with mathematical rigor—from geotechnical foundation testing to architectural luxury handovers.
+            <p className="text-xs sm:text-sm text-slate-500 mt-3 leading-relaxed">
+              Turnkey execution and structural precision across every phase of residential and commercial construction.
             </p>
           </div>
 
@@ -236,42 +236,29 @@ export default function HomePage() {
             {civilServices.map((service) => (
               <div
                 key={service.id}
-                className="group relative bg-white border border-slate-200 rounded-2xl p-7 shadow-xs hover:shadow-xl hover:border-neutral-950 transition-all duration-300 flex flex-col justify-between overflow-hidden"
+                className="group relative bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-xs hover:shadow-xl hover:border-neutral-950 transition-all duration-300 flex flex-col justify-between overflow-hidden"
               >
                 {/* Top Mars Black Line on Hover */}
                 <div className="absolute top-0 inset-x-0 h-1 bg-neutral-950 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-neutral-100 text-neutral-950 flex items-center justify-center mb-5 group-hover:bg-neutral-950 group-hover:text-white transition-colors duration-300">
+                  <div className="w-12 h-12 rounded-xl bg-neutral-100 text-neutral-950 flex items-center justify-center mb-6 group-hover:bg-neutral-950 group-hover:text-white transition-colors duration-300">
                     <Building2 className="w-6 h-6" />
                   </div>
 
-                  <h3 className="text-xl font-bold text-slate-950 mb-2 group-hover:text-black transition-colors">
+                  <h3 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight leading-snug mb-3 group-hover:text-black transition-colors">
                     {service.title}
                   </h3>
 
-                  <p className="text-xs text-slate-600 leading-relaxed mb-5">
-                    {service.description}
+                  <p className="text-[11px] sm:text-xs text-slate-500 leading-relaxed font-normal mb-6">
+                    {service.shortDesc}
                   </p>
-
-                  <div className="border-t border-slate-100 pt-4 mb-4">
-                    <p className="text-[11px] uppercase tracking-wider font-bold text-slate-500 mb-2">
-                      Key Deliverables:
-                    </p>
-                    <ul className="space-y-1.5 text-xs text-slate-700">
-                      {service.deliverables.slice(0, 3).map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-neutral-950 shrink-0 mt-0.5" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
                 </div>
 
-                <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
-                  <span className="text-xs font-bold text-neutral-950 group-hover:translate-x-1 transition-transform">
-                    View Specifications &rarr;
+                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+                  <span className="text-[11px] font-bold text-neutral-950 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1.5">
+                    <span>Explore Specifications</span>
+                    <span className="text-xs">&rarr;</span>
                   </span>
                 </div>
               </div>

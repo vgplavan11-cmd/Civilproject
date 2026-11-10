@@ -48,7 +48,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   return (
     <div className="bg-white min-h-screen">
       {/* 1. Top Breadcrumb & Actions Bar */}
-      <div className="bg-slate-50 border-b border-slate-200 pt-28 sm:pt-32 pb-4 px-4 sm:px-8">
+      <div className="bg-slate-50 border-b border-slate-200 pt-36 sm:pt-44 md:pt-48 pb-4 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
           <div className="flex items-center gap-2 text-slate-500 font-medium">
             <Link href="/" className="hover:text-black transition-colors">Home</Link>
