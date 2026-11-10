@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { 
-  Calculator, 
   Layers, 
   Clock, 
   ArrowRight, 
@@ -49,10 +48,6 @@ export default function CostEstimator() {
       <div className="absolute top-0 right-0 w-64 h-64 bg-grid-pattern opacity-60 pointer-events-none" />
 
       <div className="max-w-3xl mb-8 relative z-10">
-        <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-xs font-bold px-3 py-1 rounded-full border border-blue-200 mb-3">
-          <Calculator className="w-3.5 h-3.5" />
-          <span>Interactive Civil Engineering Estimator</span>
-        </div>
         <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight">
           Calculate Your Project &amp; Material Estimate
         </h3>

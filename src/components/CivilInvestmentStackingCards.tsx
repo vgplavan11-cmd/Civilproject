@@ -179,10 +179,10 @@ export default function CivilInvestmentStackingCards() {
           scaleMultiplier={0.035}
         >
           {/* Scroll Down Prompt Header */}
-          <div className="h-[75px] sm:h-[90px] w-full flex flex-col items-center justify-center text-center select-none text-slate-500 mb-2 px-2">
-            <div className="inline-flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-bold text-blue-700 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full uppercase tracking-wider mb-1">
+          <div className="h-[65px] sm:h-[80px] w-full flex flex-col items-center justify-center text-center select-none text-slate-500 mb-2 px-2">
+            <div className="flex items-center gap-1.5 text-xs font-bold text-slate-700 tracking-wider mb-1">
               <span>Scroll inside box to stack phases</span>
-              <ChevronDown className="w-3.5 h-3.5 animate-bounce" />
+              <ChevronDown className="w-3.5 h-3.5 animate-bounce text-blue-600" />
             </div>
             <p className="text-[10px] sm:text-[11px] text-slate-400">
               Each stage stacks chronologically with live budget percentages &amp; civil execution specs

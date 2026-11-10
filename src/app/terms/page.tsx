@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowLeft, FileCheck, ShieldCheck, Hammer, Layers, AlertCircle } from "lucide-react";
+import { ArrowLeft, ShieldCheck, Hammer, Layers, AlertCircle } from "lucide-react";
 import { companyInfo } from "@/data/companyData";
 
 export const metadata = {
@@ -22,10 +22,6 @@ export default function TermsPage() {
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Return to Home</span>
           </Link>
-          <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-xs font-bold px-3 py-1 rounded-full border border-blue-200 mb-2">
-            <FileCheck className="w-3.5 h-3.5" />
-            <span>Standard Civil Contracting Protocol</span>
-          </div>
           <h1 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
             Civil Contract &amp; Structural Warranty Terms
           </h1>

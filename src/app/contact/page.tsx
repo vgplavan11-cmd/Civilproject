@@ -11,9 +11,7 @@ import {
   ShieldCheck, 
   CheckCircle2, 
   Send, 
-  HardHat, 
-  ChevronDown, 
-  HelpCircle
+  ChevronDown
 } from "lucide-react";
 import { companyInfo } from "@/data/companyData";
 
@@ -80,10 +78,6 @@ function ContactFormContent() {
         <div className="absolute inset-0 bg-grid-pattern opacity-60 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-xs font-bold px-3 py-1 rounded-full border border-blue-200 mb-3">
-              <HardHat className="w-3.5 h-3.5" />
-              <span>Civil Consultation Desk</span>
-            </div>
             <h1 className="text-3xl sm:text-5xl font-black text-slate-950 tracking-tight">
               Connect With Our Civil Engineering Team
             </h1>
@@ -378,10 +372,6 @@ function ContactFormContent() {
       <section className="py-16 bg-slate-50 border-t border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-1.5 bg-blue-50 text-blue-700 text-xs font-bold px-3 py-1 rounded-full border border-blue-200 mb-2">
-              <HelpCircle className="w-3.5 h-3.5" />
-              <span>Civil Knowledge Base</span>
-            </div>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Frequently Asked Civil Questions
             </h2>

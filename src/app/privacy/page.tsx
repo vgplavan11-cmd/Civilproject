@@ -22,10 +22,6 @@ export default function PrivacyPage() {
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Return to Home</span>
           </Link>
-          <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-xs font-bold px-3 py-1 rounded-full border border-blue-200 mb-2">
-            <Lock className="w-3.5 h-3.5" />
-            <span>Confidentiality &amp; Property Security</span>
-          </div>
           <h1 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
             Client Privacy &amp; Land Document Policy
           </h1>

@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import LeftNavigation from "@/components/LeftNavigation";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const viewport: Viewport = {
@@ -23,8 +23,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen bg-white text-slate-900 antialiased selection:bg-blue-600 selection:text-white">
-        {/* Floating Menu on left side; expands full navigation drawer when clicked */}
-        <LeftNavigation />
+        {/* Floating Top Navbar inspired by Shipyon */}
+        <Navbar />
 
         {/* Main website content taking full width */}
         <div className="min-h-screen flex flex-col min-w-0">
