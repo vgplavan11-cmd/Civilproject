@@ -15,8 +15,8 @@ import { companyInfo } from "@/data/companyData";
 
 const NAV_LINKS = [
   { name: "Home", href: "/" },
-  { name: "Projects & Models", href: "/projects" },
-  { name: "Civil Estimator", href: "/estimator" },
+  { name: "Projects", href: "/projects" },
+  { name: "Pricing", href: "/estimator" },
   { name: "About Us", href: "/about" },
   { name: "Contact Us", href: "/contact" },
 ];
@@ -71,14 +71,9 @@ export default function Navbar() {
               </div>
 
               <div className="flex flex-col">
-                <div className="flex items-center gap-1.5 flex-wrap">
-                  <span className="font-black text-lg sm:text-xl tracking-tight text-slate-950 font-sans group-hover:text-black transition-colors">
-                    ELITE HOMES
-                  </span>
-                  <span className="text-[9px] font-black uppercase tracking-wider bg-neutral-900 text-white px-1.5 py-0.5 rounded-md border border-neutral-800 shadow-2xs">
-                    Madurai
-                  </span>
-                </div>
+                <span className="font-black text-lg sm:text-xl tracking-tight text-slate-950 font-sans group-hover:text-black transition-colors">
+                  ELITE HOMES
+                </span>
                 <span className="hidden sm:inline-block text-[10px] uppercase tracking-wider text-slate-500 font-semibold -mt-0.5">
                   Building Spaces, Elevating Lives.
                 </span>
@@ -112,17 +107,8 @@ export default function Navbar() {
               })}
             </nav>
 
-            {/* 3. Right: Primary CTA & Mobile Toggle */}
-            <div className="flex items-center gap-2 sm:gap-3">
-              <Link
-                href="/estimator"
-                className="hidden sm:inline-flex items-center gap-2 bg-neutral-950 hover:bg-black text-white font-bold text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-xl shadow-md shadow-black/25 active:scale-95 transition-all shrink-0"
-              >
-                <Calculator className="w-3.5 h-3.5" />
-                <span>Civil Estimator</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-
+            {/* 3. Right: Mobile Menu Toggle */}
+            <div className="flex items-center">
               {/* Mobile Menu Button */}
               <button
                 type="button"

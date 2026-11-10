@@ -4,7 +4,7 @@ import { HardHat, Compass, Home } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <div className="min-h-[75vh] flex items-center justify-center bg-white px-4 py-16 relative overflow-hidden">
+    <div className="min-h-[75vh] flex items-center justify-center bg-white px-4 pt-28 sm:pt-32 pb-16 relative overflow-hidden">
       {/* Blueprint grid accent */}
       <div className="absolute inset-0 bg-grid-pattern opacity-60 pointer-events-none" />
 

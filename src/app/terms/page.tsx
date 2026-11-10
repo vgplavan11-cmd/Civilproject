@@ -12,7 +12,7 @@ export default function TermsPage() {
   return (
     <div className="bg-white min-h-screen">
       {/* Header */}
-      <section className="bg-slate-50 border-b border-slate-200 py-12 relative overflow-hidden">
+      <section className="bg-slate-50 border-b border-slate-200 pt-28 sm:pt-32 pb-12 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-60 pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
           <Link

@@ -43,7 +43,7 @@ const CIVIL_NAV_ITEMS: InteractiveLinkItem[] = [
     href: "/contact"
   },
   {
-    heading: "Estimator",
+    heading: "Pricing",
     subheading: "Instant Construction Cost Calculator",
     imgSrc: "/images/nav/estimator.jpg",
     href: "/estimator"
@@ -138,14 +138,9 @@ export default function LeftNavigation() {
                     </div>
 
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-1.5 flex-wrap">
-                        <span className="font-black text-lg tracking-tight text-slate-950 font-sans hover:text-black transition-colors">
-                          ELITE HOMES
-                        </span>
-                        <span className="inline-flex items-center gap-1 text-[9px] font-black uppercase tracking-wider bg-neutral-900 text-white px-1.5 py-0.5 rounded-md border border-neutral-800">
-                          Madurai
-                        </span>
-                      </div>
+                      <span className="font-black text-lg tracking-tight text-slate-950 font-sans hover:text-black transition-colors block">
+                        ELITE HOMES
+                      </span>
                       <p className="text-[10px] uppercase tracking-wider text-slate-500 font-semibold mt-0.5 truncate">
                         Building Spaces, Elevating Lives.
                       </p>

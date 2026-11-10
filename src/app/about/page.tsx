@@ -25,7 +25,7 @@ export default function AboutPage() {
   return (
     <div className="bg-white min-h-screen">
       {/* 1. Header Banner */}
-      <section className="bg-slate-50 border-b border-slate-200 py-16 sm:py-20 relative overflow-hidden">
+      <section className="bg-slate-50 border-b border-slate-200 pt-28 sm:pt-32 pb-14 sm:pb-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-60 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
