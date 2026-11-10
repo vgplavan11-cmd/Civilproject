@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { 
   Building2, 
   HardHat, 
@@ -53,11 +54,25 @@ export default function HomePage() {
           1. HERO SECTION (Shipyon-style deep navy split layout & floating dock)
          ========================================================================= */}
       <section className="relative min-h-[92vh] sm:min-h-screen bg-[#030e21] text-white flex flex-col justify-center overflow-hidden pt-28 sm:pt-32 pb-16 sm:pb-20">
-        {/* Engineering blueprint background & ambient lighting */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-15 pointer-events-none" />
+        {/* Construction blueprint photographic background with cinematic overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/construction-blueprint-hero.jpg"
+            alt="Elite Homes Civil Engineering & Construction"
+            fill
+            priority
+            className="object-cover object-center pointer-events-none opacity-40 sm:opacity-45"
+          />
+          {/* Dual directional gradients to preserve readability and depth */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#030e21] via-[#030e21]/80 to-[#030e21]/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#030e21] via-transparent to-[#030e21]/75" />
+        </div>
+
+        {/* Ambient atmospheric lighting accents */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
         <div className="absolute -top-40 -left-40 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute top-1/3 -right-20 w-96 h-96 bg-indigo-600/15 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#030e21] via-[#030e21]/60 to-transparent pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
