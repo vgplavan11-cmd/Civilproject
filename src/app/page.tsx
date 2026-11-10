@@ -51,28 +51,22 @@ export default function HomePage() {
   return (
     <div className="bg-white min-h-screen">
       {/* =========================================================================
-          1. HERO SECTION (Shipyon-style deep navy split layout & floating dock)
+          1. HERO SECTION (Shipyon-style split layout & floating dock)
          ========================================================================= */}
-      <section className="relative min-h-[92vh] sm:min-h-screen bg-[#0d0d0d] text-white flex flex-col justify-center overflow-hidden pt-28 sm:pt-32 pb-16 sm:pb-20">
-        {/* Construction blueprint photographic background with Mars Black cinematic overlay */}
+      <section className="relative min-h-[92vh] sm:min-h-screen bg-white text-neutral-950 flex flex-col justify-center overflow-hidden pt-28 sm:pt-32 pb-16 sm:pb-20">
+        {/* Construction blueprint photographic background */}
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/construction-blueprint-hero.jpg"
             alt="Elite Homes Civil Engineering & Construction"
             fill
             priority
-            className="object-cover object-center pointer-events-none opacity-35 sm:opacity-40"
+            className="object-cover object-center pointer-events-none"
           />
-          {/* Mars Black directional gradients for pristine contrast and deep tone */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0d0d0d] via-[#121212]/85 to-[#121212]/70" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-transparent to-[#0d0d0d]/80" />
+          {/* Soft directional translucent white gradients ensuring perfect text readability while showing the construction image clearly */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-white/30 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-transparent to-white pointer-events-none" />
         </div>
-
-        {/* Ambient atmospheric lighting accents */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
-        <div className="absolute -top-40 -left-40 w-96 h-96 bg-neutral-700/15 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute top-1/3 -right-20 w-96 h-96 bg-neutral-800/20 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#0d0d0d] via-[#0d0d0d]/60 to-transparent pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
@@ -80,16 +74,16 @@ export default function HomePage() {
             {/* Left Column: Headline, Narrative, CTA buttons & Stats Strip */}
             <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 sm:space-y-7">
               {/* Main Headline */}
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.14] text-white">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.14] text-neutral-950">
                 Building Modern Homes With{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-100 via-neutral-300 to-white">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-950 via-neutral-800 to-neutral-700">
                   Structural Precision
                 </span>{" "}
                 &amp; Integrity.
               </h1>
 
               {/* Subtitle Narrative */}
-              <p className="text-sm sm:text-base lg:text-lg text-slate-300 leading-relaxed max-w-2xl font-normal">
+              <p className="text-sm sm:text-base lg:text-lg text-neutral-700 leading-relaxed max-w-2xl font-medium">
                 Elite Homes delivers turnkey residential houses (2BHK, 3BHK, Custom Luxury Villas) across Madurai with direct founder site supervision, transparent milestone pricing, and IS 456-compliant RCC framing.
               </p>
 
@@ -97,7 +91,7 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto pt-1">
                 <Link
                   href="/projects"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white hover:bg-neutral-200 text-neutral-950 font-bold text-sm px-7 py-3.5 rounded-xl shadow-lg shadow-black/40 active:scale-95 transition-all"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-neutral-950 hover:bg-black text-white font-bold text-sm px-7 py-3.5 rounded-xl shadow-lg shadow-black/25 active:scale-95 transition-all"
                 >
                   <span>Explore House Models</span>
                   <ArrowRight className="w-4 h-4" />
@@ -105,48 +99,48 @@ export default function HomePage() {
 
                 <Link
                   href="/estimator"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white/10 hover:bg-white/15 text-white font-bold text-sm px-6 py-3.5 rounded-xl border border-white/20 backdrop-blur-md transition-all active:scale-95"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white hover:bg-neutral-100 text-neutral-950 font-bold text-sm px-6 py-3.5 rounded-xl border border-neutral-300 shadow-md backdrop-blur-md transition-all active:scale-95"
                 >
-                  <Calculator className="w-4 h-4 text-neutral-300" />
+                  <Calculator className="w-4 h-4 text-neutral-950" />
                   <span>Civil Cost Estimator</span>
                 </Link>
               </div>
 
               {/* Glassmorphic Stats Strip */}
               <div className="w-full pt-4">
-                <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl grid grid-cols-2 sm:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-white/10 overflow-hidden shadow-2xl">
+                <div className="bg-white/80 backdrop-blur-md border border-neutral-200/90 rounded-2xl grid grid-cols-2 sm:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-neutral-200 overflow-hidden shadow-xl">
                   <div className="p-3.5 sm:p-4 text-center">
-                    <div className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                    <div className="text-2xl sm:text-3xl font-black text-neutral-950 tracking-tight">
                       {companyInfo.stats.yearsOfExcellence}
                     </div>
-                    <p className="text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold text-slate-400 mt-0.5">
+                    <p className="text-[10px] sm:text-[11px] uppercase tracking-wider font-bold text-neutral-600 mt-0.5">
                       Civil Experience
                     </p>
                   </div>
 
                   <div className="p-3.5 sm:p-4 text-center">
-                    <div className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                    <div className="text-2xl sm:text-3xl font-black text-neutral-950 tracking-tight">
                       {companyInfo.stats.completedProjects}
                     </div>
-                    <p className="text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold text-slate-400 mt-0.5">
+                    <p className="text-[10px] sm:text-[11px] uppercase tracking-wider font-bold text-neutral-600 mt-0.5">
                       Homes &amp; Sites
                     </p>
                   </div>
 
                   <div className="p-3.5 sm:p-4 text-center">
-                    <div className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                    <div className="text-2xl sm:text-3xl font-black text-neutral-950 tracking-tight">
                       {companyInfo.stats.squareFeetBuilt}
                     </div>
-                    <p className="text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold text-slate-400 mt-0.5">
+                    <p className="text-[10px] sm:text-[11px] uppercase tracking-wider font-bold text-neutral-600 mt-0.5">
                       Sq. Ft. Built
                     </p>
                   </div>
 
                   <div className="p-3.5 sm:p-4 text-center">
-                    <div className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                    <div className="text-2xl sm:text-3xl font-black text-neutral-950 tracking-tight">
                       {companyInfo.stats.clientSatisfactionRate}
                     </div>
-                    <p className="text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold text-slate-400 mt-0.5">
+                    <p className="text-[10px] sm:text-[11px] uppercase tracking-wider font-bold text-neutral-600 mt-0.5">
                       Founder Oversight
                     </p>
                   </div>
@@ -157,54 +151,54 @@ export default function HomePage() {
             {/* Right Column: Floating Glassmorphic Engineering Docks */}
             <div className="lg:col-span-5 flex flex-col justify-center items-center lg:items-end w-full space-y-4">
               {/* Floating Card 1 */}
-              <div className="w-full max-w-md bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-4 sm:p-5 shadow-2xl flex items-center gap-4 hover:scale-[1.02] hover:bg-white/15 transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-white/15 border border-white/20 text-white flex items-center justify-center shrink-0">
+              <div className="w-full max-w-md bg-white/85 backdrop-blur-xl border border-white/80 rounded-2xl p-4 sm:p-5 shadow-xl flex items-center gap-4 hover:scale-[1.02] hover:bg-white/95 transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-neutral-950 text-white flex items-center justify-center shrink-0 shadow-sm">
                   <ShieldCheck className="w-6 h-6" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm font-black text-white">IS 456:2000 RCC Framing</span>
-                    <span className="text-[10px] font-mono font-bold text-neutral-300 bg-neutral-900/90 px-2 py-0.5 rounded border border-neutral-700">
+                    <span className="text-sm font-black text-neutral-950">IS 456:2000 RCC Framing</span>
+                    <span className="text-[10px] font-mono font-bold text-neutral-900 bg-neutral-100 px-2 py-0.5 rounded border border-neutral-300">
                       M25 Mix
                     </span>
                   </div>
-                  <p className="text-xs text-slate-300 mt-1 leading-snug">
+                  <p className="text-xs text-neutral-600 mt-1 leading-snug">
                     Ductile seismic reinforcement using primary Fe550D TMT rebar with 0mm plumb deviation.
                   </p>
                 </div>
               </div>
 
               {/* Floating Card 2 */}
-              <div className="w-full max-w-md bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-4 sm:p-5 shadow-2xl flex items-center gap-4 hover:scale-[1.02] hover:bg-white/15 transition-all duration-300 lg:translate-x-3">
-                <div className="w-12 h-12 rounded-xl bg-white/15 border border-white/20 text-white flex items-center justify-center shrink-0">
+              <div className="w-full max-w-md bg-white/85 backdrop-blur-xl border border-white/80 rounded-2xl p-4 sm:p-5 shadow-xl flex items-center gap-4 hover:scale-[1.02] hover:bg-white/95 transition-all duration-300 lg:translate-x-3">
+                <div className="w-12 h-12 rounded-xl bg-neutral-950 text-white flex items-center justify-center shrink-0 shadow-sm">
                   <Award className="w-6 h-6" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm font-black text-white">100% In-House Lab Testing</span>
-                    <span className="text-[10px] font-mono font-bold text-neutral-300 bg-neutral-900/90 px-2 py-0.5 rounded border border-neutral-700">
+                    <span className="text-sm font-black text-neutral-950">100% In-House Lab Testing</span>
+                    <span className="text-[10px] font-mono font-bold text-neutral-900 bg-neutral-100 px-2 py-0.5 rounded border border-neutral-300">
                       IS 516
                     </span>
                   </div>
-                  <p className="text-xs text-slate-300 mt-1 leading-snug">
+                  <p className="text-xs text-neutral-600 mt-1 leading-snug">
                     150mm concrete cubes crushed at 7-day (67%) and 28-day (100%) target strength before stripping.
                   </p>
                 </div>
               </div>
 
               {/* Floating Card 3 */}
-              <div className="w-full max-w-md bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-4 sm:p-5 shadow-2xl flex items-center gap-4 hover:scale-[1.02] hover:bg-white/15 transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-white/15 border border-white/20 text-white flex items-center justify-center shrink-0">
+              <div className="w-full max-w-md bg-white/85 backdrop-blur-xl border border-white/80 rounded-2xl p-4 sm:p-5 shadow-xl flex items-center gap-4 hover:scale-[1.02] hover:bg-white/95 transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-neutral-950 text-white flex items-center justify-center shrink-0 shadow-sm">
                   <CheckCircle2 className="w-6 h-6" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm font-black text-white">10-Year Structural Warranty</span>
-                    <span className="text-[10px] font-mono font-bold text-neutral-300 bg-neutral-900/90 px-2 py-0.5 rounded border border-neutral-700">
+                    <span className="text-sm font-black text-neutral-950">10-Year Structural Warranty</span>
+                    <span className="text-[10px] font-mono font-bold text-neutral-900 bg-neutral-100 px-2 py-0.5 rounded border border-neutral-300">
                       Zero Settle
                     </span>
                   </div>
-                  <p className="text-xs text-slate-300 mt-1 leading-snug">
+                  <p className="text-xs text-neutral-600 mt-1 leading-snug">
                     Isolated footings &amp; raft foundations engineered to 185 kN/m² safe bearing soil capacity.
                   </p>
                 </div>
@@ -215,9 +209,9 @@ export default function HomePage() {
         </div>
 
         {/* Scroll To Explore Indicator */}
-        <div className="mt-8 flex flex-col items-center justify-center text-slate-400 select-none text-xs">
-          <span className="tracking-widest uppercase text-[10px] font-semibold">Scroll to explore</span>
-          <ChevronDown className="w-4 h-4 mt-1 animate-bounce text-neutral-400" />
+        <div className="mt-8 flex flex-col items-center justify-center text-neutral-600 select-none text-xs">
+          <span className="tracking-widest uppercase text-[10px] font-bold text-neutral-700">Scroll to explore</span>
+          <ChevronDown className="w-4 h-4 mt-1 animate-bounce text-neutral-700" />
         </div>
       </section>
 
