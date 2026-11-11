@@ -57,7 +57,7 @@ export default function HomePage() {
         {/* Construction blueprint photographic background */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/construction-blueprint-hero.jpg"
+            src="/images/civil-blueprint-hero.jpg"
             alt="Elite Homes Civil Engineering & Construction"
             fill
             priority
