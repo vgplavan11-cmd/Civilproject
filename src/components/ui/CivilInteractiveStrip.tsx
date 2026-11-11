@@ -11,7 +11,6 @@ interface StripItem {
   stat: string;
   statLabel: string;
   desc: string;
-  specs: string[];
   icon: React.ComponentType<{ className?: string }>;
 }
 
@@ -24,7 +23,6 @@ const CIVIL_STRIP_ITEMS: StripItem[] = [
     stat: "0mm",
     statLabel: "Plumb Deviation Limit",
     desc: "Fe550D ductile reinforcement resisting seismic tremors.",
-    specs: ["IS 13920 seismic detailing", "Heavy-gauge node ties", "0mm laser column plumb"],
     icon: ShieldCheck,
   },
   {
@@ -35,7 +33,6 @@ const CIVIL_STRIP_ITEMS: StripItem[] = [
     stat: "25 N/mm²",
     statLabel: "Compressive Mix Strength",
     desc: "7-day & 28-day cube compressive strength verification.",
-    specs: ["Digital compressive testing", "Batch slump cone checks", "Certified 53-Grade OPC"],
     icon: Award,
   },
   {
@@ -46,7 +43,6 @@ const CIVIL_STRIP_ITEMS: StripItem[] = [
     stat: "185 kN/m²",
     statLabel: "Safe Soil Bearing Capacity",
     desc: "Raft foundations engineered to geotechnical report.",
-    specs: ["Solid rock raft footings", "Anti-termite chemical barrier", "Substructure damp course (DPC)"],
     icon: Ruler,
   },
   {
@@ -57,7 +53,6 @@ const CIVIL_STRIP_ITEMS: StripItem[] = [
     stat: "0 Hidden",
     statLabel: "Escalation Cost Guarantee",
     desc: "Milestone escrow billing with zero hidden escalations.",
-    specs: ["Fixed itemized BOQ", "Weekly photo progress logs", "Direct founder site visits"],
     icon: CheckCircle2,
   },
 ];
@@ -126,25 +121,10 @@ export default function CivilInteractiveStrip() {
                   </p>
                 </div>
 
-                {/* Execution Checks (Reduced Content & Very Small Font) */}
-                <div className="mt-5 pt-4 border-t border-neutral-800/90">
-                  <span className="text-[9px] uppercase font-mono font-bold tracking-wider text-neutral-500 block mb-2">
-                    Engineering Execution Checks
-                  </span>
-                  <div className="space-y-1.5">
-                    {item.specs.map((spec, sIdx) => (
-                      <div key={sIdx} className="flex items-start gap-1.5 text-[10px] sm:text-[11px] text-neutral-300">
-                        <CheckCircle2 className="w-3 h-3 text-neutral-400 group-hover:text-white shrink-0 mt-0.5 transition-colors" />
-                        <span className="leading-tight">{spec}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Bottom Milestone Footer */}
-                  <div className="mt-4 pt-3 border-t border-neutral-800/60 flex items-center justify-between text-[10px] text-neutral-500">
-                    <span className="font-mono text-[10px] tracking-wide text-neutral-400">Milestone Guaranteed</span>
-                    <ChevronRight className="w-3.5 h-3.5 text-neutral-500 group-hover:text-white group-hover:translate-x-1 transition-all duration-300" />
-                  </div>
+                {/* Bottom Milestone Footer */}
+                <div className="mt-5 pt-3.5 border-t border-neutral-800/80 flex items-center justify-between text-[10px] text-neutral-500">
+                  <span className="font-mono text-[10px] tracking-wide text-neutral-400">Milestone Guaranteed</span>
+                  <ChevronRight className="w-3.5 h-3.5 text-neutral-500 group-hover:text-white group-hover:translate-x-1 transition-all duration-300" />
                 </div>
               </div>
             );
