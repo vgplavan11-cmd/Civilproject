@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ShieldCheck, Award, Ruler, CheckCircle2, ChevronRight, HardHat, Truck } from "lucide-react";
+import { ShieldCheck, Award, Ruler, CheckCircle2, ChevronRight } from "lucide-react";
 
 interface StripItem {
   id: string;
@@ -74,13 +74,6 @@ export default function CivilInteractiveStrip() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-900 border border-neutral-700/80 mb-4 shadow-inner">
-            <HardHat className="w-4 h-4 text-amber-400" />
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-300">
-              Why Choose Elite Homes • Civil Rigor
-            </span>
-          </div>
-
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-snug">
             Engineering Standards That Protect Your Generation.
           </h2>
@@ -185,49 +178,6 @@ export default function CivilInteractiveStrip() {
               </div>
             );
           })}
-        </div>
-
-        {/* =========================================================================
-            Shipyon Live Transit Road Track & Material Delivery Vehicle
-           ========================================================================= */}
-        <div className="mt-16 pt-8 border-t border-neutral-800/80 relative">
-          <div className="flex items-center justify-between text-xs text-slate-400 font-mono mb-3">
-            <span className="flex items-center gap-2 text-neutral-300 font-bold">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping inline-block" />
-              Live Site Concrete &amp; Rebar Logistics Track
-            </span>
-            <span className="hidden sm:inline-block">Madurai District Construction Transit Line</span>
-          </div>
-
-          {/* Roadbed Container */}
-          <div className="relative w-full h-12 bg-neutral-900/90 rounded-xl border border-neutral-800 overflow-hidden flex items-center px-4">
-            {/* Animated Dashed Road Shimmer */}
-            <div
-              className="absolute inset-x-0 h-1 top-1/2 -translate-y-1/2 pointer-events-none"
-              style={{
-                backgroundImage: "linear-gradient(90deg, rgba(245, 158, 11, 0.75) 30%, transparent 0%)",
-                backgroundSize: "28px 2px",
-                backgroundRepeat: "repeat-x",
-                animation: "wcuDashShimmer 22s linear infinite",
-              }}
-            />
-
-            {/* Continuous Animated Civil Transit Vehicle */}
-            <div
-              className="absolute flex items-center gap-2 select-none pointer-events-none"
-              style={{
-                willChange: "right",
-                animation: "truckDriveReverse 14s ease-in-out infinite, engineVibration 0.2s linear infinite",
-              }}
-            >
-              <div className="bg-neutral-950 text-white px-2.5 py-1 rounded-md border border-neutral-700 flex items-center gap-1.5 shadow-lg">
-                <Truck className="w-3.5 h-3.5 text-amber-400" />
-                <span className="text-[10px] font-mono font-bold tracking-tight text-white">
-                  M25 Mix In-Transit
-                </span>
-              </div>
-            </div>
-          </div>
         </div>
 
       </div>

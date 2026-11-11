@@ -300,7 +300,7 @@ const ACTIONS: { id: JournalAction; label: string }[] = [
 
 export default function JournalSpreadCarousel({
   spreads,
-  title = "Demo Sites",
+  title,
   meta,
   height = "100svh",
   initialIndex = 0,
@@ -536,37 +536,41 @@ export default function JournalSpreadCarousel({
       onKeyDown={onKeyDown}
     >
       <style>{CSS}</style>
-      <div className="jsc-top">
-        {showTopChips ? (
-          <div className="jsc-group">
-            <button type="button" className="jsc-chip" aria-pressed="true" aria-label="Spread view">
-              <Icon name="book" />
-            </button>
-            <button type="button" className="jsc-chip" aria-pressed="false" aria-label="Grid view">
-              <Icon name="grid" />
-            </button>
-          </div>
-        ) : null}
-        <div className="jsc-head">
-          <h2 className="jsc-title">{title}</h2>
-          {meta ? (
-            <div className="jsc-meta">
-              <Icon name="lock" />
-              {meta}
+      {(showTopChips || title) ? (
+        <div className="jsc-top">
+          {showTopChips ? (
+            <div className="jsc-group">
+              <button type="button" className="jsc-chip" aria-pressed="true" aria-label="Spread view">
+                <Icon name="book" />
+              </button>
+              <button type="button" className="jsc-chip" aria-pressed="false" aria-label="Grid view">
+                <Icon name="grid" />
+              </button>
+            </div>
+          ) : null}
+          {title ? (
+            <div className="jsc-head">
+              <h2 className="jsc-title">{title}</h2>
+              {meta ? (
+                <div className="jsc-meta">
+                  <Icon name="lock" />
+                  {meta}
+                </div>
+              ) : null}
+            </div>
+          ) : null}
+          {showTopChips ? (
+            <div className="jsc-group">
+              <button type="button" className="jsc-chip" aria-label="Search">
+                <Icon name="search" />
+              </button>
+              <button type="button" className="jsc-chip" aria-label="Menu">
+                <Icon name="menu" />
+              </button>
             </div>
           ) : null}
         </div>
-        {showTopChips ? (
-          <div className="jsc-group">
-            <button type="button" className="jsc-chip" aria-label="Search">
-              <Icon name="search" />
-            </button>
-            <button type="button" className="jsc-chip" aria-label="Menu">
-              <Icon name="menu" />
-            </button>
-          </div>
-        ) : null}
-      </div>
+      ) : null}
 
       <div
         ref={stageRef}

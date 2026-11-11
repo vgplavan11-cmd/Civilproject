@@ -95,13 +95,6 @@ export default function CivilLifecyclePipeline() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-100 border border-neutral-300 mb-4 shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-neutral-950 inline-block" />
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-800">
-              Turnkey Lifecycle Pipeline • How We Build
-            </span>
-          </div>
-
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight leading-tight">
             From Geotechnical Soil Test to Key Handover.
           </h2>

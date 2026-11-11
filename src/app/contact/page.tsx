@@ -78,11 +78,6 @@ function ContactFormContent() {
         <div className="absolute inset-0 bg-grid-pattern opacity-60 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 text-white text-xs font-mono font-bold uppercase tracking-wider mb-4">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-              <span>Civil Engineering Desk Active • Madurai Headquarters</span>
-            </div>
-
             <h1 className="text-3xl sm:text-5xl font-black text-slate-950 tracking-tight leading-[1.12]">
               Connect With Our Civil Engineering Team
             </h1>
@@ -349,15 +344,6 @@ function ContactFormContent() {
                       <p className="text-slate-400">{companyInfo.contact.hours}</p>
                       <p className="text-neutral-300 font-semibold">{companyInfo.contact.siteVisits}</p>
                     </div>
-                  </div>
-
-                  {/* Live Site Desk Status (Shipyon live pulse badge) */}
-                  <div className="pt-3 border-t border-neutral-800/80 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping inline-block" />
-                      <span className="text-xs font-mono font-bold text-white">Senior Engineer On-Call</span>
-                    </div>
-                    <span className="text-[10px] text-amber-400 font-mono font-bold">Madurai HQ Active</span>
                   </div>
                 </div>
               </div>

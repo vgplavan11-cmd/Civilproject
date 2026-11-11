@@ -66,11 +66,6 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-grid-pattern opacity-60 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 text-white text-xs font-mono font-bold uppercase tracking-wider mb-5">
-              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-              <span>Engineering Excellence • Madurai</span>
-            </div>
-
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-[1.12]">
               Building Spaces, <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-950 via-neutral-800 to-neutral-700">

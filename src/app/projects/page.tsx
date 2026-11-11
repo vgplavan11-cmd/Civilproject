@@ -1,40 +1,24 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { 
   ArrowRight, 
-  Ruler, 
-  CheckCircle2, 
-  Calculator 
+  Ruler
 } from "lucide-react";
 import { CIVIL_RAIL_PROJECTS } from "@/data/civilRailItems";
-import { houseProjects, projectFilters } from "@/data/projectsData";
 import PictureRailGallery from "@/components/ui/picture-rail-gallery";
 
 export default function ProjectsPage() {
-  const [selectedCategory, setSelectedCategory] = useState<string>("all");
-
-  const filteredProjects = houseProjects.filter((project) => {
-    if (selectedCategory === "all") return true;
-    return project.type === selectedCategory;
-  });
-
   return (
     <div className="bg-white min-h-screen">
       {/* =========================================================================
-          1. PAGE HERO (Shipyon page-hero pattern with eyebrow dot & Mars Black title)
+          1. PAGE HERO
          ========================================================================= */}
       <section className="bg-slate-50 border-b border-slate-200 pt-36 sm:pt-44 md:pt-48 pb-12 sm:pb-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-60 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 text-white text-xs font-mono font-bold uppercase tracking-wider mb-4">
-              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-              <span>Architectural Blueprint Catalog</span>
-            </div>
-
             <h1 className="text-3xl sm:text-5xl font-black text-slate-950 tracking-tight leading-[1.12]">
               House Models &amp; Design Specifications
             </h1>
@@ -46,122 +30,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* =========================================================================
-          2. INTERACTIVE CATEGORY FILTER TABS & FLOATING CATALOG GRID (Shipyon products-section)
-         ========================================================================= */}
-      <section className="py-14 bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* Shipyon-style Category Filter Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
-            {projectFilters.map((cat) => {
-              const isActive = selectedCategory === cat.id;
-              return (
-                <button
-                  key={cat.id}
-                  onClick={() => setSelectedCategory(cat.id)}
-                  className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer ${
-                    isActive
-                      ? "bg-neutral-950 text-white shadow-lg shadow-black/20 scale-105"
-                      : "bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200/80"
-                  }`}
-                >
-                  {cat.label}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Floating Product Cards Grid (Shipyon product-card--floating pattern) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project) => (
-              <div
-                key={project.id}
-                className="group bg-white rounded-2xl border border-slate-200 hover:border-neutral-950 overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between"
-              >
-                <div>
-                  {/* Image Container with Badge */}
-                  <div className="relative h-60 w-full overflow-hidden bg-slate-100">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-
-                    <div className="absolute top-3 left-3 flex items-center gap-2">
-                      <span className="bg-neutral-950/80 backdrop-blur-md text-white text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded border border-white/20">
-                        {project.type}
-                      </span>
-                      <span className="bg-amber-400 text-black text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow-sm">
-                        {project.builtUpArea}
-                      </span>
-                    </div>
-
-                    <div className="absolute bottom-3 left-3 right-3 text-white">
-                      <span className="text-[11px] font-mono text-slate-300 block">
-                        Estimated Budget: {project.baseCost}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Card Content */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-black text-slate-950 tracking-tight group-hover:text-neutral-800 transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-xs text-slate-600 mt-2 line-clamp-2 leading-relaxed">
-                      {project.subtitle}
-                    </p>
-
-                    {/* Structural Specification Badges */}
-                    <div className="grid grid-cols-2 gap-2 mt-4 pt-4 border-t border-slate-100 text-[11px] font-mono text-slate-600">
-                      <div className="flex items-center gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-neutral-950 shrink-0" />
-                        <span>IS 456 M25 Mix</span>
-                      </div>
-                      <div className="flex items-center gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-neutral-950 shrink-0" />
-                        <span>Fe550D Rebar</span>
-                      </div>
-                      <div className="flex items-center gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-neutral-950 shrink-0" />
-                        <span>100% Vastu</span>
-                      </div>
-                      <div className="flex items-center gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-neutral-950 shrink-0" />
-                        <span>10-Yr Warranty</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Card Action Buttons */}
-                <div className="p-6 pt-0 flex items-center gap-3">
-                  <Link
-                    href={`/projects/${project.id}`}
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 bg-neutral-950 hover:bg-black text-white text-xs font-bold py-3 rounded-xl shadow-sm transition-all active:scale-95"
-                  >
-                    <span>View Blueprint Dossier</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                  <Link
-                    href={`/estimator?model=${encodeURIComponent(project.title)}&area=${encodeURIComponent(project.builtUpArea.replace(/[^0-9]/g, ""))}`}
-                    className="w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-200 flex items-center justify-center text-slate-800 transition-colors"
-                    title="Estimate BOQ for this model"
-                  >
-                    <Calculator className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* =========================================================================
-          3. INTERACTIVE PICTURE RAIL ELEVATION GALLERY
+          2. INTERACTIVE PICTURE RAIL ELEVATION GALLERY
          ========================================================================= */}
       <section className="border-b border-slate-200 bg-white pt-6 pb-2">
         <PictureRailGallery
@@ -196,7 +65,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* =========================================================================
-          4. TECHNICAL COMPARISON MATRIX SECTION
+          3. TECHNICAL COMPARISON MATRIX SECTION
          ========================================================================= */}
       <section className="py-16 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -269,7 +138,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* =========================================================================
-          5. CUSTOM CIVIL BLUEPRINTS CTA
+          4. CUSTOM CIVIL BLUEPRINTS CTA
          ========================================================================= */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 text-center">

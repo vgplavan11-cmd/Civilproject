@@ -340,7 +340,6 @@ export default function HomePage() {
         <div className="w-full relative px-1 sm:px-4">
           <JournalSpreadCarousel 
             spreads={CIVIL_JOURNAL_SPREADS}
-            title="Demo Sites"
             height="clamp(480px, 75vh, 680px)"
             autoPlay={4500}
           />
