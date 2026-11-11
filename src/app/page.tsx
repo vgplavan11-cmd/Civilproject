@@ -19,6 +19,9 @@ import { civilServices } from "@/data/servicesData";
 import { companyInfo } from "@/data/companyData";
 import JournalSpreadCarousel from "@/components/ui/journal-spread-carousel";
 import { CIVIL_JOURNAL_SPREADS } from "@/data/journalData";
+import CivilInteractiveStrip from "@/components/ui/CivilInteractiveStrip";
+import CivilLifecyclePipeline from "@/components/ui/CivilLifecyclePipeline";
+import CivilQuickActionDock from "@/components/ui/CivilQuickActionDock";
 
 export default function HomePage() {
   const pillars = [
@@ -151,7 +154,7 @@ export default function HomePage() {
             {/* Right Column: Floating Glassmorphic Engineering Docks */}
             <div className="lg:col-span-5 flex flex-col justify-center items-center lg:items-end w-full space-y-4">
               {/* Floating Card 1 */}
-              <div className="w-full max-w-md bg-white/85 backdrop-blur-xl border border-white/80 rounded-2xl p-4 sm:p-5 shadow-xl flex items-center gap-4 hover:scale-[1.02] hover:bg-white/95 transition-all duration-300">
+              <div className="w-full max-w-md bg-white/85 backdrop-blur-xl border border-white/80 rounded-2xl p-4 sm:p-5 shadow-xl flex items-center gap-4 hover:scale-[1.02] hover:bg-white/95 transition-all duration-300 anim-float-card-1">
                 <div className="w-12 h-12 rounded-xl bg-neutral-950 text-white flex items-center justify-center shrink-0 shadow-sm">
                   <ShieldCheck className="w-6 h-6" />
                 </div>
@@ -169,7 +172,7 @@ export default function HomePage() {
               </div>
 
               {/* Floating Card 2 */}
-              <div className="w-full max-w-md bg-white/85 backdrop-blur-xl border border-white/80 rounded-2xl p-4 sm:p-5 shadow-xl flex items-center gap-4 hover:scale-[1.02] hover:bg-white/95 transition-all duration-300 lg:translate-x-3">
+              <div className="w-full max-w-md bg-white/85 backdrop-blur-xl border border-white/80 rounded-2xl p-4 sm:p-5 shadow-xl flex items-center gap-4 hover:scale-[1.02] hover:bg-white/95 transition-all duration-300 lg:translate-x-3 anim-float-card-2">
                 <div className="w-12 h-12 rounded-xl bg-neutral-950 text-white flex items-center justify-center shrink-0 shadow-sm">
                   <Award className="w-6 h-6" />
                 </div>
@@ -187,7 +190,7 @@ export default function HomePage() {
               </div>
 
               {/* Floating Card 3 */}
-              <div className="w-full max-w-md bg-white/85 backdrop-blur-xl border border-white/80 rounded-2xl p-4 sm:p-5 shadow-xl flex items-center gap-4 hover:scale-[1.02] hover:bg-white/95 transition-all duration-300">
+              <div className="w-full max-w-md bg-white/85 backdrop-blur-xl border border-white/80 rounded-2xl p-4 sm:p-5 shadow-xl flex items-center gap-4 hover:scale-[1.02] hover:bg-white/95 transition-all duration-300 anim-float-card-3">
                 <div className="w-12 h-12 rounded-xl bg-neutral-950 text-white flex items-center justify-center shrink-0 shadow-sm">
                   <CheckCircle2 className="w-6 h-6" />
                 </div>
@@ -317,91 +320,9 @@ export default function HomePage() {
       </section>
 
       {/* =========================================================================
-          4. WHY CHOOSE ELITE HOMES (Shipyon wcu-section engineering rigor)
+          4. WHY CHOOSE ELITE HOMES (Shipyon Interactive WCU Strip & Transit Line)
          ========================================================================= */}
-      <section className="py-20 bg-[#0d0d0d] text-white border-b border-neutral-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            {/* Left Narrative */}
-            <div className="lg:col-span-5 space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight leading-snug">
-                Zero Compromise on Steel, Cement &amp; Structural Safety.
-              </h2>
-              <p className="text-sm text-slate-300 leading-relaxed font-normal">
-                A home is only as durable as its geotechnical footing and concrete matrix. Elite Homes treats every single residential home with the mathematical standards of heavy civil infrastructure.
-              </p>
-
-              <div className="space-y-4 pt-2">
-                <div className="flex items-start gap-3.5 bg-neutral-900/80 p-4 rounded-xl border border-neutral-800">
-                  <div className="w-8 h-8 rounded-lg bg-neutral-800 text-white flex items-center justify-center shrink-0 font-black text-xs border border-neutral-700">
-                    01
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-white">Fe550D High-Ductility Rebar</h4>
-                    <p className="text-xs text-slate-400 mt-0.5">Superior elongation limits designed to withstand seismic shear tremors without brittle failure.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3.5 bg-neutral-900/80 p-4 rounded-xl border border-neutral-800">
-                  <div className="w-8 h-8 rounded-lg bg-neutral-800 text-white flex items-center justify-center shrink-0 font-black text-xs border border-neutral-700">
-                    02
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-white">Needle Vibrator Compaction</h4>
-                    <p className="text-xs text-slate-400 mt-0.5">Eliminates air voids and honeycombing in high-density column-beam junction joints.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3.5 bg-neutral-900/80 p-4 rounded-xl border border-neutral-800">
-                  <div className="w-8 h-8 rounded-lg bg-neutral-800 text-white flex items-center justify-center shrink-0 font-black text-xs border border-neutral-700">
-                    03
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-white">21-Day Ponding Water Curing</h4>
-                    <p className="text-xs text-slate-400 mt-0.5">Continuous chemical hydration prevents micro-surface cracks and guarantees maximum tensile capacity.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Comparison Box */}
-            <div className="lg:col-span-7 bg-[#141414] rounded-2xl p-6 sm:p-8 border border-neutral-800 shadow-2xl">
-              <div className="border-b border-neutral-800 pb-4 mb-6 flex items-center justify-between">
-                <span className="font-bold text-sm text-white">Standard Construction Quality Audit</span>
-                <span className="text-xs text-neutral-400 font-mono">PWD &amp; IS 456 Benchmark</span>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="bg-[#1a1a1a] p-4 rounded-xl border border-neutral-800">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Foundation Type</span>
-                  <p className="text-sm font-black text-white mt-1">M25 Isolated &amp; Raft Footings</p>
-                  <p className="text-xs text-slate-400 mt-1">Cast directly on 185 kN/m² tested hard rock stratum.</p>
-                </div>
-
-                <div className="bg-[#1a1a1a] p-4 rounded-xl border border-neutral-800">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Cement Standard</span>
-                  <p className="text-sm font-black text-white mt-1">53-Grade OPC + Certified M-Sand</p>
-                  <p className="text-xs text-slate-400 mt-1">Triple-washed graded silt-free 20mm hard rock aggregates.</p>
-                </div>
-
-                <div className="bg-[#1a1a1a] p-4 rounded-xl border border-neutral-800">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Masonry Enclosure</span>
-                  <p className="text-sm font-black text-white mt-1">Thermal Porotherm &amp; Solid Blocks</p>
-                  <p className="text-xs text-slate-400 mt-1">Fiber chicken-mesh installed at all concrete-brick joints.</p>
-                </div>
-
-                <div className="bg-[#1a1a1a] p-4 rounded-xl border border-neutral-800">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Payment Security</span>
-                  <p className="text-sm font-black text-white mt-1">Milestone Escrow Releases</p>
-                  <p className="text-xs text-slate-400 mt-1">Clients pay strictly after site milestone engineer verification.</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
+      <CivilInteractiveStrip />
 
       {/* =========================================================================
           5. LIVE INTERACTIVE 3D DEMO SITES SHOWCASE (Journal Carousel)
@@ -428,7 +349,12 @@ export default function HomePage() {
       </section>
 
       {/* =========================================================================
-          6. CIVIL ESTIMATOR SPOTLIGHT & CTA (Shipyon global-action-container)
+          6. TURNKEY LIFECYCLE PIPELINE (Shipyon HWW 3D Tilt Capsules & Laser Rail)
+         ========================================================================= */}
+      <CivilLifecyclePipeline />
+
+      {/* =========================================================================
+          7. CIVIL ESTIMATOR SPOTLIGHT & CTA (Shipyon global-action-container)
          ========================================================================= */}
       <section className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -472,6 +398,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Floating Bottom Quick-Action Engineering Dock (Shipyon dock pattern) */}
+      <CivilQuickActionDock />
 
     </div>
   );
