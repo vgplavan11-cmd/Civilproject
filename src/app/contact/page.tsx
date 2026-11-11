@@ -73,15 +73,20 @@ function ContactFormContent() {
 
   return (
     <div className="bg-white min-h-screen">
-      {/* 1. Header Banner */}
+      {/* 1. Header Banner (Shipyon page-hero pattern) */}
       <section className="bg-slate-50 border-b border-slate-200 pt-36 sm:pt-44 md:pt-48 pb-12 sm:pb-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-60 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-3xl sm:text-5xl font-black text-slate-950 tracking-tight">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 text-white text-xs font-mono font-bold uppercase tracking-wider mb-4">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+              <span>Civil Engineering Desk Active • Madurai Headquarters</span>
+            </div>
+
+            <h1 className="text-3xl sm:text-5xl font-black text-slate-950 tracking-tight leading-[1.12]">
               Connect With Our Civil Engineering Team
             </h1>
-            <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed font-normal">
               Schedule a site inspection, discuss custom 2BHK/3BHK house models, or request an itemized civil Bill of Quantities (BOQ). Our senior structural engineers are ready to assist.
             </p>
           </div>
@@ -344,6 +349,15 @@ function ContactFormContent() {
                       <p className="text-slate-400">{companyInfo.contact.hours}</p>
                       <p className="text-neutral-300 font-semibold">{companyInfo.contact.siteVisits}</p>
                     </div>
+                  </div>
+
+                  {/* Live Site Desk Status (Shipyon live pulse badge) */}
+                  <div className="pt-3 border-t border-neutral-800/80 flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping inline-block" />
+                      <span className="text-xs font-mono font-bold text-white">Senior Engineer On-Call</span>
+                    </div>
+                    <span className="text-[10px] text-amber-400 font-mono font-bold">Madurai HQ Active</span>
                   </div>
                 </div>
               </div>

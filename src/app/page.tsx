@@ -21,7 +21,6 @@ import JournalSpreadCarousel from "@/components/ui/journal-spread-carousel";
 import { CIVIL_JOURNAL_SPREADS } from "@/data/journalData";
 import CivilInteractiveStrip from "@/components/ui/CivilInteractiveStrip";
 import CivilLifecyclePipeline from "@/components/ui/CivilLifecyclePipeline";
-import CivilQuickActionDock from "@/components/ui/CivilQuickActionDock";
 
 export default function HomePage() {
   const pillars = [
@@ -398,9 +397,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Floating Bottom Quick-Action Engineering Dock (Shipyon dock pattern) */}
-      <CivilQuickActionDock />
 
     </div>
   );
