@@ -26,25 +26,25 @@ export default function HomePage() {
   const pillars = [
     {
       title: "Mathematical Structural Rigor",
-      desc: "Every column, plinth, and slab is calculated with Finite Element modeling adhering strictly to IS 456-2000 and IS 1893 seismic standards.",
+      desc: "IS 456 & IS 1893 seismic load modeling for all columns and slabs.",
       icon: Compass,
       tag: "Code Compliant"
     },
     {
       title: "100% Batch Concrete Testing",
-      desc: "Digital compressive cube testing at 7-day and 28-day curing intervals ensures certified M25/M30 grade strength prior to shuttering removal.",
+      desc: "7-day & 28-day compressive cube testing before formwork stripping.",
       icon: Award,
       tag: "IS 516 Testing"
     },
     {
       title: "Fixed Itemized BOQ Guarantee",
-      desc: "Transparent Bill of Quantities fixed before excavation begins. Zero hidden costs, zero sudden price escalations, and milestone escrow billing.",
+      desc: "Fixed BOQ locked before excavation with zero escalations.",
       icon: Ruler,
       tag: "Zero Escalations"
     },
     {
       title: "Direct Founder Site Oversight",
-      desc: "Licensed civil founders inspect your site daily, personally auditing rebar tying, slump cone consistency, and concrete compaction.",
+      desc: "Licensed civil founders inspect rebar, slump, and compaction daily.",
       icon: HardHat,
       tag: "Founder Supervised"
     }
@@ -284,33 +284,33 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
             {pillars.map((pillar, idx) => {
               const IconComp = pillar.icon;
               return (
                 <div
                   key={idx}
-                  className="group relative bg-slate-50 hover:bg-white border border-slate-200 hover:border-neutral-950 rounded-2xl p-7 shadow-xs hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
+                  className="group relative bg-slate-50 hover:bg-white border border-slate-200 hover:border-neutral-950 rounded-2xl p-5 sm:p-6 shadow-xs hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
-                    <div className="w-12 h-12 rounded-xl bg-neutral-100 text-neutral-950 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-neutral-950 group-hover:text-white transition-all duration-300">
-                      <IconComp className="w-6 h-6" />
+                    <div className="w-10 h-10 rounded-xl bg-neutral-100 text-neutral-950 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-neutral-950 group-hover:text-white transition-all duration-300 shadow-xs">
+                      <IconComp className="w-5 h-5" />
                     </div>
 
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-900 bg-neutral-100 px-2 py-0.5 rounded border border-neutral-300">
+                    <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-neutral-800 bg-neutral-100 px-2 py-0.5 rounded border border-neutral-200">
                       {pillar.tag}
                     </span>
 
-                    <h3 className="text-lg font-bold text-slate-950 mt-3 mb-2">
+                    <h3 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight leading-tight mt-3 mb-2">
                       {pillar.title}
                     </h3>
 
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="text-[11px] text-slate-500 leading-relaxed font-normal">
                       {pillar.desc}
                     </p>
                   </div>
 
-                  <div className="w-8 h-1 bg-slate-200 group-hover:w-full group-hover:bg-neutral-950 transition-all duration-500 rounded-full mt-6" />
+                  <div className="w-8 h-1 bg-slate-200 group-hover:w-full group-hover:bg-neutral-950 transition-all duration-500 rounded-full mt-5" />
                 </div>
               );
             })}

@@ -21,9 +21,9 @@ const LIFECYCLE_PHASES: PhaseCapsule[] = [
     duration: "Weeks 1 – 3",
     standards: "IS 1892 & IS 6403",
     details: [
-      "Standard Penetration Test (SPT) verifying 185 kN/m² safe bearing capacity",
-      "Chlorpyrifos anti-termite chemical soil barrier treatment under slab",
-      "M25 grade isolated & tie-beam casting with 40mm clear cover",
+      "SPT soil test (185 kN/m² SBC)",
+      "Anti-termite chemical barrier",
+      "M25 isolated footings & plinth",
     ],
     icon: Compass,
   },
@@ -32,11 +32,11 @@ const LIFECYCLE_PHASES: PhaseCapsule[] = [
     stageName: "PHASE 02 • MONOLITHIC SUPERSTRUCTURE",
     title: "IS 456 Seismic RCC Framing",
     duration: "Weeks 4 – 9",
-    standards: "IS 456:2000 & IS 13920",
+    standards: "IS 456 & IS 13920",
     details: [
-      "Primary Fe550D ductile TMT rebar with zero cold-bend fractures",
-      "Laser-aligned vertical column plumb with 0mm allowable drift",
-      "21-day continuous ponding water curing for monolithic roof slab",
+      "Fe550D rebar seismic detailing",
+      "0mm laser column plumb alignment",
+      "21-day continuous ponding curing",
     ],
     icon: Hammer,
   },
@@ -47,9 +47,9 @@ const LIFECYCLE_PHASES: PhaseCapsule[] = [
     duration: "Weeks 10 – 14",
     standards: "IS 2185 & IS 2250",
     details: [
-      "High-density Porotherm / solid block masonry with chicken-mesh jointing",
-      "Dual-layer waterproof chemical membrane over sunken washrooms & roof",
-      "Concealed heavy-gauge FRLS copper electrical conduit channel grooving",
+      "Porotherm solid block masonry",
+      "Dual-layer slab waterproofing",
+      "Concealed FRLS copper conduits",
     ],
     icon: Sparkles,
   },
@@ -60,9 +60,9 @@ const LIFECYCLE_PHASES: PhaseCapsule[] = [
     duration: "Weeks 15 – 18",
     standards: "10-Year Structural Guarantee",
     details: [
-      "120-point comprehensive engineering quality snag audit before handover",
-      "Teakwood main door fitting, premium vitrified tiles & CP fitting checks",
-      "Official handover with Structural Safety & As-Built MEP Blueprint pack",
+      "120-point quality snag audit",
+      "Teak entrance & vitrified tiles",
+      "Structural safety & MEP dossier",
     ],
     icon: Key,
   },
@@ -86,7 +86,7 @@ export default function CivilLifecyclePipeline() {
 
   return (
     <section className="py-24 bg-gradient-to-b from-white via-slate-50 to-white border-b border-slate-200 relative overflow-hidden">
-      {/* Ambient floating dust particles (Shipyon hww-dust pattern) */}
+      {/* Ambient floating dust particles */}
       <div className="absolute top-12 left-[8%] w-4 h-4 rounded-full bg-neutral-900/10 border border-neutral-900/20 anim-dust-1 pointer-events-none" />
       <div className="absolute top-1/3 right-[10%] w-3 h-3 rounded-full bg-neutral-900/15 border border-neutral-900/25 anim-dust-2 pointer-events-none" />
       <div className="absolute bottom-20 left-[15%] w-5 h-5 rounded-full bg-neutral-900/10 border border-neutral-900/20 anim-dust-3 pointer-events-none" />
@@ -103,7 +103,7 @@ export default function CivilLifecyclePipeline() {
           </p>
         </div>
 
-        {/* High-Tech Laser Connection Rail (Shipyon laser-connection-rail pattern) */}
+        {/* High-Tech Laser Connection Rail */}
         <div className="relative w-full mb-10 hidden lg:block">
           {/* Base rail */}
           <div className="w-full h-0.5 bg-neutral-200 relative overflow-hidden rounded-full">
@@ -135,8 +135,8 @@ export default function CivilLifecyclePipeline() {
           </div>
         </div>
 
-        {/* 4 Interactive 3D Perspective Tilt Capsules (Shipyon hww-capsule pattern) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 4 Interactive 3D Perspective Tilt Capsules */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
           {LIFECYCLE_PHASES.map((phase, idx) => {
             const Icon = phase.icon;
             const isHovered = hoveredIdx === idx;
@@ -150,7 +150,7 @@ export default function CivilLifecyclePipeline() {
                   setHoveredIdx(null);
                   handleMouseLeave(e);
                 }}
-                className={`group cursor-default bg-white/90 backdrop-blur-xl border rounded-3xl p-6 sm:p-7 transition-all duration-300 flex flex-col justify-between shadow-lg ${
+                className={`group cursor-default bg-white/90 backdrop-blur-xl border rounded-3xl p-5 sm:p-6 transition-all duration-300 flex flex-col justify-between shadow-lg ${
                   isHovered
                     ? "border-neutral-950 bg-white shadow-2xl"
                     : "border-slate-200/90 hover:border-slate-400"
@@ -162,35 +162,35 @@ export default function CivilLifecyclePipeline() {
               >
                 <div>
                   {/* Top Bar: Icon, Phase Badge, Duration */}
-                  <div className="flex items-center justify-between mb-5">
-                    <div className="w-12 h-12 rounded-2xl bg-neutral-950 text-white flex items-center justify-center shadow-md group-hover:scale-105 group-hover:bg-black transition-all">
-                      <Icon className="w-6 h-6" />
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-10 h-10 rounded-2xl bg-neutral-950 text-white flex items-center justify-center shadow-md group-hover:scale-105 group-hover:bg-black transition-all">
+                      <Icon className="w-5 h-5" />
                     </div>
 
                     <div className="text-right">
                       <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-800 bg-neutral-100 px-2 py-0.5 rounded border border-neutral-200 block">
                         {phase.duration}
                       </span>
-                      <span className="text-[10px] text-slate-500 font-mono mt-0.5 block">
+                      <span className="text-[9px] text-slate-500 font-mono mt-0.5 block">
                         {phase.standards}
                       </span>
                     </div>
                   </div>
 
-                  {/* Eyebrow and Title */}
-                  <span className="text-[11px] font-mono font-bold tracking-tight text-neutral-500 uppercase block mb-1">
+                  {/* Eyebrow and Bigger Title */}
+                  <span className="text-[10px] font-mono font-bold tracking-tight text-neutral-500 uppercase block mb-1">
                     {phase.stageName}
                   </span>
 
-                  <h3 className="text-xl font-black text-slate-950 tracking-tight mb-4">
+                  <h3 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight leading-tight mb-3">
                     {phase.title}
                   </h3>
 
-                  {/* Detailed Civil Execution Bullet Points */}
-                  <div className="space-y-2.5 pt-2 border-t border-slate-100">
+                  {/* Reduced & Small Civil Execution Bullet Points */}
+                  <div className="space-y-2 pt-2 border-t border-slate-100">
                     {phase.details.map((detail, dIdx) => (
-                      <div key={dIdx} className="flex items-start gap-2 text-xs text-slate-600 leading-snug">
-                        <CheckCircle className="w-3.5 h-3.5 text-neutral-950 shrink-0 mt-0.5" />
+                      <div key={dIdx} className="flex items-start gap-1.5 text-[10px] sm:text-[11px] text-slate-600 leading-snug">
+                        <CheckCircle className="w-3 h-3 text-neutral-950 shrink-0 mt-0.5" />
                         <span>{detail}</span>
                       </div>
                     ))}
@@ -198,9 +198,9 @@ export default function CivilLifecyclePipeline() {
                 </div>
 
                 {/* Milestone Safety Guarantee Strip */}
-                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 font-mono">
+                <div className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-500 font-mono">
                   <span className="flex items-center gap-1.5 font-bold text-neutral-900">
-                    <ShieldAlert className="w-3.5 h-3.5 text-amber-500" />
+                    <ShieldAlert className="w-3 h-3 text-amber-500" />
                     Site Sign-off
                   </span>
                   <span>IS Audited</span>
@@ -214,4 +214,3 @@ export default function CivilLifecyclePipeline() {
     </section>
   );
 }
-
