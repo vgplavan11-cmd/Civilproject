@@ -156,8 +156,7 @@ const CSS =
   ".jsc-meta svg{width:1.15em;height:1.15em}" +
   ".jsc-stage{position:relative;margin-top:clamp(24px,3cqi,52px);touch-action:pan-y;cursor:grab}" +
   ".jsc-stage[data-drag]{cursor:grabbing}" +
-  ".jsc-floor{position:absolute;left:50%;top:50%;width:calc(var(--jsc-w) * 1.55);height:calc(var(--jsc-h) * .62);transform:translate(-50%,calc(var(--jsc-h) * .2));" +
-  "background:#0f172a;opacity:.12;filter:blur(calc(var(--jsc-w) * .035));border-radius:calc(var(--jsc-w) * .04);pointer-events:none}" +
+  ".jsc-floor{display:none}" +
   ".jsc-view{position:absolute;inset:0;perspective:calc(var(--jsc-w) * 2.3);perspective-origin:50% 46%}" +
   ".jsc-scene{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d}" +
   ".jsc-item{position:absolute;left:0;top:0;transform-style:preserve-3d;visibility:hidden}" +
@@ -578,7 +577,6 @@ export default function JournalSpreadCarousel({
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerUp}
       >
-        <div className="jsc-floor" aria-hidden="true" />
         <div className="jsc-view">
           <div className="jsc-scene">
             {spreads.map((s, i) => (
