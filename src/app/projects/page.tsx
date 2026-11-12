@@ -83,9 +83,9 @@ export default function ProjectsPage() {
               <thead className="bg-[#0d0d0d] text-white font-bold uppercase text-[11px] tracking-wider">
                 <tr>
                   <th className="py-3.5 px-4">Engineering Feature</th>
-                  <th className="py-3.5 px-4 text-neutral-300">2BHK Horizon Model</th>
-                  <th className="py-3.5 px-4 text-neutral-300">3BHK Royal Palm Model</th>
-                  <th className="py-3.5 px-4 text-neutral-300">4BHK Sovereign Villa</th>
+                  <th className="py-3.5 px-4 text-neutral-300">2BHK Modern Model</th>
+                  <th className="py-3.5 px-4 text-neutral-300">3BHK Premium Model</th>
+                  <th className="py-3.5 px-4 text-neutral-300">Special Luxury Villa Model</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-200">

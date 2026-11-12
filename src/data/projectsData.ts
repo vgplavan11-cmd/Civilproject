@@ -43,7 +43,7 @@ export interface HouseModel {
 export const houseProjects: HouseModel[] = [
   {
     id: "xyz-horizon-2bhk",
-    title: "Elite Horizon 2BHK Modern Living",
+    title: "2BHK Modern Model",
     subtitle: "Engineered for young families maximizing space efficiency and natural ventilation",
     type: "2BHK",
     badge: "Most Popular 2BHK",
@@ -57,7 +57,7 @@ export const houseProjects: HouseModel[] = [
     status: "Ready for Construction",
     estimatedDuration: "7-8 Months",
     baseCost: "From ₹26.5 Lakhs / Turnkey Package",
-    description: "The Elite Horizon is an optimized 2BHK residential model designed by our civil structural engineers to deliver zero wasted space, optimum daylight penetration, and structural longevity with high-grade Fe550D reinforcement.",
+    description: "The 2BHK Modern Model is an optimized residential model designed by our civil structural engineers to deliver zero wasted space, optimum daylight penetration, and structural longevity with high-grade Fe550D reinforcement.",
     keyHighlights: [
       "100% Vastu-aligned layout",
       "Corner master suite with cross-ventilation",
@@ -86,7 +86,7 @@ export const houseProjects: HouseModel[] = [
   },
   {
     id: "xyz-crest-2bhk",
-    title: "Elite Crest 2BHK Deluxe + Work Suite",
+    title: "2BHK Deluxe Model",
     subtitle: "Contemporary 2BHK featuring a dedicated executive workstation and extended sit-out",
     type: "2BHK",
     badge: "Deluxe 2BHK",
@@ -129,7 +129,7 @@ export const houseProjects: HouseModel[] = [
   },
   {
     id: "xyz-royal-3bhk",
-    title: "Elite Royal Palm 3BHK Family Manor",
+    title: "3BHK Premium Model",
     subtitle: "Spacious architectural floor plan engineered for multi-generational comfort",
     type: "3BHK",
     badge: "Flagship 3BHK",
@@ -173,7 +173,7 @@ export const houseProjects: HouseModel[] = [
   },
   {
     id: "xyz-skyline-3bhk",
-    title: "Elite Skyline 3BHK Luxury Duplex",
+    title: "3BHK Duplex Model",
     subtitle: "Double-height living room duplex house model with private terrace deck",
     type: "3BHK",
     badge: "Luxury Duplex",
@@ -217,7 +217,7 @@ export const houseProjects: HouseModel[] = [
   },
   {
     id: "xyz-sovereign-villa",
-    title: "Elite Sovereign 4BHK Estate Villa",
+    title: "Special Luxury Villa Model",
     subtitle: "Ultra-luxury custom civil estate featuring private courtyard & pool deck",
     type: "Villa",
     badge: "Signature Villa",
@@ -261,7 +261,7 @@ export const houseProjects: HouseModel[] = [
   },
   {
     id: "xyz-pinnacle-commercial",
-    title: "Elite Pinnacle Commercial Complex",
+    title: "Special Commercial Model",
     subtitle: "Multi-tenant civil commercial tower built for retail showrooms and corporate suites",
     type: "Commercial",
     badge: "Commercial Infrastructure",
