@@ -220,28 +220,28 @@ export const INTERACTIVE_LINKS: InteractiveLinkItem[] = [
     href: "/",
   },
   {
-    heading: "Projects",
-    subheading: "Turnkey 2BHK, 3BHK & Villa Models",
-    imgSrc: "/images/nav/projects.jpg",
-    href: "/projects",
-  },
-  {
     heading: "About Us",
     subheading: "Our Story & Architectural Vision",
     imgSrc: "/images/nav/about.jpg",
     href: "/about",
   },
   {
+    heading: "Projects",
+    subheading: "Turnkey 2BHK, 3BHK & Villa Models",
+    imgSrc: "/images/nav/projects.jpg",
+    href: "/projects",
+  },
+  {
+    heading: "Pricing",
+    subheading: "Instant Construction Cost Calculator",
+    imgSrc: "/images/nav/estimator.jpg",
+    href: "/estimator",
+  },
+  {
     heading: "Contact Us",
     subheading: "Madurai Office, Site Visits & Estimates",
     imgSrc: "/images/nav/contact.jpg",
     href: "/contact",
-  },
-  {
-    heading: "Estimator",
-    subheading: "Instant Construction Cost Calculator",
-    imgSrc: "/images/nav/estimator.jpg",
-    href: "/estimator",
   },
 ];
 
