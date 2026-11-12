@@ -135,41 +135,8 @@ const CIVIL_PHASES: CivilPhase[] = [
 ];
 
 export default function CivilInvestmentStackingCards() {
-  const cardRefs = React.useRef<(HTMLDivElement | null)[]>([]);
-
-  const scrollToPhase = (index: number) => {
-    const el = cardRefs.current[index];
-    if (el) {
-      const topOffset = 96 + index * 14;
-      const elementPosition = el.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - topOffset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    }
-  };
-
   return (
     <div className="w-full">
-      {/* Quick Phase Selection Pills - Click to scroll webpage directly to that phase */}
-      <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 px-1 sm:flex-wrap sm:justify-center mb-6 sm:mb-8">
-        {CIVIL_PHASES.map((p, idx) => (
-          <button
-            key={idx}
-            type="button"
-            onClick={() => scrollToPhase(idx)}
-            className="shrink-0 inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold bg-white border border-slate-200 text-slate-700 hover:border-neutral-950 hover:text-black hover:bg-neutral-100 transition-all shadow-xs cursor-pointer active:scale-95"
-          >
-            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-neutral-950" />
-            <span>{p.phase}</span>
-            <span className="font-bold text-neutral-900 bg-neutral-100 px-1.5 py-0.5 rounded-sm border border-neutral-300">
-              {p.pct}
-            </span>
-          </button>
-        ))}
-      </div>
-
       {/* Main Stacking Cards - Driven Naturally by Website Scroll */}
       <div className="w-full relative">
         <StackingCards
@@ -194,9 +161,6 @@ export default function CivilInvestmentStackingCards() {
             return (
               <StackingCardItem
                 key={index}
-                ref={(el) => {
-                  cardRefs.current[index] = el;
-                }}
                 index={index}
                 className="mb-[25vh] sm:mb-[32vh] last:mb-12"
                 topPosition={`calc(96px + ${index * 14}px)`}
@@ -272,14 +236,6 @@ export default function CivilInvestmentStackingCards() {
               </StackingCardItem>
             );
           })}
-
-          {/* Bottom Completed Bar */}
-          <div className="w-full pt-8 pb-12 flex flex-col items-center justify-center text-center text-slate-600">
-            <div className="inline-flex items-center gap-2 text-xs font-bold text-slate-700 bg-white border border-slate-200 px-4 py-2 rounded-full shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-neutral-950" />
-              <span>All 6 Civil Construction Phases Completed &bull; 100% Transparent BOQ</span>
-            </div>
-          </div>
         </StackingCards>
       </div>
     </div>
