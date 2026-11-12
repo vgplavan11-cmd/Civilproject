@@ -234,7 +234,7 @@ function ContactFormContent() {
                       <label className="block font-bold text-slate-800 uppercase tracking-wider text-[11px] mb-1.5">
                         Planned Construction Timeline
                       </label>
-                      <div className="grid grid-cols-3 gap-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                         {[
                           { id: "immediate", label: "Immediate (Within 30 Days)" },
                           { id: "1-3-months", label: "1 - 3 Months" },

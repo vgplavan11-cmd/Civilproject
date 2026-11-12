@@ -22,13 +22,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-white text-slate-900 antialiased selection:bg-neutral-900 selection:text-white">
+      <body className="min-h-screen w-full max-w-full overflow-x-hidden bg-white text-slate-900 antialiased selection:bg-neutral-900 selection:text-white">
         {/* Floating Top Navbar inspired by Shipyon */}
         <Navbar />
 
         {/* Main website content taking full width */}
-        <div className="min-h-screen flex flex-col min-w-0">
-          <main className="flex-1">{children}</main>
+        <div className="min-h-screen w-full max-w-full flex flex-col min-w-0 overflow-x-hidden">
+          <main className="flex-1 w-full max-w-full min-w-0 overflow-x-hidden">{children}</main>
           <Footer />
         </div>
       </body>

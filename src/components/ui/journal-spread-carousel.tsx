@@ -139,7 +139,7 @@ const FONT =
 
 const CSS =
   FONT +
-  ".jsc-root{position:relative;width:100%;display:flex;flex-direction:column;min-height:520px;overflow:hidden;" +
+  ".jsc-root{position:relative;width:100%;max-width:100%;display:flex;flex-direction:column;min-height:480px;overflow:hidden;" +
   "background:#ffffff;color:#0f172a;" +
   "font-family:ui-rounded,'SF Pro Rounded',system-ui,-apple-system,'Segoe UI',sans-serif;outline:none;user-select:none;-webkit-user-select:none;container-type:inline-size;padding-bottom:clamp(16px,2.5cqi,36px)}" +
   ".jsc-root:focus-visible{box-shadow:inset 0 0 0 2px rgba(17,17,17,.75)}" +
@@ -154,7 +154,7 @@ const CSS =
   ".jsc-title{margin:0;font-weight:800;font-size:clamp(24px,3.2cqi,42px);letter-spacing:-.02em;line-height:1.1;color:#0f172a}" +
   ".jsc-meta{display:inline-flex;align-items:center;gap:.45em;margin-top:.55em;font-size:clamp(11px,1cqi,14px);font-weight:600;color:#64748b}" +
   ".jsc-meta svg{width:1.15em;height:1.15em}" +
-  ".jsc-stage{position:relative;flex:1 1 auto;width:100%;min-height:480px;touch-action:pan-y;cursor:grab}" +
+  ".jsc-stage{position:relative;flex:1 1 auto;width:100%;max-width:100%;min-height:440px;touch-action:pan-y;cursor:grab;overflow:hidden}" +
   ".jsc-stage[data-drag]{cursor:grabbing}" +
   ".jsc-floor{display:none}" +
   ".jsc-view{position:absolute;inset:0;perspective:calc(var(--jsc-w) * 2.3);perspective-origin:50% 46%}" +

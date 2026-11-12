@@ -161,17 +161,17 @@ export default function Footer() {
         </div>
 
         {/* Bottom Sub-bar */}
-        <div className="pt-10 flex flex-col sm:flex-row items-center justify-between gap-5 text-sm text-neutral-400">
+        <div className="pt-10 flex flex-col sm:flex-row items-center justify-between gap-5 text-xs sm:text-sm text-neutral-400 text-center sm:text-left">
           <p>© 2026 {companyInfo.name}. All rights reserved. Madurai, Tamil Nadu.</p>
-          <div className="flex flex-wrap items-center gap-6 text-sm">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 sm:gap-6 text-xs sm:text-sm">
             <Link href="/privacy" className="hover:text-white transition-colors">
               Privacy Policy
             </Link>
-            <span className="text-neutral-700">&bull;</span>
+            <span className="text-neutral-700 hidden sm:inline">&bull;</span>
             <Link href="/terms" className="hover:text-white transition-colors">
               Civil Contract Terms
             </Link>
-            <span className="text-neutral-700">&bull;</span>
+            <span className="text-neutral-700 hidden sm:inline">&bull;</span>
             <span className="text-neutral-400">10-Year Structural Integrity Warranty</span>
           </div>
         </div>

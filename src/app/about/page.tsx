@@ -149,7 +149,7 @@ export default function AboutPage() {
               </div>
 
               {/* Floating Stat Badge (Shipyon mosaic floating badge) */}
-              <div className="absolute -bottom-6 -right-2 sm:right-6 bg-neutral-950 text-white p-4 rounded-2xl border border-neutral-800 shadow-2xl flex items-center gap-3.5 z-20 anim-float-card-1">
+              <div className="absolute -bottom-6 right-2 sm:right-6 max-w-[calc(100%-1rem)] bg-neutral-950 text-white p-3.5 sm:p-4 rounded-2xl border border-neutral-800 shadow-2xl flex items-center gap-3 sm:gap-3.5 z-20 anim-float-card-1">
                 <div className="w-10 h-10 rounded-xl bg-amber-400 text-black flex items-center justify-center font-black">
                   <HardHat className="w-5 h-5" />
                 </div>
