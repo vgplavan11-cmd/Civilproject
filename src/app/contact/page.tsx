@@ -97,30 +97,29 @@ function ContactFormContent() {
 
   return (
     <div className="bg-white min-h-screen">
-      {/* 1. Header Banner (Shipyon page-hero pattern) */}
-      <section className="bg-slate-50 border-b border-slate-200 pt-36 sm:pt-44 md:pt-48 pb-12 sm:pb-16 relative overflow-hidden">
+      {/* 1. Viewport-Fitted Contact & Site Booking Hero */}
+      <section className="bg-slate-50 border-b border-slate-200 pt-28 sm:pt-32 pb-14 sm:pb-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-60 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-3xl sm:text-5xl font-black text-slate-950 tracking-tight leading-[1.12]">
+          <div className="max-w-3xl mb-8 sm:mb-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-950 text-white text-[11px] font-semibold tracking-wide uppercase mb-3 shadow-xs">
+              <Building2 className="w-3.5 h-3.5" />
+              <span>Direct Civil Engineering Desk</span>
+            </div>
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-slate-950 tracking-tight leading-[1.12]">
               Connect With Our Civil Engineering Team
             </h1>
-            <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed font-normal">
+            <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed font-normal">
               Schedule a site inspection, discuss custom 2BHK/3BHK house models, or request an itemized civil Bill of Quantities (BOQ). Our senior structural engineers are ready to assist.
             </p>
           </div>
-        </div>
-      </section>
 
-      {/* 2. Main Contact Form & Office Info */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             {/* Form Column */}
             <div className="lg:col-span-7">
               <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm">
                 <div className="mb-6">
-                  <h2 className="text-2xl font-black text-slate-950">
+                  <h2 className="text-xl sm:text-2xl font-black text-slate-950">
                     Request Project Estimate &amp; Site Visit
                   </h2>
                   <p className="text-xs text-slate-500 mt-1">

@@ -24,24 +24,23 @@ export default function EstimatorPage() {
 
   return (
     <div className="bg-white min-h-screen">
-      {/* 1. Header Banner */}
-      <section className="bg-slate-50 border-b border-slate-200 pt-36 sm:pt-44 md:pt-48 pb-12 sm:pb-16 relative overflow-hidden">
+      {/* 1. Interactive Cost Calculator - Viewport Fitted */}
+      <section className="bg-slate-50 border-b border-slate-200 pt-28 sm:pt-32 pb-14 sm:pb-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-60 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-3xl sm:text-5xl font-black text-slate-950 tracking-tight leading-[1.12]">
+          <div className="max-w-3xl mb-6 sm:mb-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-950 text-white text-[11px] font-semibold tracking-wide uppercase mb-3 shadow-xs">
+              <Ruler className="w-3.5 h-3.5" />
+              <span>Civil Engineering BOQ Calculator</span>
+            </div>
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-slate-950 tracking-tight leading-[1.12]">
               Civil Construction &amp; Material Estimator
             </h1>
-            <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed font-normal">
               Plan your construction budget with transparent, code-compliant mathematical estimates. Calculate indicative turnkey costs, structural steel requirements, cement bag counts, and project timelines based on Tamil Nadu PWD and IS 456-2000 standards.
             </p>
           </div>
-        </div>
-      </section>
 
-      {/* 2. Interactive Cost Calculator */}
-      <section className="py-12 sm:py-16 bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <CostEstimator />
         </div>
       </section>

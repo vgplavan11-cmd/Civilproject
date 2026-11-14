@@ -93,163 +93,143 @@ export default function ProjectsPage() {
   return (
     <div className="bg-white min-h-screen">
       {/* =========================================================================
-          1. PAGE HERO & TYPOLOGY FILTER
+          1. UNIFIED VIEWPORT-FITTED HERO, FILTER & HOUSE MODEL GRID
          ========================================================================= */}
-      <section className="bg-slate-50 border-b border-slate-200 pt-32 sm:pt-40 md:pt-44 pb-8 sm:pb-10 relative overflow-hidden">
+      <section className="bg-slate-50 border-b border-slate-200 pt-28 sm:pt-32 pb-14 sm:pb-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-60 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-950 text-white text-[11px] font-semibold tracking-wide uppercase mb-3 shadow-xs">
-              <Building2 className="w-3.5 h-3.5" />
-              <span>Architectural House Models</span>
-            </div>
-            <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-slate-950 tracking-tight leading-[1.12]">
-              House Models &amp; Design Plans
-            </h1>
-            <p className="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed font-normal">
-              Explore our turnkey residential house models (2BHK, 3BHK, and Special Models including Luxury Villas and Commercial complexes) engineered with complete RCC structural specifications and Vastu compliance.
-            </p>
-          </div>
-
-          {/* Filter Bar */}
-          <div className="mt-6 pt-5 border-t border-slate-200/80">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
-                <Filter className="w-3.5 h-3.5 text-neutral-950" />
-                Filter by Type:
-              </span>
-
-              {activeFilter !== "all" && (
-                <button
-                  onClick={() => setActiveFilter("all")}
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-900 bg-white border border-slate-300 hover:border-neutral-950 px-2.5 py-0.5 rounded-full transition-all self-start sm:self-auto cursor-pointer shadow-xs"
-                >
-                  <span>Filter: <strong>{activeLabel}</strong></span>
-                  <X className="w-3.5 h-3.5 text-slate-500 hover:text-black" />
-                </button>
-              )}
-            </div>
-
-            {/* Filter Pills */}
-            <div className="flex flex-wrap items-center gap-2 mt-2.5">
-              {filterOptions.map((option) => {
-                const isActive = activeFilter === option.id;
-                return (
-                  <button
-                    key={option.id}
-                    onClick={() => setActiveFilter(option.id)}
-                    className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                      isActive
-                        ? "bg-neutral-950 text-white shadow-sm ring-1 ring-neutral-950 border-neutral-950"
-                        : "bg-white text-slate-700 hover:text-neutral-950 hover:bg-slate-100 border border-slate-200"
-                    }`}
-                  >
-                    {option.icon && <span>{option.icon}</span>}
-                    <span>{option.label}</span>
-                    <span 
-                      className={`text-[10px] px-1.5 py-0.2 rounded-full font-extrabold ${
-                        isActive 
-                          ? "bg-neutral-800 text-neutral-100" 
-                          : "bg-slate-100 text-slate-600 border border-slate-200"
-                      }`}
-                    >
-                      {option.count}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-
-            <div className="mt-2.5 text-xs text-slate-500 font-medium">
-              Showing <span className="font-bold text-neutral-950">{filteredHouseProjects.length}</span> of {houseProjects.length} models
-              {activeFilter !== "all" && (
-                <span className="text-slate-600"> matching &ldquo;{activeLabel}&rdquo;</span>
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================================
-          2. CLEAN & MINIMAL HOUSE MODEL BOXES
-         ========================================================================= */}
-      <section className="py-10 sm:py-12 bg-slate-50 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
-            <div>
-              <h2 className="text-xl sm:text-2xl font-black text-slate-950 tracking-tight">
-                {activeFilter === "all" ? "All House Models" : activeLabel}
-              </h2>
-              <p className="text-xs text-slate-500 mt-0.5">
-                Architectural floor plans and turnkey construction specifications.
+          
+          {/* Header & Filter Bar */}
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-slate-200/90">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-950 text-white text-[11px] font-semibold tracking-wide uppercase mb-3 shadow-xs">
+                <Building2 className="w-3.5 h-3.5" />
+                <span>Architectural House Models</span>
+              </div>
+              <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-slate-950 tracking-tight leading-[1.12]">
+                House Models &amp; Design Plans
+              </h1>
+              <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed font-normal">
+                Explore our turnkey residential house models (2BHK, 3BHK, Luxury Villas &amp; Commercial) engineered with IS 456-compliant RCC framing and Vastu alignment.
               </p>
             </div>
 
-            <span className="self-start sm:self-auto inline-flex items-center px-2.5 py-1 rounded-md bg-white border border-slate-200 text-xs font-bold text-neutral-950 shadow-xs">
-              {filteredHouseProjects.length} {filteredHouseProjects.length === 1 ? "Model" : "Models"}
-            </span>
+            {/* Filter Pills */}
+            <div className="space-y-2">
+              <div className="flex items-center justify-between sm:justify-start gap-3">
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
+                  <Filter className="w-3.5 h-3.5 text-neutral-950" />
+                  Filter by Type:
+                </span>
+                {activeFilter !== "all" && (
+                  <button
+                    onClick={() => setActiveFilter("all")}
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-900 bg-white border border-slate-300 hover:border-neutral-950 px-2.5 py-0.5 rounded-full transition-all cursor-pointer shadow-xs"
+                  >
+                    <span>Reset: <strong>{activeLabel}</strong></span>
+                    <X className="w-3.5 h-3.5 text-slate-500 hover:text-black" />
+                  </button>
+                )}
+              </div>
+
+              <div className="flex flex-wrap items-center gap-2">
+                {filterOptions.map((option) => {
+                  const isActive = activeFilter === option.id;
+                  return (
+                    <button
+                      key={option.id}
+                      onClick={() => setActiveFilter(option.id)}
+                      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                        isActive
+                          ? "bg-neutral-950 text-white shadow-sm ring-1 ring-neutral-950 border-neutral-950"
+                          : "bg-white text-slate-700 hover:text-neutral-950 hover:bg-slate-100 border border-slate-200"
+                      }`}
+                    >
+                      {option.icon && <span>{option.icon}</span>}
+                      <span>{option.label}</span>
+                      <span 
+                        className={`text-[10px] px-1.5 py-0.2 rounded-full font-extrabold ${
+                          isActive 
+                            ? "bg-neutral-800 text-neutral-100" 
+                            : "bg-slate-100 text-slate-600 border border-slate-200"
+                        }`}
+                      >
+                        {option.count}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              <div className="text-xs text-slate-500 font-medium">
+                Showing <span className="font-bold text-neutral-950">{filteredHouseProjects.length}</span> of {houseProjects.length} models
+              </div>
+            </div>
           </div>
 
-          {/* Simple, Readable Boxes Grid */}
-          {filteredHouseProjects.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {filteredHouseProjects.map((project) => (
-                <Link
-                  key={project.id}
-                  href={`/projects/${project.id}`}
-                  className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md hover:border-neutral-900 transition-all duration-300 flex flex-col group"
-                >
-                  {/* Clean Blueprint View without dark overlays */}
-                  <div className="relative aspect-[16/10] bg-slate-50 border-b border-slate-100 flex items-center justify-center p-3 overflow-hidden">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <span className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-neutral-950 text-white text-[10px] font-bold">
-                      {project.type}
-                    </span>
-                  </div>
-
-                  {/* Clean, Simple Info */}
-                  <div className="p-4 flex flex-col justify-between flex-1">
-                    <div>
-                      <h3 className="text-base font-black text-slate-950 tracking-tight group-hover:text-black">
-                        {project.title}
-                      </h3>
-                      <p className="text-xs text-slate-500 mt-1 font-medium">
-                        {project.builtUpArea} • {project.bedrooms} Beds, {project.bathrooms} Baths • {project.floors}
-                      </p>
-                    </div>
-
-                    <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
-                      <div>
-                        <span className="text-[10px] uppercase font-bold text-slate-400 block leading-tight">Turnkey Package</span>
-                        <span className="text-sm font-black text-slate-950">{project.baseCost.split("/")[0]}</span>
-                      </div>
-                      <span className="inline-flex items-center gap-1.5 bg-neutral-950 text-white text-xs font-bold py-1.5 px-3 rounded-lg group-hover:bg-black transition-colors">
-                        <span>View Plan</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
+          {/* Clean House Model Boxes Grid - Positioned seamlessly in viewport */}
+          <div className="mt-8">
+            {filteredHouseProjects.length > 0 ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                {filteredHouseProjects.map((project) => (
+                  <Link
+                    key={project.id}
+                    href={`/projects/${project.id}`}
+                    className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md hover:border-neutral-900 transition-all duration-300 flex flex-col group"
+                  >
+                    {/* Clean Blueprint View */}
+                    <div className="relative aspect-[16/10] bg-slate-50 border-b border-slate-100 flex items-center justify-center p-3 overflow-hidden">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <span className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-neutral-950 text-white text-[10px] font-bold">
+                        {project.type}
                       </span>
                     </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-10 bg-white rounded-xl border border-dashed border-slate-300 p-6">
-              <Building2 className="w-8 h-8 text-slate-400 mx-auto mb-2" />
-              <h3 className="text-sm font-bold text-slate-900">No models match the selected filter</h3>
-              <p className="text-xs text-slate-500 mt-1">Please reset the filter to view all models.</p>
-              <button
-                onClick={() => setActiveFilter("all")}
-                className="mt-3 px-3.5 py-1.5 rounded-lg bg-neutral-950 text-white text-xs font-bold hover:bg-black cursor-pointer"
-              >
-                Reset to All Models
-              </button>
-            </div>
-          )}
+
+                    {/* Clean, Simple Info */}
+                    <div className="p-4 flex flex-col justify-between flex-1">
+                      <div>
+                        <h3 className="text-base font-black text-slate-950 tracking-tight group-hover:text-black">
+                          {project.title}
+                        </h3>
+                        <p className="text-xs text-slate-500 mt-1 font-medium">
+                          {project.builtUpArea} • {project.bedrooms} Beds, {project.bathrooms} Baths • {project.floors}
+                        </p>
+                      </div>
+
+                      <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                          <span className="text-[10px] uppercase font-bold text-slate-400 block leading-tight">Turnkey Package</span>
+                          <span className="text-sm font-black text-slate-950">{project.baseCost.split("/")[0]}</span>
+                        </div>
+                        <span className="inline-flex items-center gap-1.5 bg-neutral-950 text-white text-xs font-bold py-1.5 px-3 rounded-lg group-hover:bg-black transition-colors">
+                          <span>View Plan</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-10 bg-white rounded-xl border border-dashed border-slate-300 p-6">
+                <Building2 className="w-8 h-8 text-slate-400 mx-auto mb-2" />
+                <h3 className="text-sm font-bold text-slate-900">No models match the selected filter</h3>
+                <p className="text-xs text-slate-500 mt-1">Please reset the filter to view all models.</p>
+                <button
+                  onClick={() => setActiveFilter("all")}
+                  className="mt-3 px-3.5 py-1.5 rounded-lg bg-neutral-950 text-white text-xs font-bold hover:bg-black cursor-pointer"
+                >
+                  Reset to All Models
+                </button>
+              </div>
+            )}
+          </div>
+
         </div>
       </section>
 

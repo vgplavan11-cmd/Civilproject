@@ -60,53 +60,67 @@ export default function AboutPage() {
     <div className="bg-white min-h-screen">
       
       {/* =========================================================================
-          1. PAGE HERO (Shipyon page-hero pattern with eyebrow dot & Mars Black title)
+          1. PAGE HERO (Fitted Viewport Hero with 2-Column Split)
          ========================================================================= */}
-      <section className="bg-slate-50 border-b border-slate-200 pt-36 sm:pt-44 md:pt-48 pb-16 sm:pb-20 relative overflow-hidden">
+      <section className="relative min-h-[88vh] sm:min-h-[92vh] bg-slate-50 border-b border-slate-200 flex flex-col justify-center overflow-hidden pt-28 sm:pt-32 pb-14 sm:pb-16">
         <div className="absolute inset-0 bg-grid-pattern opacity-60 pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-[1.12]">
-              Building Spaces, <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-950 via-neutral-800 to-neutral-700">
-                Elevating Lives.
-              </span>
-            </h1>
-
-            <p className="text-sm sm:text-base lg:text-lg text-slate-600 mt-5 leading-relaxed font-normal">
-              Elite Homes is an engineering-first civil construction firm. Founded by passionate civil engineers, we replace traditional contracting opacity with real-time digital communication, transparent fixed BOQs, and daily founder site supervision.
-            </p>
-
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Link
-                href="/projects"
-                className="inline-flex items-center gap-2 bg-neutral-950 hover:bg-black text-white text-xs sm:text-sm font-bold px-6 py-3 rounded-xl shadow-lg shadow-black/20 transition-all active:scale-95"
-              >
-                <span>Explore House Models</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-white hover:bg-neutral-100 text-neutral-950 text-xs sm:text-sm font-bold px-6 py-3 rounded-xl border border-neutral-300 shadow-xs transition-all active:scale-95"
-              >
-                <span>Speak With Principal Engineer</span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================================
-          2. ABOUT MOSAIC SECTION (Shipyon about-mosaic asymmetric gallery pattern)
-         ========================================================================= */}
-      <section className="py-20 bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             
-            {/* Left: Asymmetric Photographic Mosaic */}
+            {/* Left Column: Headline, Narrative & CTAs */}
+            <div className="lg:col-span-6 space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-950 text-white text-[11px] font-semibold tracking-wide uppercase shadow-xs">
+                <HardHat className="w-3.5 h-3.5" />
+                <span>Engineering-First Civil Firm &bull; Madurai</span>
+              </div>
+
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-[1.12]">
+                Building Spaces, <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-950 via-neutral-800 to-neutral-700">
+                  Elevating Lives.
+                </span>
+              </h1>
+
+              <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed font-normal">
+                Elite Homes is an engineering-first civil construction firm. Founded by passionate civil engineers, we replace traditional contracting opacity with real-time digital communication, transparent fixed BOQs, and daily founder site supervision.
+              </p>
+
+              <div className="flex flex-wrap items-center gap-3 pt-1">
+                <Link
+                  href="/projects"
+                  className="inline-flex items-center gap-2 bg-neutral-950 hover:bg-black text-white text-xs sm:text-sm font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-black/20 transition-all active:scale-95"
+                >
+                  <span>Explore House Models</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 bg-white hover:bg-neutral-100 text-neutral-950 text-xs sm:text-sm font-bold px-6 py-3.5 rounded-xl border border-neutral-300 shadow-xs transition-all active:scale-95"
+                >
+                  <span>Speak With Principal Engineer</span>
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-4 border-t border-slate-200">
+                <div className="p-3 bg-white rounded-xl border border-slate-200 shadow-xs">
+                  <span className="text-lg sm:text-xl font-black text-slate-950 block">100%</span>
+                  <span className="text-[10px] sm:text-[11px] font-semibold text-slate-600">Founder Supervision</span>
+                </div>
+                <div className="p-3 bg-white rounded-xl border border-slate-200 shadow-xs">
+                  <span className="text-lg sm:text-xl font-black text-slate-950 block">35,000+</span>
+                  <span className="text-[10px] sm:text-[11px] font-semibold text-slate-600">Sq. Ft. Constructed</span>
+                </div>
+                <div className="p-3 bg-white rounded-xl border border-slate-200 shadow-xs col-span-2 sm:col-span-1">
+                  <span className="text-lg sm:text-xl font-black text-slate-950 block">10-Year</span>
+                  <span className="text-[10px] sm:text-[11px] font-semibold text-slate-600">Structural Guarantee</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Asymmetric Photographic Mosaic */}
             <div className="lg:col-span-6 relative">
               <div className="grid grid-cols-2 gap-4">
-                <div className="relative h-72 sm:h-80 rounded-2xl overflow-hidden border border-slate-200 shadow-xl group">
+                <div className="relative h-72 sm:h-80 md:h-96 rounded-2xl overflow-hidden border border-slate-200 shadow-xl group">
                   <Image
                     src="/images/civil-blueprint-hero.jpg"
                     alt="Active Civil Framing Site"
@@ -119,8 +133,8 @@ export default function AboutPage() {
                   </span>
                 </div>
 
-                <div className="space-y-4">
-                  <div className="relative h-36 rounded-2xl overflow-hidden border border-slate-200 shadow-md group">
+                <div className="space-y-4 flex flex-col justify-between">
+                  <div className="relative h-36 sm:h-44 rounded-2xl overflow-hidden border border-slate-200 shadow-md group">
                     <Image
                       src="/images/xyz-crest-2bhk.png"
                       alt="Modern 2BHK Elevation"
@@ -133,7 +147,7 @@ export default function AboutPage() {
                     </span>
                   </div>
 
-                  <div className="relative h-36 rounded-2xl overflow-hidden border border-slate-200 shadow-md group">
+                  <div className="relative h-36 sm:h-44 rounded-2xl overflow-hidden border border-slate-200 shadow-md group">
                     <Image
                       src="/images/xyz-royal-3bhk.png"
                       alt="Luxury 3BHK Villa"
@@ -148,9 +162,9 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Floating Stat Badge (Shipyon mosaic floating badge) */}
-              <div className="absolute -bottom-6 right-2 sm:right-6 max-w-[calc(100%-1rem)] bg-neutral-950 text-white p-3.5 sm:p-4 rounded-2xl border border-neutral-800 shadow-2xl flex items-center gap-3 sm:gap-3.5 z-20 anim-float-card-1">
-                <div className="w-10 h-10 rounded-xl bg-amber-400 text-black flex items-center justify-center font-black">
+              {/* Floating Stat Badge */}
+              <div className="absolute -bottom-5 right-2 sm:right-6 max-w-[calc(100%-1rem)] bg-neutral-950 text-white p-3 sm:p-3.5 rounded-2xl border border-neutral-800 shadow-2xl flex items-center gap-3 z-20 anim-float-card-1">
+                <div className="w-10 h-10 rounded-xl bg-amber-400 text-black flex items-center justify-center font-black shrink-0">
                   <HardHat className="w-5 h-5" />
                 </div>
                 <div>
@@ -162,36 +176,40 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Right: Narrative Description */}
-            <div className="lg:col-span-6 space-y-5">
-              <span className="text-xs font-mono font-bold uppercase tracking-widest text-neutral-500">
-                Our Origin Story
-              </span>
+          </div>
+        </div>
+      </section>
 
-              <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight leading-snug">
-                Engineering Homes With The Discipline of Infrastructure.
-              </h2>
+      {/* =========================================================================
+          2. OUR ORIGIN STORY & CIVIL PHILOSOPHY
+         ========================================================================= */}
+      <section className="py-16 sm:py-20 bg-white border-b border-slate-200">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+          <span className="text-xs font-mono font-bold uppercase tracking-widest text-neutral-500">
+            Our Origin Story
+          </span>
 
-              <p className="text-sm text-slate-600 leading-relaxed font-normal">
-                Traditional contractors often rely on visual approximations and third-party subcontractors who cut corners on steel gauge, cement grades, and water curing.
-              </p>
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight leading-snug">
+            Engineering Homes With The Discipline of Infrastructure.
+          </h2>
 
-              <p className="text-sm text-slate-600 leading-relaxed font-normal">
-                Elite Homes was founded to change this. We treat every single residential home with the exact mathematical standards of heavy civil projects: isolated footings engineered to 185 kN/m² soil reports, primary Fe550D rebar, in-house cube compressive crushing tests, and laser-aligned plumb checks.
-              </p>
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+            Traditional contractors often rely on visual approximations and third-party subcontractors who cut corners on steel gauge, cement grades, and water curing.
+          </p>
 
-              <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-100">
-                <div className="p-3.5 bg-slate-50 rounded-xl border border-slate-200">
-                  <span className="text-xl sm:text-2xl font-black text-slate-950 block">100%</span>
-                  <span className="text-[11px] font-semibold text-slate-600">Founder Site Oversight</span>
-                </div>
-                <div className="p-3.5 bg-slate-50 rounded-xl border border-slate-200">
-                  <span className="text-xl sm:text-2xl font-black text-slate-950 block">0 Days</span>
-                  <span className="text-[11px] font-semibold text-slate-600">Unexplained Delays</span>
-                </div>
-              </div>
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+            Elite Homes was founded to change this. We treat every single residential home with the exact mathematical standards of heavy civil projects: isolated footings engineered to 185 kN/m² soil reports, primary Fe550D rebar, in-house cube compressive crushing tests, and laser-aligned plumb checks.
+          </p>
+
+          <div className="grid grid-cols-2 gap-4 pt-4 max-w-lg mx-auto">
+            <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
+              <span className="text-2xl font-black text-slate-950 block">100%</span>
+              <span className="text-xs font-semibold text-slate-600">Founder Site Oversight</span>
             </div>
-
+            <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
+              <span className="text-2xl font-black text-slate-950 block">0 Days</span>
+              <span className="text-xs font-semibold text-slate-600">Unexplained Delays</span>
+            </div>
           </div>
         </div>
       </section>
