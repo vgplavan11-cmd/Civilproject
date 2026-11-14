@@ -29,6 +29,10 @@ export interface PictureRailItem {
   specs?: string[];
   /** Architectural description */
   description?: string;
+  /** House typology for filtering (2BHK, 3BHK, Villa, Commercial, Special) */
+  type?: "2BHK" | "3BHK" | "Villa" | "Commercial" | "Special";
+  /** Category grouping for filters */
+  category?: string;
 }
 
 export interface PictureRailGalleryLabels {
