@@ -33,17 +33,41 @@ function ContactFormContent() {
 
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [refId, setRefId] = useState("EH-492100");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    setRefId(`EH-${Math.floor(100000 + Math.random() * 900000)}`);
-    // Simulate civil engineering desk dispatch
-    setTimeout(() => {
-      setSubmitting(false);
+    setErrorMessage(null);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || "Failed to submit inquiry. Please try again.");
+      }
+
+      setRefId(data.refId || `EH-${Math.floor(100000 + Math.random() * 900000)}`);
       setSubmitted(true);
-    }, 900);
+    } catch (err: unknown) {
+      console.error("Inquiry submission error:", err);
+      setErrorMessage(
+        err instanceof Error
+          ? err.message
+          : "Unable to send your inquiry. Please check your internet connection or call our office."
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const faqs = [
@@ -138,6 +162,12 @@ function ContactFormContent() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4 text-xs">
+                    {errorMessage && (
+                      <div className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-800 text-xs font-medium flex items-start gap-2.5">
+                        <span className="font-bold shrink-0">Error:</span>
+                        <span>{errorMessage}</span>
+                      </div>
+                    )}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block font-bold text-slate-800 uppercase tracking-wider text-[11px] mb-1.5">
