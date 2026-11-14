@@ -7,16 +7,12 @@ import {
   ArrowRight, 
   Ruler, 
   Filter, 
-  CheckCircle2, 
   Building2, 
   Home, 
   Sparkles, 
-  X, 
-  Eye, 
-  Layers
+  X 
 } from "lucide-react";
-import { houseProjects, HouseModel } from "@/data/projectsData";
-import ProjectSpecModal from "@/components/ProjectSpecModal";
+import { houseProjects } from "@/data/projectsData";
 
 type FilterType = "all" | "2bhk" | "3bhk" | "special" | "villa" | "commercial";
 
@@ -29,7 +25,6 @@ interface FilterOption {
 
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState<FilterType>("all");
-  const [selectedSpecModel, setSelectedSpecModel] = useState<HouseModel | null>(null);
 
   // Filter options with pre-calculated counts
   const filterOptions: FilterOption[] = useMemo(() => [
@@ -98,7 +93,7 @@ export default function ProjectsPage() {
   return (
     <div className="bg-white min-h-screen">
       {/* =========================================================================
-          1. PAGE HERO & TYPOLOGY FILTER CONTROLS
+          1. PAGE HERO & TYPOLOGY FILTER
          ========================================================================= */}
       <section className="bg-slate-50 border-b border-slate-200 pt-32 sm:pt-40 md:pt-44 pb-8 sm:pb-10 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-60 pointer-events-none" />
@@ -106,27 +101,24 @@ export default function ProjectsPage() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-950 text-white text-[11px] font-semibold tracking-wide uppercase mb-3 shadow-xs">
               <Building2 className="w-3.5 h-3.5" />
-              <span>Architectural House Models &amp; Civil Plans</span>
+              <span>Architectural House Models</span>
             </div>
             <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-slate-950 tracking-tight leading-[1.12]">
-              House Models &amp; Design Specifications
+              House Models &amp; Design Plans
             </h1>
             <p className="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed font-normal">
-              Explore our turnkey residential house models (2BHK, 3BHK, and Special Models including Luxury Villas and Commercial complexes). Each model is engineered with comprehensive RCC structural specifications, high-grade Fe550D rebar, and Vastu compliance.
+              Explore our turnkey residential house models (2BHK, 3BHK, and Special Models including Luxury Villas and Commercial complexes) engineered with complete RCC structural specifications and Vastu compliance.
             </p>
           </div>
 
-          {/* PROJECT TYPOLOGY FILTER BAR */}
+          {/* Filter Bar */}
           <div className="mt-6 pt-5 border-t border-slate-200/80">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
-                  <Filter className="w-3.5 h-3.5 text-neutral-950" />
-                  Filter by Project Type:
-                </span>
-              </div>
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
+                <Filter className="w-3.5 h-3.5 text-neutral-950" />
+                Filter by Type:
+              </span>
 
-              {/* Active Filter Clear Tag */}
               {activeFilter !== "all" && (
                 <button
                   onClick={() => setActiveFilter("all")}
@@ -168,7 +160,6 @@ export default function ProjectsPage() {
               })}
             </div>
 
-            {/* Status indicator */}
             <div className="mt-2.5 text-xs text-slate-500 font-medium">
               Showing <span className="font-bold text-neutral-950">{filteredHouseProjects.length}</span> of {houseProjects.length} models
               {activeFilter !== "all" && (
@@ -180,136 +171,70 @@ export default function ProjectsPage() {
       </section>
 
       {/* =========================================================================
-          2. ARCHITECTURAL MODELS SHOWCASE GRID (COMPACT BOXES STYLE)
+          2. CLEAN & MINIMAL HOUSE MODEL BOXES
          ========================================================================= */}
       <section className="py-10 sm:py-12 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
             <div>
-              <div className="inline-flex items-center gap-1 text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">
-                <Layers className="w-3 h-3 text-neutral-950" />
-                <span>Architectural Models Dossier</span>
-              </div>
               <h2 className="text-xl sm:text-2xl font-black text-slate-950 tracking-tight">
-                {activeFilter === "all" ? "All Engineering Models" : `${activeLabel}`}
+                {activeFilter === "all" ? "All House Models" : activeLabel}
               </h2>
+              <p className="text-xs text-slate-500 mt-0.5">
+                Architectural floor plans and turnkey construction specifications.
+              </p>
             </div>
 
-            {/* Visible count badge */}
-            <span className="self-start sm:self-auto inline-flex items-center px-2.5 py-0.5 rounded-md bg-white border border-slate-200 text-xs font-bold text-neutral-950 shadow-xs">
-              {filteredHouseProjects.length} {filteredHouseProjects.length === 1 ? "Model Available" : "Models Available"}
+            <span className="self-start sm:self-auto inline-flex items-center px-2.5 py-1 rounded-md bg-white border border-slate-200 text-xs font-bold text-neutral-950 shadow-xs">
+              {filteredHouseProjects.length} {filteredHouseProjects.length === 1 ? "Model" : "Models"}
             </span>
           </div>
 
-          {/* Compact Cards Grid */}
+          {/* Simple, Readable Boxes Grid */}
           {filteredHouseProjects.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {filteredHouseProjects.map((project) => (
-                <div
+                <Link
                   key={project.id}
-                  className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col group"
+                  href={`/projects/${project.id}`}
+                  className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md hover:border-neutral-900 transition-all duration-300 flex flex-col group"
                 >
-                  {/* Model Image Preview (Compact 16:9) */}
-                  <div className="relative aspect-[16/9.5] sm:aspect-[16/9] bg-slate-900 overflow-hidden">
+                  {/* Clean Blueprint View without dark overlays */}
+                  <div className="relative aspect-[16/10] bg-slate-50 border-b border-slate-100 flex items-center justify-center p-3 overflow-hidden">
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-
-                    {/* Top Badges */}
-                    <div className="absolute top-2.5 left-2.5 flex flex-wrap gap-1">
-                      <span className="px-2 py-0.5 rounded bg-neutral-950/90 text-white text-[10px] font-bold backdrop-blur-sm border border-neutral-700">
-                        {project.type}
-                      </span>
-                      {project.badge && (
-                        <span className="px-2 py-0.5 rounded bg-white/95 text-neutral-950 text-[10px] font-bold backdrop-blur-sm shadow-xs">
-                          {project.badge}
-                        </span>
-                      )}
-                    </div>
-
-                    {/* Bottom Pricing & Area Tag */}
-                    <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-end justify-between text-white">
-                      <div>
-                        <div className="text-[9px] uppercase font-bold text-slate-300">Turnkey Package</div>
-                        <div className="text-sm font-black tracking-tight">{project.baseCost.split("/")[0]}</div>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-[9px] uppercase font-bold text-slate-300">Built-Up</div>
-                        <div className="text-xs font-black">{project.builtUpArea}</div>
-                      </div>
-                    </div>
+                    <span className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-neutral-950 text-white text-[10px] font-bold">
+                      {project.type}
+                    </span>
                   </div>
 
-                  {/* Compact Card Content Body */}
-                  <div className="p-3.5 sm:p-4 flex-1 flex flex-col justify-between">
+                  {/* Clean, Simple Info */}
+                  <div className="p-4 flex flex-col justify-between flex-1">
                     <div>
-                      <div className="flex items-center justify-between gap-2 mb-1">
-                        <h3 className="text-sm sm:text-base font-black text-slate-950 tracking-tight truncate">
-                          {project.title}
-                        </h3>
-                        <span className="text-[10px] font-bold text-slate-600 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200 shrink-0">
-                          {project.status}
-                        </span>
-                      </div>
-
-                      <p className="text-[11px] text-slate-500 line-clamp-1 mb-2.5 font-normal leading-relaxed">
-                        {project.subtitle}
+                      <h3 className="text-base font-black text-slate-950 tracking-tight group-hover:text-black">
+                        {project.title}
+                      </h3>
+                      <p className="text-xs text-slate-500 mt-1 font-medium">
+                        {project.builtUpArea} • {project.bedrooms} Beds, {project.bathrooms} Baths • {project.floors}
                       </p>
-
-                      {/* Compact Quick Specs Strip */}
-                      <div className="grid grid-cols-2 gap-1.5 p-2 rounded-lg bg-slate-50 border border-slate-100 text-[11px] mb-2.5">
-                        <div>
-                          <span className="text-[9px] uppercase font-bold text-slate-400 block">Carpet Area</span>
-                          <span className="font-bold text-slate-800">{project.carpetArea}</span>
-                        </div>
-                        <div>
-                          <span className="text-[9px] uppercase font-bold text-slate-400 block">Rooms</span>
-                          <span className="font-bold text-slate-800">{project.bedrooms} Beds, {project.bathrooms} Baths</span>
-                        </div>
-                        <div>
-                          <span className="text-[9px] uppercase font-bold text-slate-400 block">Floors</span>
-                          <span className="font-bold text-slate-800">{project.floors}</span>
-                        </div>
-                        <div>
-                          <span className="text-[9px] uppercase font-bold text-slate-400 block">Handover</span>
-                          <span className="font-bold text-slate-800">{project.estimatedDuration}</span>
-                        </div>
-                      </div>
-
-                      {/* Engineering Highlights (Compact 2 items) */}
-                      <ul className="space-y-1 mb-3 text-[11px] text-slate-600">
-                        {project.keyHighlights.slice(0, 2).map((highlight, idx) => (
-                          <li key={idx} className="flex items-center gap-1.5 truncate">
-                            <CheckCircle2 className="w-3 h-3 text-neutral-900 shrink-0" />
-                            <span className="truncate">{highlight}</span>
-                          </li>
-                        ))}
-                      </ul>
                     </div>
 
-                    {/* Compact Card Action Buttons */}
-                    <div className="pt-2.5 border-t border-slate-100 flex items-center gap-2">
-                      <button
-                        onClick={() => setSelectedSpecModel(project)}
-                        className="flex-1 inline-flex items-center justify-center gap-1 bg-slate-100 hover:bg-slate-200 text-slate-800 text-[11px] font-bold py-1.5 px-2.5 rounded-lg border border-slate-200 transition-colors cursor-pointer"
-                      >
-                        <Eye className="w-3 h-3" />
-                        <span>Quick Specs</span>
-                      </button>
-                      <Link
-                        href={`/projects/${project.id}`}
-                        className="flex-1 inline-flex items-center justify-center gap-1 bg-neutral-950 hover:bg-black text-white text-[11px] font-bold py-1.5 px-2.5 rounded-lg shadow-xs transition-all"
-                      >
+                    <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                      <div>
+                        <span className="text-[10px] uppercase font-bold text-slate-400 block leading-tight">Turnkey Package</span>
+                        <span className="text-sm font-black text-slate-950">{project.baseCost.split("/")[0]}</span>
+                      </div>
+                      <span className="inline-flex items-center gap-1.5 bg-neutral-950 text-white text-xs font-bold py-1.5 px-3 rounded-lg group-hover:bg-black transition-colors">
                         <span>View Plan</span>
-                        <ArrowRight className="w-3 h-3" />
-                      </Link>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </span>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           ) : (
@@ -426,12 +351,6 @@ export default function ProjectsPage() {
           </div>
         </div>
       </section>
-
-      {/* QUICK SPECS MODAL */}
-      <ProjectSpecModal
-        model={selectedSpecModel}
-        onClose={() => setSelectedSpecModel(null)}
-      />
     </div>
   );
 }
