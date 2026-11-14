@@ -70,17 +70,31 @@ const LIFECYCLE_PHASES: PhaseCapsule[] = [
 
 export default function CivilLifecyclePipeline() {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+  const rafRef = React.useRef<number | null>(null);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const xRatio = (e.clientX - rect.left) / rect.width - 0.5;
-    const yRatio = (e.clientY - rect.top) / rect.height - 0.5;
-    const rotateY = xRatio * 14;
-    const rotateX = yRatio * -14;
-    e.currentTarget.style.transform = `perspective(900px) rotateY(${rotateY.toFixed(2)}deg) rotateX(${rotateX.toFixed(2)}deg) translateY(-6px)`;
+    const target = e.currentTarget;
+    const clientX = e.clientX;
+    const clientY = e.clientY;
+
+    if (rafRef.current) {
+      cancelAnimationFrame(rafRef.current);
+    }
+
+    rafRef.current = requestAnimationFrame(() => {
+      const rect = target.getBoundingClientRect();
+      const xRatio = (clientX - rect.left) / rect.width - 0.5;
+      const yRatio = (clientY - rect.top) / rect.height - 0.5;
+      const rotateY = xRatio * 14;
+      const rotateX = yRatio * -14;
+      target.style.transform = `perspective(900px) rotateY(${rotateY.toFixed(2)}deg) rotateX(${rotateX.toFixed(2)}deg) translateY(-6px)`;
+    });
   };
 
   const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (rafRef.current) {
+      cancelAnimationFrame(rafRef.current);
+    }
     e.currentTarget.style.transform = `perspective(900px) rotateY(0deg) rotateX(0deg) translateY(0px)`;
   };
 

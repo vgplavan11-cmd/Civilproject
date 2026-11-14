@@ -93,7 +93,7 @@ const StackingCardItem = forwardRef<HTMLDivElement, StackingCardItemProps>(
         {...props}
       >
         <motion.div
-          className="origin-top relative will-change-transform"
+          className="origin-top relative will-change-transform transform-gpu"
           style={{ scale }}
         >
           {children}

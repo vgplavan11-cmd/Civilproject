@@ -62,6 +62,7 @@ export default function HomePage() {
             src="/images/civil-blueprint-hero.jpg"
             alt="Elite Homes Civil Engineering & Construction"
             fill
+            sizes="100vw"
             priority
             className="object-cover object-center pointer-events-none"
           />

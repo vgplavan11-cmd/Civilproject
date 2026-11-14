@@ -169,24 +169,36 @@ body {
 
 .anim-float-card-1 {
   animation: 4.5s ease-in-out infinite floatCard1;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .anim-float-card-2 {
   animation: 5.5s ease-in-out 0.8s infinite floatCard2;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .anim-float-card-3 {
   animation: 5s ease-in-out 0.4s infinite floatCard3;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .anim-dust-1 {
   animation: 8s ease-in-out infinite dustFloat;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .anim-dust-2 {
   animation: 11s ease-in-out 1.5s infinite dustFloat;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .anim-dust-3 {
   animation: 9s ease-in-out 0.8s infinite dustFloat;
+  will-change: transform;
+  transform: translateZ(0);
 }

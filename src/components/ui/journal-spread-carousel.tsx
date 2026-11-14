@@ -159,8 +159,8 @@ const CSS =
   ".jsc-floor{display:none}" +
   ".jsc-view{position:absolute;inset:0;perspective:calc(var(--jsc-w) * 2.3);perspective-origin:50% 46%}" +
   ".jsc-scene{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d}" +
-  ".jsc-item{position:absolute;left:0;top:0;transform-style:preserve-3d;visibility:hidden}" +
-  ".jsc-page{position:absolute;top:calc(var(--jsc-h) * -.5);width:calc(var(--jsc-w) * .5);height:var(--jsc-h);overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;" +
+  ".jsc-item{position:absolute;left:0;top:0;transform-style:preserve-3d;visibility:hidden;will-change:transform;transform:translateZ(0)}" +
+  ".jsc-page{position:absolute;top:calc(var(--jsc-h) * -.5);width:calc(var(--jsc-w) * .5);height:var(--jsc-h);overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;will-change:transform;transform:translateZ(0);" +
   "background:#efebe3;box-shadow:0 1px 0 rgba(255,255,255,.35) inset}" +
   ".jsc-page[data-side=l]{left:calc(var(--jsc-w) * -.5);transform-origin:100% 50%;border-radius:calc(var(--jsc-w) * .034) 0 0 calc(var(--jsc-w) * .034);box-shadow:-8px 12px 28px rgba(15,23,42,.12),0 2px 6px rgba(15,23,42,.06)}" +
   ".jsc-page[data-side=r]{left:0;transform-origin:0 50%;border-radius:0 calc(var(--jsc-w) * .034) calc(var(--jsc-w) * .034) 0;box-shadow:8px 12px 28px rgba(15,23,42,.12),0 2px 6px rgba(15,23,42,.06)}" +
@@ -272,7 +272,7 @@ function Sheet({ spread }: { spread: JournalSpread }) {
           data-tape={p.tape ? "" : undefined}
           style={{ left: p.x + "%", top: p.y + "%", width: p.w + "%", transform: "rotate(" + (p.rotate ?? 0) + "deg)" }}
         >
-          <img src={p.src} alt="" draggable={false} decoding="async" style={{ maxWidth: "none" }} />
+          <img src={p.src} alt="" draggable={false} decoding="async" loading="lazy" style={{ maxWidth: "none" }} />
           {p.caption ? <figcaption>{p.caption}</figcaption> : null}
         </figure>
       ))}
