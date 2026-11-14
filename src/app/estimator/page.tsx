@@ -39,7 +39,7 @@ export default function EstimatorPage() {
         </div>
       </section>
 
-      {/* 2. Interactive Cost Calculator */}
+      {/* 2. Interactive Cost & Material Estimator */}
       <section className="py-12 sm:py-16 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <CostEstimator />

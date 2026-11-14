@@ -38,7 +38,7 @@ const CIVIL_NAV_ITEMS: InteractiveLinkItem[] = [
   },
   {
     heading: "Pricing",
-    subheading: "Instant Construction Cost Calculator",
+    subheading: "Instant Construction Cost Estimator",
     imgSrc: "/images/nav/estimator.jpg",
     href: "/estimator"
   },

@@ -233,7 +233,7 @@ export const INTERACTIVE_LINKS: InteractiveLinkItem[] = [
   },
   {
     heading: "Pricing",
-    subheading: "Instant Construction Cost Calculator",
+    subheading: "Instant Construction Cost Estimator",
     imgSrc: "/images/nav/estimator.jpg",
     href: "/estimator",
   },
