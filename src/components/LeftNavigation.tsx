@@ -38,7 +38,7 @@ const CIVIL_NAV_ITEMS: InteractiveLinkItem[] = [
   },
   {
     heading: "Pricing",
-    subheading: "Civil Investment & Turnkey BOQ",
+    subheading: "Instant Construction Cost Calculator",
     imgSrc: "/images/nav/estimator.jpg",
     href: "/estimator"
   },

@@ -4,13 +4,14 @@ import {
   ArrowRight, 
   Ruler
 } from "lucide-react";
+import CostEstimator from "@/components/CostEstimator";
 import CivilInvestmentStackingCards from "@/components/CivilInvestmentStackingCards";
 import { companyInfo } from "@/data/companyData";
 
 export const metadata = {
-  title: "Civil Construction Pricing & BOQ Investment | Elite Homes",
-  description: "Explore transparent turnkey civil construction pricing, milestone cost breakdown, and engineering material consumption benchmarks for 2BHK, 3BHK, and Villa models in Madurai.",
-  keywords: "construction pricing, civil cost Madurai, turnkey building budget, BOQ milestone release, Elite Homes constructions"
+  title: "Civil Construction Cost & Material Estimator | Elite Homes",
+  description: "Calculate real-time turnkey civil construction costs, structural steel quantities (Fe550D), cement bags, and project duration for 2BHK, 3BHK, and Villa models in Madurai.",
+  keywords: "construction cost estimator, civil calculator, 2bhk cost Madurai, 3bhk building budget, steel and cement estimate, Elite Homes constructions"
 };
 
 export default function EstimatorPage() {
@@ -29,16 +30,23 @@ export default function EstimatorPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-3xl sm:text-5xl font-black text-slate-950 tracking-tight leading-[1.12]">
-              Civil Construction Pricing &amp; Investment
+              Civil Construction &amp; Material Estimator
             </h1>
             <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed">
-              Explore transparent, code-compliant milestone investments and itemized Bill of Quantities (BOQ). Understand how your civil investment is distributed across each construction phase with zero hidden cost escalations.
+              Plan your construction budget with transparent, code-compliant mathematical estimates. Calculate indicative turnkey costs, structural steel requirements, cement bag counts, and project timelines based on Tamil Nadu PWD and IS 456-2000 standards.
             </p>
           </div>
         </div>
       </section>
 
-      {/* 2. Cost Component Distribution Matrix (Stacking Cards) */}
+      {/* 2. Interactive Cost Calculator */}
+      <section className="py-12 sm:py-16 bg-white border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <CostEstimator />
+        </div>
+      </section>
+
+      {/* 3. Cost Component Distribution Matrix */}
       <section className="py-16 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
@@ -54,7 +62,7 @@ export default function EstimatorPage() {
         </div>
       </section>
 
-      {/* 3. Engineering Thumb-Rule Benchmark Table */}
+      {/* 4. Engineering Thumb-Rule Benchmark Table */}
       <section className="py-16 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-10">
@@ -89,7 +97,7 @@ export default function EstimatorPage() {
         </div>
       </section>
 
-      {/* 4. Direct Site Survey / Soil Test Booking CTA */}
+      {/* 5. Direct Site Survey / Soil Test Booking CTA */}
       <section className="py-16 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <div className="p-8 sm:p-12 rounded-2xl border-2 border-dashed border-slate-300 bg-white">
