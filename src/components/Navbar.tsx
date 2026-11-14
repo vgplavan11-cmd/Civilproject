@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { 
   Menu, 
   X, 
-  Calculator, 
+  FileText, 
   Phone, 
   ArrowRight
 } from "lucide-react";
@@ -158,8 +158,8 @@ export default function Navbar() {
                 onClick={() => setIsMobileOpen(false)}
                 className="w-full flex items-center justify-center gap-2 bg-neutral-950 hover:bg-black text-white font-bold text-xs py-3 px-4 rounded-xl shadow-md shadow-black/25 active:scale-95 transition-all"
               >
-                <Calculator className="w-4 h-4" />
-                <span>Launch Civil Cost Estimator</span>
+                <FileText className="w-4 h-4" />
+                <span>View Construction Pricing &amp; BOQ</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
 

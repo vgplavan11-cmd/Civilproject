@@ -12,8 +12,7 @@ import {
   ArrowRight, 
   Award, 
   ChevronDown,
-  Compass,
-  Calculator
+  Compass
 } from "lucide-react";
 import { civilServices } from "@/data/servicesData";
 import { companyInfo } from "@/data/companyData";
@@ -103,8 +102,8 @@ export default function HomePage() {
                   href="/estimator"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white hover:bg-neutral-100 text-neutral-950 font-bold text-sm px-6 py-3.5 rounded-xl border border-neutral-300 shadow-md backdrop-blur-md transition-all active:scale-95"
                 >
-                  <Calculator className="w-4 h-4 text-neutral-950" />
-                  <span>Civil Cost Estimator</span>
+                  <ArrowRight className="w-4 h-4 text-neutral-950" />
+                  <span>Construction Pricing &amp; BOQ</span>
                 </Link>
               </div>
 
@@ -361,16 +360,16 @@ export default function HomePage() {
 
             <div className="max-w-2xl space-y-4 relative z-10 text-center lg:text-left">
               <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight leading-snug">
-                Calculate Turnkey Civil Costs &amp; Raw Material Requirements
+                Transparent Civil Pricing &amp; Milestone Releases
               </h2>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
-                Determine your construction budget, Fe550D TMT steel tonnage, cement bag counts, and project timelines with our dedicated engineering calculator based on IS 456-2000 standards.
+                Explore our transparent itemized Bill of Quantities (BOQ), standard engineering material benchmarks, and stage-wise escrow payment schedule with zero cost escalations.
               </p>
 
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2 text-xs font-semibold text-slate-300">
                 <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-lg border border-white/10">
                   <CheckCircle2 className="w-3.5 h-3.5 text-neutral-300" />
-                  Real-time Cost per Sq.Ft
+                  Transparent Turnkey Pricing
                 </span>
                 <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-lg border border-white/10">
                   <CheckCircle2 className="w-3.5 h-3.5 text-neutral-300" />
@@ -388,8 +387,7 @@ export default function HomePage() {
                 href="/estimator"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white hover:bg-neutral-200 text-neutral-950 font-bold text-xs sm:text-sm px-8 py-4 rounded-xl shadow-lg shadow-black/40 active:scale-95 transition-all"
               >
-                <Calculator className="w-4 h-4" />
-                <span>Launch Full Civil Estimator</span>
+                <span>Explore Pricing &amp; BOQ Breakdown</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

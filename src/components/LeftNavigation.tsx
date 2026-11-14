@@ -38,7 +38,7 @@ const CIVIL_NAV_ITEMS: InteractiveLinkItem[] = [
   },
   {
     heading: "Pricing",
-    subheading: "Instant Construction Cost Estimator",
+    subheading: "Civil Investment & Turnkey BOQ",
     imgSrc: "/images/nav/estimator.jpg",
     href: "/estimator"
   },

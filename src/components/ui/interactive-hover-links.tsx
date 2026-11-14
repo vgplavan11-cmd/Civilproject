@@ -233,7 +233,7 @@ export const INTERACTIVE_LINKS: InteractiveLinkItem[] = [
   },
   {
     heading: "Pricing",
-    subheading: "Instant Construction Cost Estimator",
+    subheading: "Civil Investment & Turnkey BOQ",
     imgSrc: "/images/nav/estimator.jpg",
     href: "/estimator",
   },
