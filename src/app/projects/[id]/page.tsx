@@ -84,7 +84,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 <span className="text-xs font-bold uppercase tracking-wider bg-neutral-900 text-white px-3 py-1 rounded border border-neutral-800">
                   {project.type} Model
                 </span>
-                <span className="text-xs font-semibold bg-emerald-50 text-emerald-800 px-3 py-1 rounded border border-emerald-200">
+                <span className="text-xs font-semibold bg-neutral-100 text-neutral-800 px-3 py-1 rounded border border-neutral-300">
                   Status: {project.status}
                 </span>
               </div>
@@ -115,7 +115,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 </div>
                 <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
                   <p className="text-[10px] uppercase font-bold text-slate-400">Est. Handover</p>
-                  <p className="text-lg font-black text-emerald-700 mt-0.5">{project.estimatedDuration}</p>
+                  <p className="text-lg font-black text-neutral-950 mt-0.5">{project.estimatedDuration}</p>
                 </div>
               </div>
             </div>
@@ -321,7 +321,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   <h4 className="text-sm font-bold text-slate-900 mb-2">{m.title}</h4>
                   <p className="text-xs text-slate-600 leading-relaxed">{m.desc}</p>
                 </div>
-                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] text-emerald-700 font-semibold">
+                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] text-neutral-900 font-semibold">
                   <CheckCircle2 className="w-3.5 h-3.5" />
                   <span>Site Engineer Sign-off Required</span>
                 </div>

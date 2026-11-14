@@ -90,7 +90,7 @@ export default function ProjectSpecModal({ model, onClose }: ProjectSpecModalPro
             </div>
             <div>
               <p className="text-[11px] font-bold uppercase tracking-wider text-slate-500">Est. Handover</p>
-              <p className="text-base font-extrabold text-emerald-700 mt-0.5">{model.estimatedDuration}</p>
+              <p className="text-base font-extrabold text-neutral-950 mt-0.5">{model.estimatedDuration}</p>
             </div>
           </div>
 
@@ -180,7 +180,7 @@ export default function ProjectSpecModal({ model, onClose }: ProjectSpecModalPro
         {/* Modal Footer Actions */}
         <div className="px-6 py-4 border-t border-slate-200 bg-slate-50 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="text-xs text-slate-500 flex items-center gap-1.5">
-            <ShieldCheck className="w-4 h-4 text-emerald-600" />
+            <ShieldCheck className="w-4 h-4 text-neutral-950" />
             <span>Backed by Elite Homes 10-Year Structural Guarantee</span>
           </div>
           <div className="flex items-center gap-3 w-full sm:w-auto">

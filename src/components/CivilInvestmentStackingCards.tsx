@@ -163,7 +163,7 @@ export default function CivilInvestmentStackingCards() {
                 key={index}
                 index={index}
                 className="mb-[25vh] sm:mb-[32vh] last:mb-12"
-                topPosition={`calc(96px + ${index * 14}px)`}
+                topPosition={`calc(clamp(76px, 9vh, 96px) + ${index * 10}px)`}
               >
                 <div
                   className={cn(
