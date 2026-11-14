@@ -49,11 +49,22 @@ export async function POST(request: Request) {
     // Dispatch via Nodemailer
     const result = await sendContactInquiry(payload);
 
+    if (!result.delivered) {
+      return NextResponse.json(
+        {
+          success: false,
+          refId: result.refId,
+          error: "Email delivery failed: SMTP credentials (SMTP_USER and SMTP_PASS) are not configured in Vercel Environment Variables. Please add them in your Vercel Project Settings and redeploy.",
+          notice: result.notice,
+        },
+        { status: 500 }
+      );
+    }
+
     return NextResponse.json({
       success: true,
       refId: result.refId,
-      delivered: result.delivered,
-      notice: result.notice,
+      delivered: true,
     });
   } catch (error: unknown) {
     console.error("[API /api/contact Error]:", error);

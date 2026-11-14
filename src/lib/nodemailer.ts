@@ -14,17 +14,36 @@ export interface ContactInquiryPayload {
 
 /**
  * Creates and configures the Nodemailer SMTP transporter.
+ * Optimized for both localhost and Vercel serverless cloud execution.
  */
 export function getMailTransporter() {
   const host = process.env.SMTP_HOST || "smtp.gmail.com";
-  const port = Number(process.env.SMTP_PORT) || 465;
-  const secure = process.env.SMTP_SECURE ? process.env.SMTP_SECURE === "true" : port === 465;
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
+  const user = process.env.SMTP_USER?.trim();
+  // Strip any accidental whitespace from Google App Passwords (e.g. "abcd efgh ijkl mnop")
+  const pass = process.env.SMTP_PASS?.replace(/\s+/g, "");
 
   if (!user || !pass) {
     return null;
   }
+
+  const isGmail = host.includes("gmail") || user.endsWith("@gmail.com");
+
+  // When connecting via Gmail, use service preset for optimal Vercel serverless compatibility
+  if (isGmail) {
+    return nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user,
+        pass,
+      },
+      connectionTimeout: 10000,
+      greetingTimeout: 10000,
+      socketTimeout: 15000,
+    });
+  }
+
+  const port = Number(process.env.SMTP_PORT) || 587;
+  const secure = process.env.SMTP_SECURE ? process.env.SMTP_SECURE === "true" : port === 465;
 
   return nodemailer.createTransport({
     host,
@@ -34,6 +53,9 @@ export function getMailTransporter() {
       user,
       pass,
     },
+    connectionTimeout: 10000,
+    greetingTimeout: 10000,
+    socketTimeout: 15000,
   });
 }
 
@@ -44,22 +66,21 @@ export function getMailTransporter() {
  */
 export async function sendContactInquiry(data: ContactInquiryPayload) {
   const transporter = getMailTransporter();
-  const receiverEmail = process.env.CONTACT_RECEIVER_EMAIL || process.env.SMTP_USER;
-  const senderEmail = process.env.SMTP_USER;
+  const receiverEmail = process.env.CONTACT_RECEIVER_EMAIL?.trim() || process.env.SMTP_USER?.trim();
+  const senderEmail = process.env.SMTP_USER?.trim();
   const senderName = process.env.SMTP_FROM_NAME || "Elite Homes Civil Engineering";
 
-  // If SMTP credentials have not been configured yet in .env.local:
+  // If SMTP credentials have not been configured on the host (e.g. Vercel):
   if (!transporter || !senderEmail || !receiverEmail) {
     console.warn(
-      `[Nodemailer Notice] SMTP credentials not fully configured in .env.local. ` +
-      `Inquiry (Ref: ${data.refId}) from "${data.name}" was logged but email delivery was skipped. ` +
-      `To enable actual email sending, add SMTP_USER and SMTP_PASS in .env.local.`
+      `[Nodemailer Warning] SMTP credentials (SMTP_USER / SMTP_PASS) not configured in Vercel environment variables. ` +
+      `Inquiry (Ref: ${data.refId}) from "${data.name}" was logged but email delivery was skipped.`
     );
     return {
-      success: true,
+      success: false,
       delivered: false,
       refId: data.refId,
-      notice: "SMTP credentials pending in .env.local",
+      notice: "SMTP credentials (SMTP_USER / SMTP_PASS) are missing in Vercel Environment Variables.",
     };
   }
 
